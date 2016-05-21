@@ -36,6 +36,7 @@
 }
 @property (nonatomic,strong) NSMutableArray *items;
 @property (nonatomic,strong) User *applicationUser;
+
 @end
 
 @implementation SideMenuTableViewController
@@ -127,7 +128,21 @@
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
         imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        imageView.image = self.applicationUser.userImage ? self.applicationUser.userImage : [UIImage imageNamed:@"thumbnail"];
+        
+        
+//        imageView.image = self.applicationUser.userImage ? self.applicationUser.userImage : [UIImage imageNamed:@"thumbnail"];
+        
+        self.applicationUser = [[MobAccountManager sharedMobAccountManager] applicationUser];
+        if ([self.applicationUser.GenderEn  isEqual: @"Male"] || [self.applicationUser.GenderAr  isEqual: @"ذكر"]) {
+            imageView.image = self.applicationUser.userImage ? self.applicationUser.userImage : [UIImage imageNamed:@"defaultdriver.jpg"];
+            
+        }else {
+            imageView.image = self.applicationUser.userImage ? self.applicationUser.userImage : [UIImage imageNamed:@"defaultdriverfemale.jpg"];
+
+            
+        }
+        
+        
         imageView.layer.masksToBounds = YES;
         imageView.layer.cornerRadius = 50.0;
         imageView.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -167,7 +182,12 @@
 #pragma mark UITableView Datasource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 54;
+    if (IDIOM == IPAD) {
+        NSLog(@"I'm Ipad User in The Side Menu");
+        return 100;
+    }else {
+    return 45;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -282,7 +302,18 @@
 - (UINavigationController *)homeNavigationController
 {
     if (!_homeNavigationController) {
-        HomeViewController *homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar":@"HomeViewController" bundle:nil];
+        
+        HomeViewController *homeViewControlle;
+        if ( IDIOM == IPAD )
+        {
+            homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar_Ipad":@"HomeViewController_Ipad" bundle:nil];
+            
+            
+        }else {
+            homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar":@"HomeViewController" bundle:nil];
+            
+        }
+        
         homeViewControlle.enableBackButton = NO;
         _homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewControlle];
     }
@@ -303,9 +334,25 @@
 - (UINavigationController *)searchNavigationController
 {
     if (!_searchNavigationController) {
-        SearchViewController *viewController = [[SearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchViewController_ar":@"SearchViewController" bundle:nil];
-        viewController.enableBackButton = NO;
-        _searchNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        
+        
+        
+        if ( IDIOM == IPAD ) {
+            /* do something specifically for iPad. */
+            SearchViewController *viewController = [[SearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchViewController_ar_Ipad":@"SearchViewController_Ipad" bundle:nil];
+            viewController.enableBackButton = NO;
+            _searchNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        } else {
+            /* do something specifically for iPhone or iPod touch. */
+            SearchViewController *viewController = [[SearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchViewController_ar":@"SearchViewController" bundle:nil];
+            viewController.enableBackButton = NO;
+            _searchNavigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        }
+        
+        
+        
+        
+    
     }
     return _searchNavigationController;
 }
@@ -344,8 +391,19 @@
 {
     if (!_vehiclesNavigationController)
     {
-        VehiclesViewController *vehiclesView = [[VehiclesViewController alloc] initWithNibName:(KIS_ARABIC)?@"VehiclesViewController_ar":@"VehiclesViewController" bundle:nil];
-        _vehiclesNavigationController = [[UINavigationController alloc] initWithRootViewController:vehiclesView];
+        
+        
+        if (IDIOM == IPAD) {
+            VehiclesViewController *vehiclesView = [[VehiclesViewController alloc] initWithNibName:(KIS_ARABIC)?@"VehiclesViewController_ar_Ipad":@"VehiclesViewController_Ipad" bundle:nil];
+            _vehiclesNavigationController = [[UINavigationController alloc] initWithRootViewController:vehiclesView];
+        }else {
+            VehiclesViewController *vehiclesView = [[VehiclesViewController alloc] initWithNibName:(KIS_ARABIC)?@"VehiclesViewController_ar":@"VehiclesViewController" bundle:nil];
+            _vehiclesNavigationController = [[UINavigationController alloc] initWithRootViewController:vehiclesView];
+            
+        }
+        
+        
+     
     }
     return _vehiclesNavigationController;
 }
@@ -354,8 +412,14 @@
 {
     if (!_welcomeNavigationController)
     {
+        if ( IDIOM == IPAD ) {
+            WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"WelcomeViewController_ar_Ipad":@"WelcomeViewController_Ipad" bundle:nil];
+            
+            _welcomeNavigationController = [[UINavigationController alloc] initWithRootViewController:welcomeViewController];
+        }
+        else{
         WelcomeViewController *welcomeViewController = [[WelcomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"WelcomeViewController_ar":@"WelcomeViewController" bundle:nil];
-     _welcomeNavigationController = [[UINavigationController alloc] initWithRootViewController:welcomeViewController];
+            _welcomeNavigationController = [[UINavigationController alloc] initWithRootViewController:welcomeViewController];}
     }
     return _welcomeNavigationController;
 }

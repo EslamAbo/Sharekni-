@@ -50,6 +50,7 @@
 - (void)GetPhotoWithName:(NSString *)name withSuccess:(void (^)(UIImage *image,NSString *filePath))success
                   Failure:(void (^)(NSString *error))failure
 {
+    //GonWhat
     if([name isEqualToString:@"NoImage.png"])
     {
         success(nil,nil);

@@ -44,6 +44,7 @@
 @implementation MobAccountManager
 
 - (NSString *) applicationUserID{
+    NSLog(@"%@",_applicationUser.ID);
     return self.applicationUser.ID.stringValue;
 }
 
@@ -167,16 +168,22 @@ NSString *path = [NSString stringWithFormat:@"cls_mobios.asmx/ChangePassword?id=
         
         responseString = [self jsonStringFromResponse:responseString];
 
-        if (responseString)
+        if ([responseString  isEqual:  @"\"A reset password link has been sent to your email\\nPlease note that this link is valid for one day only.\""])
         {
-            NSString *str = GET_STRING(@"A reset password link has been sent to your email");
+//            NSString *str = @"A reset password link has been sent to your email";
+            NSString *str = (GET_STRING(@"A reset password link has been sent to your email"));
+
             success(str);
+            NSLog(responseString);
         }else{
-            failure(GET_STRING(@"data are not matching"));
+            failure(GET_STRING(@"Email are not matching"));
+
+            NSLog(responseString);
+
         }
         
     } failure:^void(AFHTTPRequestOperation * operation, NSError * error) {
-        failure(GET_STRING(@"data are not matching"));
+        failure(@"Data are not Matching");
     }];
 }
 
@@ -340,6 +347,34 @@ NSString *path = [NSString stringWithFormat:@"cls_mobios.asmx/ChangePassword?id=
 
 }
 
+//GonMade WebServ Driver_SendInvitation
+
+- (void) DriverSendInvitation:(NSString *)PassengerID RouteID:(NSString *)RouteID DriverID:(NSString *)DriverID Remark:(NSString *)remark WithSuccess:(void (^)(NSString *user))success Failure:(void (^)(NSString *error))failure
+{
+    //    NSString *path = [NSString stringWithFormat:@"cls_mobios.asmx/Passenger_SendAlert?DriverId=%@&PassengerId=%@&RouteId=%@&s_Remarks=%@",DriverID,PassengerID,RouteID,remark];
+    NSString *path = [NSString stringWithFormat:@"cls_mobios.asmx/Driver_SendInvitation?RouteID=%@&PassengerID=%@&DriverID=%@&s_Remarks=%@",RouteID,PassengerID,DriverID,remark];
+    path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog([NSString stringWithFormat:@"%@%@",Sharkeni_BASEURL,path]);
+    [self.operationManager GET:path parameters:nil success:^void(AFHTTPRequestOperation * operation, id responseObject)
+     {
+         NSString *responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+         responseString = [self jsonStringFromResponse:responseString];
+         
+         if (![responseString containsString:@"1"]){
+             failure(@"Error");
+             NSLog(responseString);
+         }
+         success(responseString);
+         NSLog(responseString);
+         NSLog(@"Succes");
+     } failure:^void(AFHTTPRequestOperation * operation, NSError * error) {
+         failure(@"incorrect");
+         NSLog(error);
+     }];
+    
+}
+
+
 - (void) registerVehicle:(NSString *)AccountId TrafficFileNo:(NSString *)TrafficFileNo BirthDate:(NSString *)BirthDate WithSuccess:(void (^)(NSString *user))success Failure:(void (^)(NSString *error))failure
 {
     NSString *path = [NSString stringWithFormat:@"/_mobfiles/cls_mobios.asmx/Driver_RegisterVehicleWithETService?AccountId=%@&TrafficFileNo=%@&BirthDate=%@",AccountId,TrafficFileNo,BirthDate];
@@ -359,30 +394,30 @@ NSString *path = [NSString stringWithFormat:@"cls_mobios.asmx/ChangePassword?id=
          }
          else if ([responseString containsString:@"-2"])
          {
-             failure(@"You can't use this file number");
+             failure(GET_STRING(@"You can't use this file number"));
          }
          else if ([responseString containsString:@"-3"])
          {
-             failure(@"Date birth invalid");
+             failure(GET_STRING(@"Invalid birthdate"));
          }
          else if ([responseString containsString:@"-4"])
          {
-             failure(@"License verified, but no cars found");
+             failure(GET_STRING(@"License verified, but no cars found"));
          }
          else if ([responseString containsString:@"-5"])
          {
-             failure(@"Invalid data please check again");
+             failure(GET_STRING(@"Invalid data please check again"));
          }
          else if ([responseString containsString:@"-6"])
          {
-             failure(@"Invalid data please check again");
+             failure(GET_STRING(@"Invalid data please check again"));
              success(responseString);
          }
      } failure:^void(AFHTTPRequestOperation * operation, NSError * error){
          failure(@"incorrect");
      }];
 }
-
+/*
 - (void) acceptRequest:(NSString *)RequestId andIsAccepted:(NSString *)IsAccept WithSuccess:(void (^)(NSString *response))success Failure:(void (^)(NSString *error))failure
 {
     NSString *path = [NSString stringWithFormat:@"cls_mobios.asmx/Driver_AcceptRequest?RequestId=%@&IsAccept=%@",RequestId,IsAccept];
@@ -406,12 +441,47 @@ NSString *path = [NSString stringWithFormat:@"cls_mobios.asmx/ChangePassword?id=
             failure(error);
     }];
 }
+*/
+
+- (void) acceptRequest:(NSString *)RequestId andIsAccepted:(NSString *)IsAccept notificationType:(AcceptNotification)type WithSuccess:(void (^)(NSString *response))success Failure:(void (^)(NSString *error))failure
+{
+    NSString *path ;
+    
+    if (type == DriverRequest) {
+        path = [NSString stringWithFormat:@"cls_mobios.asmx/Driver_AcceptRequest?RequestId=%@&IsAccept=%@",RequestId,IsAccept];
+    }
+    else if (type == PassengerJoin) {
+        path = [NSString stringWithFormat:@"cls_mobios.asmx/Passenger_AcceptInvitation?RequestId=%@&IsAccept=%@",RequestId,IsAccept];
+    }
+    
+    
+    [self.operationManager GET:path parameters:nil success:^void(AFHTTPRequestOperation * operation, id responseObject)
+     {
+         NSString *responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+         responseString = [self jsonStringFromResponse:responseString];
+         
+         if([responseString containsString:@"-2"]){
+             failure(@"Failed");
+         }
+         else if ([responseString containsString:@"-1"]){
+             failure(@"Failed");
+         }
+         else{
+             success(nil);
+         }
+         
+         
+     } failure:^void(AFHTTPRequestOperation * operation, NSError * error) {
+         failure(error);
+     }];
+}
+
 
 - (void) getUser:(NSString *)userID WithSuccess:(void (^)(User *user))success Failure:(void (^)(NSString *error))failure
 {
     NSString *path = [NSString stringWithFormat:@"cls_mobios.asmx/Get?id=%@",userID];
     [self.operationManager GET:path parameters:nil success:^void(AFHTTPRequestOperation * operation, id responseObject) {
-        
+        NSLog(@"HomeUrl : %@%@",Sharkeni_BASEURL,path);
         NSString *responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         responseString = [self jsonStringFromResponse:responseString];
         NSError *jsonError;

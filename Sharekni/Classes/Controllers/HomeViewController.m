@@ -29,6 +29,7 @@
 #import "VerifyMobileViewController.h"
 #import "UIViewController+MJPopupViewController.h"
 #import "EditProfileViewController.h"
+#import "Languages.h"
 
 @import MobileAppTracker;
 
@@ -73,9 +74,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *verifiedImgOne;
 @property (weak, nonatomic) IBOutlet UIImageView *verifiedImgTwo;
 @property (weak, nonatomic) IBOutlet UIButton *verifyBtn;
-
+@property (assign , nonatomic) int NotificationURLCount ;
 @property (assign , nonatomic) int notificationCount ;
 @property (strong , nonatomic) NSString * notificationCountTxt ;
+@property (strong , nonatomic) NSNumber * notificationCountForUrl ;
 
 
 @property (nonatomic,strong) User *sharedUser;
@@ -87,11 +89,10 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
-
     [Tune measureSession];
     
     [self configureData];
-//    [self configureUI];
+    //    [self configureUI];
     [self configureActionsUI];
     
     __block HomeViewController *blockSelf = self;
@@ -100,10 +101,43 @@
     } Failure:^(NSString *error) {
         blockSelf.ratingLabel.text = 0;
     }];
+    
+    [[MobAccountManager sharedMobAccountManager] getUser:self.sharedUser.ID.stringValue WithSuccess:^(User *user) {
+        /*
+         _sharedUser.PendingInvitationCount + _sharedUser.Passenger_Invitation_Count + _sharedUser.PassengerMyAlertsCount + _sharedUser.DriverMyAlertsCount + _sharedUser.PendingRequestsCount
+         */
+        self.NotificationURLCount = 0;
+        self.notificationCount = 0;
+        NSNumber *number1  = _sharedUser.PendingInvitationCount  ;
+        NSLog(@"NSNUMBER1 is %@",number1);
+        NSNumber *number2  = _sharedUser.Passenger_Invitation_Count ;
+        NSLog(@"NSNUMBER2 is %@",number2);
+        NSNumber *number3  = _sharedUser.PassengerMyAlertsCount ;
+        NSLog(@"NSNUMBER3 is %@",number3);
+        NSNumber *number4  = _sharedUser.DriverMyAlertsCount ;
+        NSLog(@"NSNUMBER4 is %@",number4);
+        NSNumber *number5  = _sharedUser.PendingRequestsCount ;
+        NSLog(@"NSNUMBER5 is %@",number5);
+        NSInteger value = ([number1 integerValue] + [number2 integerValue] + [number3 integerValue] + [number4 integerValue] + [number5 integerValue]);
+        int myValue = (int) value;
+        
+        NSLog(@"My Value is :  %d",myValue);
+        _NotificationURLCount = myValue  ;
+        NSLog(@"Howa da 3ebo %d",_NotificationURLCount);
+        blockSelf.sharedUser = user;
+        [[MobAccountManager sharedMobAccountManager] setApplicationUser:user];
+        [blockSelf configureUI];
+        [KVNProgress dismiss];
+    } Failure:^(NSString *error)
+     {
+         [KVNProgress dismiss];
+     }];
+    
+    [self getNotifications];
 }
 
 - (BOOL)shouldAutorotate
-{    
+{
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     if (orientation == UIInterfaceOrientationPortrait){
         // your code for portrait mode
@@ -116,21 +150,42 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.notificationCount = 0;
+    
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
-
+    
     [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
     __block HomeViewController *blockSelf = self;
     [[MobAccountManager sharedMobAccountManager] getUser:self.sharedUser.ID.stringValue WithSuccess:^(User *user) {
+        /*
+         _sharedUser.PendingInvitationCount + _sharedUser.Passenger_Invitation_Count + _sharedUser.PassengerMyAlertsCount + _sharedUser.DriverMyAlertsCount + _sharedUser.PendingRequestsCount
+         */
+        self.NotificationURLCount = 0;
+        self.notificationCount = 0;
+        NSNumber *number1  = _sharedUser.PendingInvitationCount  ;
+        NSLog(@"NSNUMBER1 is %@",number1);
+        NSNumber *number2  = _sharedUser.Passenger_Invitation_Count ;
+        NSLog(@"NSNUMBER2 is %@",number2);
+        NSNumber *number3  = _sharedUser.PassengerMyAlertsCount ;
+        NSLog(@"NSNUMBER3 is %@",number3);
+        NSNumber *number4  = _sharedUser.DriverMyAlertsCount ;
+        NSLog(@"NSNUMBER4 is %@",number4);
+        NSNumber *number5  = _sharedUser.PendingRequestsCount ;
+        NSLog(@"NSNUMBER5 is %@",number5);
+        NSInteger value = ([number1 integerValue] + [number2 integerValue] + [number3 integerValue] + [number4 integerValue] + [number5 integerValue]);
+        int myValue = (int) value;
+        
+        NSLog(@"My Value is :  %d",myValue);
+        _NotificationURLCount = myValue  ;
+        NSLog(@"Howa da 3ebo %d",_NotificationURLCount);
         blockSelf.sharedUser = user;
         [[MobAccountManager sharedMobAccountManager] setApplicationUser:user];
         [blockSelf configureUI];
         [KVNProgress dismiss];
     } Failure:^(NSString *error)
-    {
-        [KVNProgress dismiss];
-    }];
+     {
+         [KVNProgress dismiss];
+     }];
     
     [self getNotifications];
 }
@@ -181,7 +236,7 @@
         
         UITapGestureRecognizer *joinedRidesGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showJoinedRides)];
         [self.ridesJoinedView addGestureRecognizer:joinedRidesGesture];
-    
+        
     }else{
         //passenger
         self.ridesCreatedView.alpha = 0;
@@ -215,9 +270,9 @@
     
     self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",self.sharedUser.FirstName,self.sharedUser.LastName];
     self.nameLabel.text = [self.nameLabel.text capitalizedString];
-
+    
     self.nationalityLabel.text = (KIS_ARABIC)?self.sharedUser.NationalityArName:self.sharedUser.NationalityEnName;
-
+    
     self.emailLabel.text = self.sharedUser.Username;
     self.mobileNumberLabel.text = [NSString stringWithFormat:@"%@",self.sharedUser.Mobile];
     if ([self.sharedUser.IsPhotoVerified boolValue])
@@ -238,7 +293,65 @@
     NSString *ridesJoinedText = [NSString stringWithFormat:@"%@ (%@)",GET_STRING(@"Rides Joined"),self.sharedUser.PassengerJoinedRidesCount];
     NSString *vehiclesCountText = [NSString stringWithFormat:@"%@ (%@)",GET_STRING(@"Vehicles"),self.sharedUser.VehiclesCount.stringValue];
     
-    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"thumbnail"];
+    if ([self.sharedUser.IsPhotoVerified isEqual: @"True"] ) {
+        //        self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"thumbnail"];
+        self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"thumbnail"];
+        //        NSLog(self.sharedUser.IsPhotoVerified);
+        NSLog(@"Maybe true");
+        
+    }
+    else if ([self.sharedUser.IsPhotoVerified isEqual: @"False"] ) {
+        NSLog(@"Maybe false");
+        switch ([[Languages sharedLanguageInstance] language]) {
+                
+                
+            case Arabic:
+                //
+                
+                if ([self.sharedUser.GenderAr  isEqual: @"ذكر"]) {
+                    
+                    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"imageaftereditar.png"];
+                    
+                    
+                }else {
+                    
+                    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"imageaftereditfemalear.png"];
+                    
+                }
+                
+                
+                break;
+            case English:
+                //
+                
+                if ([self.sharedUser.GenderEn  isEqual: @"Male"]) {
+                    
+                    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"imageafterediten.png"];
+                    
+                }else{
+                    //                    NSLog(self.sharedUser.GenderAr);
+                    
+                    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"imageaftereditfemale.png"];
+                    
+                }
+                
+            default:
+                NSLog(@"Error while picking Language");
+                
+                break;
+        }
+    }else {
+        
+        
+        NSLog(@"NoImage.png result from UrlImage √");
+        if ([self.sharedUser.GenderEn  isEqual: @"Male"] || [self.sharedUser.GenderAr  isEqual: @"ذكر"]) {
+            self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"defaultdriver.jpg"];
+        }else {
+            self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"defaultdriverfemale.jpg"];
+        }
+    }
+    
+    
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
     self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.profileImageView.layer.borderWidth = 0.5f;
@@ -252,29 +365,29 @@
 - (IBAction) verfiyMobileAction:(id)sender
 {
     [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
-
+    
     [[MobAccountManager sharedMobAccountManager] verifyMobileNumber:[NSString stringWithFormat:@"%@",self.sharedUser.ID] WithSuccess:^(NSString *user)
-    {
-        [KVNProgress dismiss];
-
-        if ([user containsString:@"1"])
-        {
-            [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Mobile verification code has been sent to your mobile")];
-            
-            VerifyMobileViewController *verifyView = [[VerifyMobileViewController alloc] initWithNibName:@"VerifyMobileViewController" bundle:nil];
-            
-            verifyView.accountID = [NSString stringWithFormat:@"%@",self.sharedUser.ID] ;
-            verifyView.delegate = self;
-            [self presentPopupViewController:verifyView animationType:MJPopupViewAnimationSlideBottomBottom];
-            
-        }
-        else
-        {
-            [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please check your mobile number")];
-        }
-    } Failure:^(NSString *error) {
-        [KVNProgress dismiss];
-    }];
+     {
+         [KVNProgress dismiss];
+         
+         if ([user containsString:@"1"])
+         {
+             [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Mobile verification code has been sent to your mobile")];
+             
+             VerifyMobileViewController *verifyView = [[VerifyMobileViewController alloc] initWithNibName:@"VerifyMobileViewController" bundle:nil];
+             
+             verifyView.accountID = [NSString stringWithFormat:@"%@",self.sharedUser.ID] ;
+             verifyView.delegate = self;
+             [self presentPopupViewController:verifyView animationType:MJPopupViewAnimationSlideBottomBottom];
+             
+         }
+         else
+         {
+             [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please check your mobile number")];
+         }
+     } Failure:^(NSString *error) {
+         [KVNProgress dismiss];
+     }];
 }
 
 - (void)dismissButtonClicked:(VerifyMobileViewController *)verifyMobileNumber
@@ -290,31 +403,83 @@
 
 #pragma Gestures & Actions
 - (void) searchAction{
-    SearchViewController *searchView = [[SearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchViewController_ar":@"SearchViewController" bundle:nil];
-    searchView.enableBackButton = YES;
-    [self.navigationController pushViewController:searchView animated:YES];
+    
+    if ( IDIOM == IPAD ) {
+        /* do something specifically for iPad. */
+        SearchViewController *searchView = [[SearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchViewController_ar_Ipad":@"SearchViewController_Ipad" bundle:nil];
+        searchView.enableBackButton = YES;
+        [self.navigationController pushViewController:searchView animated:YES];
+    } else {
+        /* do something specifically for iPhone or iPod touch. */
+        SearchViewController *searchView = [[SearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchViewController_ar":@"SearchViewController" bundle:nil];
+        searchView.enableBackButton = YES;
+        [self.navigationController pushViewController:searchView animated:YES];
+    }
+    
+
 }
 
- //GonMade creatRide
+//GonMade creatRide
 - (void) createRideAction
 {
-    if (self.sharedUser.DriverMyRidesCount.integerValue < 1)
+    //GonFollowOrders
+    
+    if (self.sharedUser.VehiclesCount.integerValue == 0)
     {
-        [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Sorry, you have yo have at least one ride")];
-               } // first if
+       
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:GET_STRING(@"You Don't Have Any Vehcile Registered") message:GET_STRING(@"Do you want to Register it now?") preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *Cancel = [UIAlertAction actionWithTitle:GET_STRING(@"Dismiss") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:GET_STRING(@"Register Vehicle") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            if (IDIOM == IPAD) {
+                
+                VehiclesViewController *registerVehicle = [[VehiclesViewController alloc] initWithNibName:(KIS_ARABIC)?@"VehiclesViewController_ar_Ipad":@"VehiclesViewController_Ipad" bundle:nil];
+                registerVehicle.enableBackButton = YES;
+                [self.navigationController pushViewController:registerVehicle animated:YES];
+            }else {
+                VehiclesViewController *registerVehicle = [[VehiclesViewController alloc] initWithNibName:(KIS_ARABIC)?@"VehiclesViewController_ar":@"VehiclesViewController" bundle:nil];
+                registerVehicle.enableBackButton = YES;
+                [self.navigationController pushViewController:registerVehicle animated:YES];
+            }
+        
+            
+        }];
+        [alert addAction:Cancel];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+           } // first if
     else
     {
-        
+    
         if (self.sharedUser.DriverMyRidesCount.integerValue < 2)
         {
-            CreateRideViewController *createRideViewController = [[CreateRideViewController alloc] initWithNibName:(KIS_ARABIC)?@"CreateRideViewController_ar":@"CreateRideViewController" bundle:nil];
-            [self.navigationController pushViewController:createRideViewController animated:YES];
+            User *user = [[MobAccountManager sharedMobAccountManager] applicationUser];
+
+            if (IDIOM == IPAD){
+                CreateRideViewController *createRideViewController = [[CreateRideViewController alloc] initWithNibName:(KIS_ARABIC)?@"CreateRideViewController_ar_Ipad":@"CreateRideViewController_IPad" bundle:nil];
+                createRideViewController.UserID = [NSString stringWithFormat:@"%@",user.ID];
+                [self.navigationController pushViewController:createRideViewController animated:YES];
+            }else {
+                
+                CreateRideViewController *createRideViewController = [[CreateRideViewController alloc] initWithNibName:(KIS_ARABIC)?@"CreateRideViewController_ar":@"CreateRideViewController" bundle:nil];
+                createRideViewController.UserID = [NSString stringWithFormat:@"%@",user.ID];
+                [self.navigationController pushViewController:createRideViewController animated:YES];
+            }
+            
+            
+            
+
         }
         else
         {
             [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Sorry, It's not allowed to create more than two rides")];
         }
-
+        
     }
 }
 
@@ -348,8 +513,15 @@
 
 - (IBAction) editAction:(id)sender
 {
-    EditProfileViewController *profileView = [[EditProfileViewController alloc] initWithNibName:(KIS_ARABIC)?@"EditProfileViewController_ar":@"EditProfileViewController" bundle:nil];
-    [self.navigationController pushViewController:profileView animated:YES];
+    if (IDIOM == IPAD) {
+        
+        EditProfileViewController *profileView = [[EditProfileViewController alloc] initWithNibName:(KIS_ARABIC)?@"EditProfileViewController_ar_Ipad":@"EditProfileViewController_Ipad" bundle:nil];
+        [self.navigationController pushViewController:profileView animated:YES];
+    }else {
+        EditProfileViewController *profileView = [[EditProfileViewController alloc] initWithNibName:(KIS_ARABIC)?@"EditProfileViewController_ar":@"EditProfileViewController" bundle:nil];
+        [self.navigationController pushViewController:profileView animated:YES];
+    }
+
 }
 
 - (IBAction) openNotifications:(id)sender
@@ -369,11 +541,11 @@
     [[MasterDataManager sharedMasterDataManager] getRequestNotifications:[NSString stringWithFormat:@"%@",user.ID] notificationType:NotificationTypeAlert  WithSuccess:^(NSMutableArray *array) {
         
         self.notificationCount += (int)array.count ;
-       
+        
         [self getAcceptedNotifications];
         
     } Failure:^(NSString *error) {
-        NSLog(@"Error in Notifications");
+        NSLog(@"NotificationTypeAlert Error in Notifications");
         [KVNProgress dismiss];
         [KVNProgress showErrorWithStatus:@"Error"];
         [blockSelf performBlock:^{
@@ -394,13 +566,28 @@
         [blockSelf getPendingNotifications];
         
     } Failure:^(NSString *error) {
-        NSLog(@"Error in Notifications");
+        NSLog(@"NotificationTypeAccepted Error in Notifications");
         [KVNProgress dismiss];
         [KVNProgress showErrorWithStatus:@"Error"];
         [blockSelf performBlock:^{
             [KVNProgress dismiss];
         } afterDelay:3];
     }];
+    
+    [[MasterDataManager sharedMasterDataManager] getRequestNotifications:[NSString stringWithFormat:@"%@",user.ID] notificationType:NotificationTypeAccepted WithSuccess:^(NSMutableArray *array) {
+        
+        blockSelf.notificationCount += (int)array.count ;
+        [blockSelf getPendingNotifications];
+        
+    } Failure:^(NSString *error) {
+        NSLog(@"NotificationTypeAccepted Error in Notifications");
+        [KVNProgress dismiss];
+        [KVNProgress showErrorWithStatus:@"Error"];
+        [blockSelf performBlock:^{
+            [KVNProgress dismiss];
+        } afterDelay:3];
+    }];
+    
 }
 
 - (void) getPendingNotifications
@@ -408,15 +595,15 @@
     User *user = [[MobAccountManager sharedMobAccountManager] applicationUser];
     __block HomeViewController *blockSelf = self;
     
-    [[MasterDataManager sharedMasterDataManager] getRequestNotifications:[NSString stringWithFormat:@"%@",user.ID] notificationType:NotificationTypePending WithSuccess:^(NSMutableArray *array) {
+    [[MasterDataManager sharedMasterDataManager] getRequestNotifications:[NSString stringWithFormat:@"%@",user.ID] notificationType:Driver_GetPendingInvitationsFromPassenger WithSuccess:^(NSMutableArray *array) {
         
         blockSelf.notificationCount += (int)array.count ;
-        self.notificationCountLabel.text = [NSString stringWithFormat:@"%d",blockSelf.notificationCount];
+        self.notificationCountLabel.text = [NSString stringWithFormat:@"%d",blockSelf.NotificationURLCount];
         
         [KVNProgress dismiss];
         
     } Failure:^(NSString *error) {
-        NSLog(@"Error in Notifications");
+        NSLog(@" Driver_GetPendingInvitationsFromPassenger Error in Notifications");
         [KVNProgress dismiss];
         [KVNProgress showErrorWithStatus:@"Error"];
         [blockSelf performBlock:^{
@@ -427,9 +614,19 @@
 
 - (void) showVeichles:(id)sender
 {
-    VehiclesViewController *registerVehicle = [[VehiclesViewController alloc] initWithNibName:(KIS_ARABIC)?@"VehiclesViewController_ar":@"VehiclesViewController" bundle:nil];
-    registerVehicle.enableBackButton = YES;
+    
+    if (IDIOM == IPAD) {
+        
+        VehiclesViewController *registerVehicle = [[VehiclesViewController alloc] initWithNibName:(KIS_ARABIC)?@"VehiclesViewController_ar_Ipad":@"VehiclesViewController_Ipad" bundle:nil];
+        registerVehicle.enableBackButton = YES;
         [self.navigationController pushViewController:registerVehicle animated:YES];
+    }else {
+        VehiclesViewController *registerVehicle = [[VehiclesViewController alloc] initWithNibName:(KIS_ARABIC)?@"VehiclesViewController_ar":@"VehiclesViewController" bundle:nil];
+        registerVehicle.enableBackButton = YES;
+        [self.navigationController pushViewController:registerVehicle animated:YES];
+    }
+    
+
 }
 
 - (void) showCreatedRides

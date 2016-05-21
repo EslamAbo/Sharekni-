@@ -31,7 +31,7 @@
 
 - (void) uploadPhoto{
     if(!self.image){
-        self.failureHandler(@"No Image ");
+        self.failureHandler(@"");
     }
 //    else{
 //        NSString *imageString = [self stringFromImage:self.image];

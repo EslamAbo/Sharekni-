@@ -59,6 +59,16 @@
     if (orientation == UIInterfaceOrientationPortrait){
         // your code for portrait mode
         return NO ;
+        /*  UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:GET_STRING(@"No permits found") preferredStyle:UIAlertControllerStyleAlert];
+         
+         UIAlertAction *ok = [UIAlertAction actionWithTitle:GET_STRING(@"Ok") style:UIAlertActionStyleDefault handler:nil];
+         [alert addAction:ok];
+         [self presentViewController:alert animated:YES completion:nil];
+         NSLog(@"HIDDen");
+         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         [self.navigationController popViewControllerAnimated:true];
+         });
+         */
     }else{
         return YES ;
     }

@@ -22,9 +22,9 @@
 @interface ForgetPasswordViewController ()<UITextFieldDelegate,REFrostedViewControllerDelegate>
 {
     float animatedDistance ;
+    NSString * EmailSpaceRemoved;
 }
 
-@property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 
@@ -48,6 +48,9 @@
     
     self.navigationController.navigationBarHidden = NO ;
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    
+
+    
     [self configureUI];
 
 }
@@ -73,9 +76,9 @@
 }
 
 - (void) configureUI{
-    if ([self.mobileTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+    
+    if ([self.emailTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         UIColor *color = [UIColor add_colorWithRGBHexString:Red_HEX];
-        self.mobileTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"mobileReq") attributes:@{NSForegroundColorAttributeName: color}];
         self.emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"mailReq") attributes:@{NSForegroundColorAttributeName: color}];
     } else {
         NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
@@ -88,27 +91,37 @@
     
 }
 
+-(NSString *)SpacesRemover :(NSString *)StringRemoveSpaces{
+    NSString *s = [StringRemoveSpaces stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    return s ;
+}
+
+
 - (IBAction)forgetAction:(id)sender
 {
     [self.view endEditing:YES];
 
-    if(self.mobileTextField.text.length == 0){
-  
-        [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"mobileReq")];
-    }
-    else if (self.emailTextField.text.length == 0)
+     if (self.emailTextField.text.length == 0)
     {
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"mailReq")];
     }
     else
     {
+
+        EmailSpaceRemoved = self.emailTextField.text;
+        EmailSpaceRemoved = [self SpacesRemover:_emailTextField.text];
+        
         [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
         
         __block ForgetPasswordViewController *blockSelf = self;
-        [[MobAccountManager sharedMobAccountManager] forgetPassword:self.mobileTextField.text andEmail:self.emailTextField.text WithSuccess:^(NSString *user) {
+        [[MobAccountManager sharedMobAccountManager] forgetPassword:@"" andEmail: EmailSpaceRemoved WithSuccess:^(NSString *user) {
             [KVNProgress dismiss];
             if (user) {
                 [KVNProgress showSuccessWithStatus:user];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popToRootViewControllerAnimated:true];
+                });
             }else{
                 [KVNProgress dismiss];
             }

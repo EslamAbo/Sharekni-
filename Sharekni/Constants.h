@@ -9,6 +9,8 @@
 #ifndef Sharekni_Constants_h
 #define Sharekni_Constants_h
 
+#define IDIOM    UI_USER_INTERFACE_IDIOM()
+#define IPAD     UIUserInterfaceIdiomPad
 
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
@@ -46,9 +48,9 @@
 
 //#define Sharkeni_BASEURL @"https://www.sharekni.ae/_mobfiles/"
 
-//#define Sharkeni_BASEURL @"http://213.42.51.219/_mobfiles/"
+#define Sharkeni_BASEURL @"http://213.42.51.219/_mobfiles/"
 
-#define Sharkeni_BASEURL @"http://sharekni-web.sdg.ae/_mobfiles/"
+//#define Sharkeni_BASEURL @"http://sharekni-web.sdg.ae/_mobfiles/"
 
 #define GetAgeRanges_URL @"cls_mobios.asmx/GetAgeRanges"
 #define GetEmirates_URL @"cls_mobios.asmx/GetEmirates"
@@ -111,7 +113,10 @@ typedef enum RoadType : NSUInteger {
 typedef enum NotificationType : NSUInteger {
     NotificationTypeAccepted,
     NotificationTypeAlert,
-    NotificationTypePending
+    NotificationTypePending,
+    NotificationTypeAlertForPassenger,
+    Driver_GetAcceptedInvitationsFromPassenger,
+    Driver_GetPendingInvitationsFromPassenger,
 } NotificationType;
 
 typedef enum WebViewType : NSUInteger {
@@ -135,6 +140,15 @@ typedef enum TextFieldType : NSUInteger {
     VehiclesTextField
 } TextFieldType;
 
+typedef enum AcceptNotification : NSUInteger {
+    DriverRequest,
+    PassengerJoin,
+} AcceptNotification;
+
+typedef enum deleteRequestWithID : NSUInteger {
+    Driver_RemoveInvitation,
+    Passenger_RemoveRequest,
+} deleteRequestWithID;
 
 #define API_PARAMETERS_KEYS
 

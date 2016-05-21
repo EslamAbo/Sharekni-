@@ -127,7 +127,6 @@
     {
         rideCell = [[MostRideDetailsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MOST_RIDE_DETAILS_CELLID];
     }
-    
     MostRideDetails *ride = self.rides[indexPath.row];
     rideCell.delegate = self ;
     [rideCell setMostRide:ride];

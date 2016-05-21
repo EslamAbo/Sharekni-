@@ -34,6 +34,12 @@
 #import "CreateRideViewController.h"
 #import "HCSStarRatingView.h"
 #import "MostRidesViewController.h"
+#import "HelpManager.h"
+#import "HelpManager.h"
+
+#import "MostRideDetailsViewControllerForPassenger.h"
+
+
 #define VERTICAL_SPACE 15
 #define REVIEWS_CELL_HEIGHT  117
 #define PASSENGER_ALERT_TAG  1199
@@ -74,11 +80,16 @@
     __weak IBOutlet UIButton *firstButton;
     __weak IBOutlet UIView *passengersView;
     __weak IBOutlet UIButton *thirdButton;
+    
+    __weak IBOutlet UIButton *MatchedSearchResults;
+    NSString *selected;
 }
 
 @property (nonatomic ,strong) NSString *rateValue ;
 
 @property (nonatomic ,strong) HCSStarRatingView *driverRatingsView ;
+@property (nonatomic,strong) NSString *RouteID;
+@property (nonatomic,strong) NSString *TheAccountID;
 
 @property (nonatomic ,strong) NSMutableArray *reviews ;
 @property (nonatomic ,strong) NSMutableArray *markers ;
@@ -103,6 +114,38 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    
+    if (self.driverDetails)
+    {
+        _RouteID = self.driverDetails.RouteId;
+        _TheAccountID = self.driverDetails.ID;
+    }
+    else if (self.createdRide){
+        _RouteID = self.createdRide.RouteID.stringValue;
+        _TheAccountID = [[MobAccountManager sharedMobAccountManager] applicationUserID];
+    }
+    else if (self.joinedRide){
+        _RouteID = self.joinedRide.RouteID.stringValue;
+        //        accountID = [[MobAccountManager sharedMobAccountManager] applicationUserID];
+    }
+    switch ([[Languages sharedLanguageInstance] language]) {
+            
+            
+        case Arabic:
+            self->selected = @"Arabic";
+            break;
+        case English:
+            //
+            self->selected = @"English";
+            //        self.HindiButtonSelector.hidden = NO;
+            break;
+        default:
+            break;
+    }
+    
+    
     self.alreadyJoined = NO;
     self.title = GET_STRING(@"rideDetails");
     
@@ -186,11 +229,11 @@
     }
     
     [KVNProgress showWithStatus:GET_STRING(@"loading")];
-
+    
     [[MobAccountManager sharedMobAccountManager] getDriverRate:driverID inRouteID:routeID WithSuccess:^(NSString *response) {
         
         self.rateValue = response;
-
+        
     } Failure:^(NSString *error) {
         
     }];
@@ -364,8 +407,16 @@
                         if (applicationUserID.length > 0) {
                             for (Passenger *passenger in array) {
                                 if([passenger.AccountId.stringValue isEqualToString:applicationUserID]){
-                                    blockSelf.alreadyJoined = YES;
-                                    break;
+                                    if([passenger.RequestStatus isEqual:@"True"] && [passenger.PassengerStatus isEqual:@"True"]){
+                                        blockSelf.alreadyJoined = YES;
+                                        break;
+                                    }else {
+                                        joinRideBtn.alpha = 0;
+                                        CGSize contentSize = contentView.contentSize ;
+                                        contentSize.height = joinRideBtn.frame.origin.y;
+                                        contentView.contentSize = contentSize;
+                                        NSLog(@"TheButton alfa = 0 ");
+                                    }
                                 }
                             }
                         }
@@ -406,6 +457,7 @@
 - (void) configureActionsButtons
 {
     if (self.createdRide) {
+        MatchedSearchResults.hidden = NO;
         [firstButton setTitle:GET_STRING(@"Delete") forState:UIControlStateNormal];
         [firstButton addTarget:self action:@selector(deleteRideAction) forControlEvents:UIControlEventTouchUpInside];
         
@@ -516,7 +568,7 @@
     if (self.joinedRide || self.createdRide || self.alreadyJoined) {
         joinRideBtn.alpha = 0;
         CGSize contentSize = contentView.contentSize ;
-        contentSize.height = joinRideBtn.frame.origin.y;
+        contentSize.height = joinRideBtn.frame.origin.y + VERTICAL_SPACE;
         contentView.contentSize = contentSize;
     }
     else
@@ -578,10 +630,43 @@
         [self presentPopupViewController:addReview animationType:MJPopupViewAnimationSlideBottomBottom];
     }
     else{
-        LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
-        loginView.isLogged = YES ;
-        [self presentViewController:navg animated:YES completion:nil];
+        
+        
+        
+        if ( IDIOM == IPAD ) {
+            /* do something specifically for iPad. */
+            
+            if (  [self->selected  isEqual: @"Arabic"]) {
+                LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController_ar_Ipad" bundle:nil];
+                UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
+                loginView.isLogged = YES ;
+                [self presentViewController:navg animated:YES completion:nil];
+            }else {
+                LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController_Ipad" bundle:nil];
+                UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
+                loginView.isLogged = YES ;
+                [self presentViewController:navg animated:YES completion:nil];
+            }
+            
+        } else {
+            /* do something specifically for iPhone or iPod touch. */
+            
+            if (  [self->selected  isEqual: @"Arabic"]) {
+                LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController_ar" bundle:nil];
+                UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
+                loginView.isLogged = YES ;
+                [self presentViewController:navg animated:YES completion:nil];
+            }else {
+                LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+                UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
+                loginView.isLogged = YES ;
+                [self presentViewController:navg animated:YES completion:nil];
+            }
+            
+        }
+        
+        
+        
     }
 }
 
@@ -594,13 +679,28 @@
 
 - (void) editRideAction
 {
-    CreateRideViewController *editRideViewController = [[CreateRideViewController alloc] initWithNibName:(KIS_ARABIC)?@"CreateRideViewController_ar":@"CreateRideViewController" bundle:nil];
-    editRideViewController.routeDetails = self.routeDetails;
-    __block RideDetailsViewController *blockSelf = self;
-    [editRideViewController setEditHandler:^{
-        [blockSelf refreshInfo];
-    }];
-    [self.navigationController pushViewController:editRideViewController animated:YES];
+    
+    if (IDIOM == IPAD) {
+        
+        CreateRideViewController *editRideViewController = [[CreateRideViewController alloc] initWithNibName:(KIS_ARABIC)?@"CreateRideViewController_ar_Ipad":@"CreateRideViewController_IPad" bundle:nil];
+        editRideViewController.routeDetails = self.routeDetails;
+        __block RideDetailsViewController *blockSelf = self;
+        [editRideViewController setEditHandler:^{
+            [blockSelf refreshInfo];
+        }];
+        [self.navigationController pushViewController:editRideViewController animated:YES];
+        
+    }else {
+        CreateRideViewController *editRideViewController = [[CreateRideViewController alloc] initWithNibName:(KIS_ARABIC)?@"CreateRideViewController_ar":@"CreateRideViewController" bundle:nil];
+        editRideViewController.routeDetails = self.routeDetails;
+        __block RideDetailsViewController *blockSelf = self;
+        [editRideViewController setEditHandler:^{
+            [blockSelf refreshInfo];
+        }];
+        [self.navigationController pushViewController:editRideViewController animated:YES];
+    }
+    
+
 }
 
 - (void) permitRideAction
@@ -642,17 +742,28 @@
 - (void)didJoinToRideSuccesfully
 {
     joinRideBtn.alpha = 0;
+    //GonHint
     
+    //    for (UIViewController *controller in self.navigationController.viewControllers)
+    //    {
+    //        if ([controller isKindOfClass:[MostRidesViewController class]])
+    //        {
+    //            [self.navigationController popToViewController:controller animated:YES];
+    if (self.alreadyJoined == NO) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:GET_STRING(@"Received your request and waiting for The approval") preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:GET_STRING(@"Ok") style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
-//    for (UIViewController *controller in self.navigationController.viewControllers)
-//    {
-//        if ([controller isKindOfClass:[MostRidesViewController class]])
-//        {
-//            [self.navigationController popToViewController:controller animated:YES];
-     [self.navigationController popViewControllerAnimated:true];
-//            break;
-//        }
-//    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController popViewControllerAnimated:true];
+        
+    });
+    //            break;
+    //        }
+    //    }
     
 }
 
@@ -668,10 +779,40 @@
     }
     else
     {
-        LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
-        loginView.isLogged = YES ;
-        [self presentViewController:navg animated:YES completion:nil];
+        
+        
+        if ( IDIOM == IPAD ) {
+            /* do something specifically for iPad. */
+            
+            if (  [self->selected  isEqual: @"Arabic"]) {
+                LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController_ar_Ipad" bundle:nil];
+                UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
+                loginView.isLogged = YES ;
+                [self presentViewController:navg animated:YES completion:nil];
+            }else {
+                LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController_Ipad" bundle:nil];
+                UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
+                loginView.isLogged = YES ;
+                [self presentViewController:navg animated:YES completion:nil];
+            }
+            
+        } else {
+            /* do something specifically for iPhone or iPod touch. */
+            
+            if (  [self->selected  isEqual: @"Arabic"]) {
+                LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController_ar" bundle:nil];
+                UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
+                loginView.isLogged = YES ;
+                [self presentViewController:navg animated:YES completion:nil];
+            }else {
+                LoginViewController *loginView =  [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+                UINavigationController *navg = [[UINavigationController alloc] initWithRootViewController:loginView];
+                loginView.isLogged = YES ;
+                [self presentViewController:navg animated:YES completion:nil];
+            }
+            
+        }
+        
     }
 }
 
@@ -684,6 +825,7 @@
     [[MobAccountManager sharedMobAccountManager] deleteRideWithID:self.routeDetails.ID.stringValue withSuccess:^(BOOL deletedSuccessfully) {
         
         [KVNProgress showSuccessWithStatus:GET_STRING(@"Ride Delete successfully.")];
+        [self.navigationController popViewControllerAnimated:true];
         [blockSelf configureData];
         
     } Failure:^(NSString *error) {
@@ -859,6 +1001,11 @@
     else if (IS_IPHONE_6P)
     {
         frame =  CGRectMake(_MKmapView.frame.origin.x, _MKmapView.frame.origin.y, 414.0f, 280);
+    }if (IDIOM == IPAD) {
+        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        
+        frame =  CGRectMake(_MKmapView.frame.origin.x, _MKmapView.frame.origin.y, width, 280);
+        
     }
     else
     {
@@ -1076,4 +1223,62 @@
     }
     return _loadingBarButton;
 }
+- (IBAction)MatchedSearchResulst:(id)sender {
+    if(self.passengers.count < 4)
+    {
+        [KVNProgress showWithStatus:GET_STRING(@"loading")];
+        
+        User *user = [[MobAccountManager sharedMobAccountManager] applicationUser];
+        
+        [[MasterDataManager sharedMasterDataManager] getRideDetailsFORPASSENGER:[NSString stringWithFormat:@"%@",user.ID] FromEmirateID:[NSString stringWithFormat:@"%@",self.routeDetails.FromEmirateId] FromRegionID:[NSString stringWithFormat:@"%@",self.routeDetails.FromRegionId] ToEmirateID:[NSString stringWithFormat:@"%@",self.routeDetails.ToEmirateId] ToRegionID:[NSString stringWithFormat:@"%@",self.routeDetails.ToRegionId] RouteID:_RouteID WithSuccess:^(NSMutableArray *array) {
+            
+            NSLog(@"_RouteID: %@",_RouteID);
+            NSLog(@"FromEmirateID: %@",self.routeDetails.FromEmirateId);
+            NSLog(@"FromRegionID: %@",self.routeDetails.FromRegionId);
+            NSLog(@"ToEmirateID: %@",self.routeDetails.ToEmirateId);
+            NSLog(@"ToRegionID: %@",self.routeDetails.ToRegionId);
+            
+            if( array.count > 0 ){
+                MostRideDetailsViewControllerForPassenger *rideDetailsView = [[MostRideDetailsViewControllerForPassenger alloc] initWithNibName:@"MostRideDetailsViewControllerForPassenger" bundle:nil];
+                rideDetailsView.toEmirate = FromRegionName.text;
+                rideDetailsView.fromRegion = [NSString stringWithFormat:@"%@ : %@",(KIS_ARABIC)?self.routeDetails.FromEmirateArName:self.routeDetails.FromEmirateEnName,(KIS_ARABIC)?self.routeDetails.FromRegionArName:self.routeDetails.FromRegionEnName];
+                rideDetailsView.fromEmirate = [NSString stringWithFormat:@"%@ : %@",(KIS_ARABIC)?self.routeDetails.ToEmirateArName:self.routeDetails.ToEmirateEnName,(KIS_ARABIC)?self.routeDetails.ToRegionArName:self.routeDetails.ToRegionEnName];
+                rideDetailsView.RouteIDString = _RouteID;
+                rideDetailsView.WebAccountID = [NSString stringWithFormat:@"%@",user.ID];
+                rideDetailsView.FromEmirateID = [NSString stringWithFormat:@"%@",self.routeDetails.FromEmirateId];
+                rideDetailsView.ToEmirateID = [NSString stringWithFormat:@"%@",self.routeDetails.ToEmirateId];
+                rideDetailsView.FromRegionID = [NSString stringWithFormat:@"%@",self.routeDetails.FromRegionId];
+                rideDetailsView.ToRegionID = [NSString stringWithFormat:@"%@",self.routeDetails.ToRegionId];
+                rideDetailsView.TheFlag = @"RideDetails";
+                
+                
+                [self.navigationController pushViewController:rideDetailsView animated:YES];
+            }
+            else{
+                [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"No Rides Found")];
+            }
+            //    [[MasterDataManager sharedMasterDataManager] getRideDetails:@"0" FromEmirateID:_ride.FromEmirateId FromRegionID:_ride.FromRegionId ToEmirateID:_ride.ToEmirateId ToRegionID:_ride.ToRegionId WithSuccess:^(NSMutableArray *array) {
+            
+            [KVNProgress dismiss];
+            
+        } Failure:^(NSString *error) {
+            
+            NSLog(@"Error in Best Drivers : RideDetailsVC");
+            //        [KVNProgress dismiss];
+            //        [KVNProgress showErrorWithStatus:@"Error"];
+            //        [blockSelf performBlock:^{
+            //            [KVNProgress dismiss];
+            //        } afterDelay:3];
+            
+        }];
+    }else {
+        [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Sorry, you can't send any more invitations")];
+    }
+    
+    
+    
+    
+}
+
+
 @end

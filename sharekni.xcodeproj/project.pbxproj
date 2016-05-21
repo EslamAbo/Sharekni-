@@ -33,7 +33,6 @@
 		048912B01BB933B8005E4E02 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 048912AF1BB933B8005E4E02 /* User.m */; };
 		04931B211BAAF814000F5434 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04931B201BAAF814000F5434 /* main.m */; };
 		04931B271BAAF814000F5434 /* Sharekni.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04931B251BAAF814000F5434 /* Sharekni.xcdatamodeld */; };
-		04931B2D1BAAF814000F5434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04931B2B1BAAF814000F5434 /* Main.storyboard */; };
 		04931B3E1BAAF815000F5434 /* SharekniTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04931B3D1BAAF815000F5434 /* SharekniTests.m */; };
 		04C3E0331BE09EF000698227 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C3E0311BE09EF000698227 /* HomeViewController.m */; };
 		04CFC7051BE52C6B0009BBDA /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CFC7031BE52C6B0009BBDA /* RegisterViewController.m */; };
@@ -48,7 +47,6 @@
 		140B97B01C164E1A0030E266 /* VerifyMobileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 140B97AE1C164E1A0030E266 /* VerifyMobileViewController.m */; };
 		140B97B11C164E1A0030E266 /* VerifyMobileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140B97AF1C164E1A0030E266 /* VerifyMobileViewController.xib */; };
 		140B97B31C167E680030E266 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140B97B21C167E670030E266 /* iAd.framework */; };
-		140B97B51C167E8F0030E266 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140B97B41C167E8F0030E266 /* StoreKit.framework */; };
 		140B97B71C167E9E0030E266 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140B97B61C167E9E0030E266 /* CoreTelephony.framework */; };
 		140B97B91C167EA60030E266 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140B97B81C167EA60030E266 /* AdSupport.framework */; };
 		140B97BB1C167EBB0030E266 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140B97BA1C167EBB0030E266 /* MobileCoreServices.framework */; };
@@ -163,6 +161,42 @@
 		14E5D7C71C0283890089054A /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E5D7C51C0283890089054A /* HistoryViewController.m */; };
 		14E692651BE8B7180041A999 /* DriverDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E692631BE8B7180041A999 /* DriverDetailsViewController.m */; };
 		14ECD2431C1AAF170013FE1D /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECD2411C1AAF170013FE1D /* EditProfileViewController.m */; };
+		7103F4FC1CD52E6A00FFC52B /* HomeViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7103F4FB1CD52E6A00FFC52B /* HomeViewController_Ipad.xib */; };
+		7103F4FE1CD52E7E00FFC52B /* HomeViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7103F4FD1CD52E7E00FFC52B /* HomeViewController_ar_Ipad.xib */; };
+		712F0DAB1C88555200721D9A /* RideDetailsVCInvitePassengers.m in Sources */ = {isa = PBXBuildFile; fileRef = 712F0DAA1C88555200721D9A /* RideDetailsVCInvitePassengers.m */; };
+		712F0DB81C885A5D00721D9A /* RideDetailsVCInvitePassengers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712F0DB71C885A5D00721D9A /* RideDetailsVCInvitePassengers.xib */; };
+		712F0DBA1C885A6D00721D9A /* RideDetailsVCInvitePassengers_ar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712F0DB91C885A6D00721D9A /* RideDetailsVCInvitePassengers_ar.xib */; };
+		713FD4511CCE97400011CFDE /* RegisterViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713FD4501CCE97400011CFDE /* RegisterViewController_Ipad.xib */; };
+		713FD4531CCE97610011CFDE /* RegisterViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713FD4521CCE97610011CFDE /* RegisterViewController_ar_Ipad.xib */; };
+		7140BB631CD68FBB00207C47 /* AdvancedSearchViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7140BB621CD68FBB00207C47 /* AdvancedSearchViewController_Ipad.xib */; };
+		7140BB651CD68FCB00207C47 /* AdvancedSearchViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7140BB641CD68FCB00207C47 /* AdvancedSearchViewController_ar_Ipad.xib */; };
+		7140BB6B1CD6E3EE00207C47 /* EditProfileViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7140BB6A1CD6E3EE00207C47 /* EditProfileViewController_Ipad.xib */; };
+		7140BB6D1CD6E3FD00207C47 /* EditProfileViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7140BB6C1CD6E3FD00207C47 /* EditProfileViewController_ar_Ipad.xib */; };
+		71501E871CD41707002B267B /* LoginViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71501E861CD41707002B267B /* LoginViewController_Ipad.xib */; };
+		71501E891CD41752002B267B /* LoginViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71501E881CD41752002B267B /* LoginViewController_ar_Ipad.xib */; };
+		715F02291C78893A00788D41 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 715F02281C78893A00788D41 /* StoreKit.framework */; };
+		718925811C81ECED00BE8A6D /* MostRideDetailsDataForPassenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 718925801C81ECED00BE8A6D /* MostRideDetailsDataForPassenger.m */; };
+		718925841C81ED7300BE8A6D /* MostRideDetailsViewControllerForPassenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 718925831C81ED7300BE8A6D /* MostRideDetailsViewControllerForPassenger.m */; };
+		718925861C81ED8000BE8A6D /* MostRideDetailsViewControllerForPassenger.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718925851C81ED8000BE8A6D /* MostRideDetailsViewControllerForPassenger.xib */; };
+		719090051C79D796002D5214 /* MapLookupForPassenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 719090041C79D796002D5214 /* MapLookupForPassenger.m */; };
+		719090081C7A286D002D5214 /* AddRemarksViewControllerForMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 719090071C7A286D002D5214 /* AddRemarksViewControllerForMap.m */; };
+		7190900A1C7A287C002D5214 /* AddRemarksViewControllerForMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719090091C7A287C002D5214 /* AddRemarksViewControllerForMap.xib */; };
+		71B9D69C1CD42A9D003E973D /* SearchViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B9D69B1CD42A9D003E973D /* SearchViewController_Ipad.xib */; };
+		71B9D69E1CD42AB1003E973D /* SearchViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B9D69D1CD42AB1003E973D /* SearchViewController_ar_Ipad.xib */; };
+		71C97E3D1CDEA6D0005C5C6F /* VehiclesViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C97E3C1CDEA6D0005C5C6F /* VehiclesViewController_Ipad.xib */; };
+		71C97E3F1CDEA6DD005C5C6F /* VehiclesViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C97E3E1CDEA6DD005C5C6F /* VehiclesViewController_ar_Ipad.xib */; };
+		71D522C41C799A5000E0F8E7 /* MostRideDetailsForMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D522C31C799A5000E0F8E7 /* MostRideDetailsForMap.m */; };
+		71D522C61C799A6600E0F8E7 /* MostRideDetailsForMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D522C51C799A6600E0F8E7 /* MostRideDetailsForMap.xib */; };
+		71D522C91C79A10400E0F8E7 /* SearchResultsViewControllerForMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D522C81C79A10400E0F8E7 /* SearchResultsViewControllerForMap.m */; };
+		71D522D11C79A4EE00E0F8E7 /* SearchResultsViewControllerForMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D522D01C79A4EE00E0F8E7 /* SearchResultsViewControllerForMap.xib */; };
+		71D522D31C79A5CB00E0F8E7 /* SearchResultsViewControllerForMap_ar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D522D21C79A5CB00E0F8E7 /* SearchResultsViewControllerForMap_ar.xib */; };
+		71E294D01CD8C31900743C67 /* CreateRideViewController_IPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E294CF1CD8C31900743C67 /* CreateRideViewController_IPad.xib */; };
+		71E294D21CD8C32D00743C67 /* CreateRideViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E294D11CD8C32D00743C67 /* CreateRideViewController_ar_Ipad.xib */; };
+		71F7340E1C787F4A00CF1826 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04931B2B1BAAF814000F5434 /* Main.storyboard */; };
+		71F757291CCD8257006C92B3 /* WelcomeViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F757281CCD8257006C92B3 /* WelcomeViewController_Ipad.xib */; };
+		71F7572B1CCD8264006C92B3 /* WelcomeViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F7572A1CCD8264006C92B3 /* WelcomeViewController_ar_Ipad.xib */; };
+		71FBC7621CDA17A900CCA2DC /* MostRideDetailsCell_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FBC7611CDA17A900CCA2DC /* MostRideDetailsCell_Ipad.xib */; };
+		71FBC7641CDA2B8D00CCA2DC /* BestDriverCell_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FBC7631CDA2B8D00CCA2DC /* BestDriverCell_Ipad.xib */; };
 		71FDAC241C62F52900CFCEF9 /* Hintss in Resources */ = {isa = PBXBuildFile; fileRef = 71FDAC231C62F52900CFCEF9 /* Hintss */; };
 		87196D461BF0A30500A94370 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87196D451BF0A30500A94370 /* Launch Screen.storyboard */; };
 		873E4C611BED30E4006C42F8 /* MapInfoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E4C601BED30E4006C42F8 /* MapInfoWindow.m */; };
@@ -302,7 +336,6 @@
 		140B97AE1C164E1A0030E266 /* VerifyMobileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyMobileViewController.m; sourceTree = "<group>"; };
 		140B97AF1C164E1A0030E266 /* VerifyMobileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyMobileViewController.xib; sourceTree = "<group>"; };
 		140B97B21C167E670030E266 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		140B97B41C167E8F0030E266 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		140B97B61C167E9E0030E266 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		140B97B81C167EA60030E266 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		140B97BA1C167EBB0030E266 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -461,10 +494,52 @@
 		14ECD2401C1AAF170013FE1D /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		14ECD2411C1AAF170013FE1D /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		33EF369DCE24017837965426 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7103F4FB1CD52E6A00FFC52B /* HomeViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController_Ipad.xib; sourceTree = "<group>"; };
+		7103F4FD1CD52E7E00FFC52B /* HomeViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		712F0DA91C88554300721D9A /* RideDetailsVCInvitePassengers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RideDetailsVCInvitePassengers.h; sourceTree = "<group>"; };
+		712F0DAA1C88555200721D9A /* RideDetailsVCInvitePassengers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideDetailsVCInvitePassengers.m; sourceTree = "<group>"; };
+		712F0DB71C885A5D00721D9A /* RideDetailsVCInvitePassengers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideDetailsVCInvitePassengers.xib; sourceTree = "<group>"; };
+		712F0DB91C885A6D00721D9A /* RideDetailsVCInvitePassengers_ar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideDetailsVCInvitePassengers_ar.xib; sourceTree = "<group>"; };
+		713FD4501CCE97400011CFDE /* RegisterViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController_Ipad.xib; sourceTree = "<group>"; };
+		713FD4521CCE97610011CFDE /* RegisterViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		7140BB621CD68FBB00207C47 /* AdvancedSearchViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvancedSearchViewController_Ipad.xib; sourceTree = "<group>"; };
+		7140BB641CD68FCB00207C47 /* AdvancedSearchViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvancedSearchViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		7140BB6A1CD6E3EE00207C47 /* EditProfileViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController_Ipad.xib; sourceTree = "<group>"; };
+		7140BB6C1CD6E3FD00207C47 /* EditProfileViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		71501E861CD41707002B267B /* LoginViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_Ipad.xib; sourceTree = "<group>"; };
+		71501E881CD41752002B267B /* LoginViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		715F02281C78893A00788D41 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7189257F1C81ECE300BE8A6D /* MostRideDetailsDataForPassenger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MostRideDetailsDataForPassenger.h; sourceTree = "<group>"; };
+		718925801C81ECED00BE8A6D /* MostRideDetailsDataForPassenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRideDetailsDataForPassenger.m; sourceTree = "<group>"; };
+		718925821C81ED6900BE8A6D /* MostRideDetailsViewControllerForPassenger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MostRideDetailsViewControllerForPassenger.h; sourceTree = "<group>"; };
+		718925831C81ED7300BE8A6D /* MostRideDetailsViewControllerForPassenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRideDetailsViewControllerForPassenger.m; sourceTree = "<group>"; };
+		718925851C81ED8000BE8A6D /* MostRideDetailsViewControllerForPassenger.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MostRideDetailsViewControllerForPassenger.xib; sourceTree = "<group>"; };
+		719090031C79D776002D5214 /* MapLookupForPassenger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapLookupForPassenger.h; sourceTree = "<group>"; };
+		719090041C79D796002D5214 /* MapLookupForPassenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLookupForPassenger.m; sourceTree = "<group>"; };
+		719090061C7A285E002D5214 /* AddRemarksViewControllerForMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddRemarksViewControllerForMap.h; sourceTree = "<group>"; };
+		719090071C7A286D002D5214 /* AddRemarksViewControllerForMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRemarksViewControllerForMap.m; sourceTree = "<group>"; };
+		719090091C7A287C002D5214 /* AddRemarksViewControllerForMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRemarksViewControllerForMap.xib; sourceTree = "<group>"; };
+		71B9D69B1CD42A9D003E973D /* SearchViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController_Ipad.xib; sourceTree = "<group>"; };
+		71B9D69D1CD42AB1003E973D /* SearchViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		71C97E3C1CDEA6D0005C5C6F /* VehiclesViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VehiclesViewController_Ipad.xib; sourceTree = "<group>"; };
+		71C97E3E1CDEA6DD005C5C6F /* VehiclesViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VehiclesViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		71D522C21C799A4200E0F8E7 /* MostRideDetailsForMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MostRideDetailsForMap.h; sourceTree = "<group>"; };
+		71D522C31C799A5000E0F8E7 /* MostRideDetailsForMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRideDetailsForMap.m; sourceTree = "<group>"; };
+		71D522C51C799A6600E0F8E7 /* MostRideDetailsForMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MostRideDetailsForMap.xib; sourceTree = "<group>"; };
+		71D522C71C79A0F400E0F8E7 /* SearchResultsViewControllerForMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewControllerForMap.h; sourceTree = "<group>"; };
+		71D522C81C79A10400E0F8E7 /* SearchResultsViewControllerForMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewControllerForMap.m; sourceTree = "<group>"; };
+		71D522D01C79A4EE00E0F8E7 /* SearchResultsViewControllerForMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsViewControllerForMap.xib; sourceTree = "<group>"; };
+		71D522D21C79A5CB00E0F8E7 /* SearchResultsViewControllerForMap_ar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsViewControllerForMap_ar.xib; sourceTree = "<group>"; };
+		71E294CF1CD8C31900743C67 /* CreateRideViewController_IPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateRideViewController_IPad.xib; sourceTree = "<group>"; };
+		71E294D11CD8C32D00743C67 /* CreateRideViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateRideViewController_ar_Ipad.xib; sourceTree = "<group>"; };
 		71F506351C5D9D0F003C0639 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		71F506361C5D9D0F003C0639 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		71F506371C5DA2D2003C0639 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Main.strings; sourceTree = "<group>"; };
 		71F506381C5DA2D2003C0639 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		71F757281CCD8257006C92B3 /* WelcomeViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController_Ipad.xib; sourceTree = "<group>"; };
+		71F7572A1CCD8264006C92B3 /* WelcomeViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		71FBC7611CDA17A900CCA2DC /* MostRideDetailsCell_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MostRideDetailsCell_Ipad.xib; sourceTree = "<group>"; };
+		71FBC7631CDA2B8D00CCA2DC /* BestDriverCell_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestDriverCell_Ipad.xib; sourceTree = "<group>"; };
 		71FDAC231C62F52900CFCEF9 /* Hintss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Hintss; sourceTree = "<group>"; };
 		87196D451BF0A30500A94370 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		873E4C5F1BED30E4006C42F8 /* MapInfoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapInfoWindow.h; sourceTree = "<group>"; };
@@ -552,9 +627,9 @@
 				140B97BD1C167EC40030E266 /* SystemConfiguration.framework in Frameworks */,
 				140B97BB1C167EBB0030E266 /* MobileCoreServices.framework in Frameworks */,
 				140B97B91C167EA60030E266 /* AdSupport.framework in Frameworks */,
+				715F02291C78893A00788D41 /* StoreKit.framework in Frameworks */,
 				140B97C31C1680BA0030E266 /* MobileAppTracker.framework in Frameworks */,
 				140B97B71C167E9E0030E266 /* CoreTelephony.framework in Frameworks */,
-				140B97B51C167E8F0030E266 /* StoreKit.framework in Frameworks */,
 				140B97B31C167E680030E266 /* iAd.framework in Frameworks */,
 				14D3E94B1C06AD220047F415 /* CoreGraphics.framework in Frameworks */,
 				14D3E9491C06AD1B0047F415 /* QuartzCore.framework in Frameworks */,
@@ -680,6 +755,9 @@
 				1425F8141BFFCB5500AD086B /* AddRemarksViewController.h */,
 				1425F8151BFFCB5500AD086B /* AddRemarksViewController.m */,
 				1425F8161BFFCB5500AD086B /* AddRemarksViewController.xib */,
+				719090061C7A285E002D5214 /* AddRemarksViewControllerForMap.h */,
+				719090071C7A286D002D5214 /* AddRemarksViewControllerForMap.m */,
+				719090091C7A287C002D5214 /* AddRemarksViewControllerForMap.xib */,
 				140B97AD1C164E1A0030E266 /* VerifyMobileViewController.h */,
 				140B97AE1C164E1A0030E266 /* VerifyMobileViewController.m */,
 				140B97AF1C164E1A0030E266 /* VerifyMobileViewController.xib */,
@@ -719,6 +797,8 @@
 				04C3E0311BE09EF000698227 /* HomeViewController.m */,
 				14DFCBAA1C24911500EE87CA /* HomeViewController.xib */,
 				14DFCBA91C24911500EE87CA /* HomeViewController_ar.xib */,
+				7103F4FB1CD52E6A00FFC52B /* HomeViewController_Ipad.xib */,
+				7103F4FD1CD52E7E00FFC52B /* HomeViewController_ar_Ipad.xib */,
 				0453B2E51BE54B3B00007271 /* SideMenuTableViewController.h */,
 				0453B2E61BE54B3B00007271 /* SideMenuTableViewController.m */,
 				0453B2E81BE54EC500007271 /* BaseViewController.h */,
@@ -745,6 +825,7 @@
 				143BE6C21BB68F1D009F6496 /* BestDriverCell.h */,
 				143BE6C31BB68F1D009F6496 /* BestDriverCell.m */,
 				14C8CB751C14483900AA16DF /* BestDriverCell.xib */,
+				71FBC7631CDA2B8D00CCA2DC /* BestDriverCell_Ipad.xib */,
 				143BE6C51BB69327009F6496 /* MostRidesCell.h */,
 				143BE6C61BB69327009F6496 /* MostRidesCell.m */,
 				0453B2EB1BE55E1000007271 /* MostRidesCell.xib */,
@@ -757,6 +838,10 @@
 				14022BE71BE56B8B00585042 /* MostRideDetailsCell.h */,
 				14022BE81BE56B8B00585042 /* MostRideDetailsCell.m */,
 				14DFCB9D1C24873700EE87CA /* MostRideDetailsCell.xib */,
+				71FBC7611CDA17A900CCA2DC /* MostRideDetailsCell_Ipad.xib */,
+				71D522C21C799A4200E0F8E7 /* MostRideDetailsForMap.h */,
+				71D522C31C799A5000E0F8E7 /* MostRideDetailsForMap.m */,
+				71D522C51C799A6600E0F8E7 /* MostRideDetailsForMap.xib */,
 				148795CA1BEA679800B940D8 /* DriverRideCell.h */,
 				148795CB1BEA679800B940D8 /* DriverRideCell.m */,
 				14DFCB9F1C24873E00EE87CA /* DriverRideCell.xib */,
@@ -862,10 +947,14 @@
 				143BE6B71BB5640B009F6496 /* LoginViewController.m */,
 				14DFCB771C24663B00EE87CA /* LoginViewController.xib */,
 				14DFCB761C24663B00EE87CA /* LoginViewController_ar.xib */,
+				71501E861CD41707002B267B /* LoginViewController_Ipad.xib */,
+				71501E881CD41752002B267B /* LoginViewController_ar_Ipad.xib */,
 				04CFC7021BE52C6B0009BBDA /* RegisterViewController.h */,
 				04CFC7031BE52C6B0009BBDA /* RegisterViewController.m */,
 				14DFCB7B1C24668900EE87CA /* RegisterViewController.xib */,
 				14DFCB7A1C24668900EE87CA /* RegisterViewController_ar.xib */,
+				713FD4501CCE97400011CFDE /* RegisterViewController_Ipad.xib */,
+				713FD4521CCE97610011CFDE /* RegisterViewController_ar_Ipad.xib */,
 				14B00C941BFB921E004F46F7 /* ForgetPasswordViewController.h */,
 				14B00C951BFB921E004F46F7 /* ForgetPasswordViewController.m */,
 				14B00C961BFB921E004F46F7 /* ForgetPasswordViewController.xib */,
@@ -873,6 +962,8 @@
 				14ECD2411C1AAF170013FE1D /* EditProfileViewController.m */,
 				14DFCB831C24718C00EE87CA /* EditProfileViewController.xib */,
 				14DFCB821C24718C00EE87CA /* EditProfileViewController_ar.xib */,
+				7140BB6A1CD6E3EE00207C47 /* EditProfileViewController_Ipad.xib */,
+				7140BB6C1CD6E3FD00207C47 /* EditProfileViewController_ar_Ipad.xib */,
 			);
 			name = Registeration;
 			sourceTree = "<group>";
@@ -884,14 +975,22 @@
 				047E454F1BC0960F000B5151 /* SearchViewController.m */,
 				14DFCB7F1C246C0900EE87CA /* SearchViewController.xib */,
 				14DFCB7E1C246C0900EE87CA /* SearchViewController_ar.xib */,
+				71B9D69B1CD42A9D003E973D /* SearchViewController_Ipad.xib */,
+				71B9D69D1CD42AB1003E973D /* SearchViewController_ar_Ipad.xib */,
 				87D9D32C1BEE58380096E17A /* AdvancedSearchViewController.h */,
 				87D9D32D1BEE58380096E17A /* AdvancedSearchViewController.m */,
 				14DFCB901C24765A00EE87CA /* AdvancedSearchViewController.xib */,
 				14DFCB8F1C24765A00EE87CA /* AdvancedSearchViewController_ar.xib */,
+				7140BB621CD68FBB00207C47 /* AdvancedSearchViewController_Ipad.xib */,
+				7140BB641CD68FCB00207C47 /* AdvancedSearchViewController_ar_Ipad.xib */,
 				044ECE911BC08A6000AF3E2D /* SearchResultsViewController.h */,
 				044ECE921BC08A6000AF3E2D /* SearchResultsViewController.m */,
 				14DFCBC21C24BF3300EE87CA /* SearchResultsViewController.xib */,
 				14DFCBC11C24BF3300EE87CA /* SearchResultsViewController_ar.xib */,
+				71D522C71C79A0F400E0F8E7 /* SearchResultsViewControllerForMap.h */,
+				71D522C81C79A10400E0F8E7 /* SearchResultsViewControllerForMap.m */,
+				71D522D01C79A4EE00E0F8E7 /* SearchResultsViewControllerForMap.xib */,
+				71D522D21C79A5CB00E0F8E7 /* SearchResultsViewControllerForMap_ar.xib */,
 				047E45801BC59DE0000B5151 /* SelectLocationViewController.h */,
 				047E45811BC59DE0000B5151 /* SelectLocationViewController.m */,
 				14DFCBA21C2488B300EE87CA /* SelectLocationViewController.xib */,
@@ -946,14 +1045,23 @@
 				14022BDD1BE56A9300585042 /* MostRideDetailsViewController.h */,
 				14022BDE1BE56A9300585042 /* MostRideDetailsViewController.m */,
 				14DFCB971C247CD800EE87CA /* MostRideDetailsViewController.xib */,
+				718925821C81ED6900BE8A6D /* MostRideDetailsViewControllerForPassenger.h */,
+				718925831C81ED7300BE8A6D /* MostRideDetailsViewControllerForPassenger.m */,
+				718925851C81ED8000BE8A6D /* MostRideDetailsViewControllerForPassenger.xib */,
 				87C571CF1BDBB07F00EFB618 /* CreateRideViewController.h */,
 				87C571D01BDBB08000EFB618 /* CreateRideViewController.m */,
 				14DFCBA61C248A2900EE87CA /* CreateRideViewController.xib */,
 				14DFCBA51C248A2900EE87CA /* CreateRideViewController_ar.xib */,
+				71E294CF1CD8C31900743C67 /* CreateRideViewController_IPad.xib */,
+				71E294D11CD8C32D00743C67 /* CreateRideViewController_ar_Ipad.xib */,
 				14022BE21BE56AA400585042 /* RideDetailsViewController.h */,
 				14022BE31BE56AA400585042 /* RideDetailsViewController.m */,
 				14DFCBAE1C24925300EE87CA /* RideDetailsViewController.xib */,
 				14DFCBAD1C24925300EE87CA /* RideDetailsViewController_ar.xib */,
+				712F0DA91C88554300721D9A /* RideDetailsVCInvitePassengers.h */,
+				712F0DAA1C88555200721D9A /* RideDetailsVCInvitePassengers.m */,
+				712F0DB71C885A5D00721D9A /* RideDetailsVCInvitePassengers.xib */,
+				712F0DB91C885A6D00721D9A /* RideDetailsVCInvitePassengers_ar.xib */,
 				87E5F7601BFB68DE004FF688 /* RidesJoinedViewController.h */,
 				87E5F7611BFB68DE004FF688 /* RidesJoinedViewController.m */,
 				87E5F7621BFB68DE004FF688 /* RidesJoinedViewController.xib */,
@@ -981,6 +1089,8 @@
 				1425F8011BFF11A200AD086B /* VehiclesViewController.m */,
 				14DFCBB21C24BBFC00EE87CA /* VehiclesViewController.xib */,
 				14DFCBB11C24BBFC00EE87CA /* VehiclesViewController_ar.xib */,
+				71C97E3C1CDEA6D0005C5C6F /* VehiclesViewController_Ipad.xib */,
+				71C97E3E1CDEA6DD005C5C6F /* VehiclesViewController_ar_Ipad.xib */,
 			);
 			name = Drivers;
 			sourceTree = "<group>";
@@ -998,6 +1108,8 @@
 				143BE6B11BB14BE5009F6496 /* WelcomeViewController.m */,
 				14DFCB731C24619A00EE87CA /* WelcomeViewController.xib */,
 				14DFCB721C24619A00EE87CA /* WelcomeViewController_ar.xib */,
+				71F757281CCD8257006C92B3 /* WelcomeViewController_Ipad.xib */,
+				71F7572A1CCD8264006C92B3 /* WelcomeViewController_ar_Ipad.xib */,
 				14D3E9371C06A2290047F415 /* TourViewController.h */,
 				14D3E9381C06A2290047F415 /* TourViewController.m */,
 				14D3E9391C06A2290047F415 /* TourViewController.xib */,
@@ -1047,8 +1159,12 @@
 				143F30F81BC8EF5E006A6A21 /* MostRide.m */,
 				143F30FF1BC9F540006A6A21 /* MapLookUp.h */,
 				143F31001BC9F540006A6A21 /* MapLookUp.m */,
+				719090031C79D776002D5214 /* MapLookupForPassenger.h */,
+				719090041C79D796002D5214 /* MapLookupForPassenger.m */,
 				87B58B541BD36F7900E73E55 /* MostRideDetails.h */,
 				87B58B551BD36F7900E73E55 /* MostRideDetails.m */,
+				7189257F1C81ECE300BE8A6D /* MostRideDetailsDataForPassenger.h */,
+				718925801C81ECED00BE8A6D /* MostRideDetailsDataForPassenger.m */,
 				87C571DA1BDBD33F00EFB618 /* Vehicle.h */,
 				87C571DB1BDBD33F00EFB618 /* Vehicle.m */,
 				148795CF1BEA685800B940D8 /* DriverDetails.h */,
@@ -1096,12 +1212,12 @@
 		EB0896A2D090EB584EC82226 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				715F02281C78893A00788D41 /* StoreKit.framework */,
 				140B97C21C1680BA0030E266 /* MobileAppTracker.framework */,
 				140B97BC1C167EC40030E266 /* SystemConfiguration.framework */,
 				140B97BA1C167EBB0030E266 /* MobileCoreServices.framework */,
 				140B97B81C167EA60030E266 /* AdSupport.framework */,
 				140B97B61C167E9E0030E266 /* CoreTelephony.framework */,
-				140B97B41C167E8F0030E266 /* StoreKit.framework */,
 				140B97B21C167E670030E266 /* iAd.framework */,
 				14D3E94A1C06AD220047F415 /* CoreGraphics.framework */,
 				14D3E9481C06AD1B0047F415 /* QuartzCore.framework */,
@@ -1158,10 +1274,16 @@
 		04931B131BAAF814000F5434 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					04931B1A1BAAF814000F5434 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 89SHAPC6FM;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					04931B361BAAF815000F5434 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -1198,34 +1320,46 @@
 			files = (
 				14DFCBAF1C24925300EE87CA /* RideDetailsViewController_ar.xib in Resources */,
 				140B97CF1C1686B90030E266 /* tourar_5.png in Resources */,
+				7190900A1C7A287C002D5214 /* AddRemarksViewControllerForMap.xib in Resources */,
 				8787E1F21BF7534100CCD53B /* policy.html in Resources */,
+				71501E871CD41707002B267B /* LoginViewController_Ipad.xib in Resources */,
 				047E455C1BC58330000B5151 /* PickupLocationView.xib in Resources */,
+				7103F4FE1CD52E7E00FFC52B /* HomeViewController_ar_Ipad.xib in Resources */,
 				14DFCB8E1C24756500EE87CA /* Main_ar.storyboard in Resources */,
+				71E294D01CD8C31900743C67 /* CreateRideViewController_IPad.xib in Resources */,
 				14DFCB981C247CD800EE87CA /* MostRideDetailsViewController.xib in Resources */,
 				0451C3AC1C05B76D009CA1FC /* SplashViewController.xib in Resources */,
 				14DFCBB41C24BBFC00EE87CA /* VehiclesViewController.xib in Resources */,
 				1425F80E1BFF48BE00AD086B /* VehicleViewCell.xib in Resources */,
 				14DFCBAB1C24911500EE87CA /* HomeViewController_ar.xib in Resources */,
 				146815551BFBB61000A78430 /* SideMenuCell.xib in Resources */,
+				7140BB631CD68FBB00207C47 /* AdvancedSearchViewController_Ipad.xib in Resources */,
 				87196D461BF0A30500A94370 /* Launch Screen.storyboard in Resources */,
 				141352181C24E2B0003064DB /* MapInfoWindow.xib in Resources */,
 				1425F8131BFF9C9F00AD086B /* NotificationsViewController.xib in Resources */,
 				140B97D81C1686C30030E266 /* touren_2.png in Resources */,
 				140B97D61C1686C30030E266 /* touren_0.png in Resources */,
 				8787E1F31BF7534100CCD53B /* terms_en.html in Resources */,
+				713FD4511CCE97400011CFDE /* RegisterViewController_Ipad.xib in Resources */,
 				14DFCB841C24718C00EE87CA /* EditProfileViewController_ar.xib in Resources */,
 				14DFCBB31C24BBFC00EE87CA /* VehiclesViewController_ar.xib in Resources */,
 				140B97DB1C1686C30030E266 /* touren_5.png in Resources */,
+				71501E891CD41752002B267B /* LoginViewController_ar_Ipad.xib in Resources */,
 				140B97B11C164E1A0030E266 /* VerifyMobileViewController.xib in Resources */,
 				8777FA611C00C4B20022E368 /* CreatedRidesViewController.xib in Resources */,
+				71C97E3D1CDEA6D0005C5C6F /* VehiclesViewController_Ipad.xib in Resources */,
+				71FBC7641CDA2B8D00CCA2DC /* BestDriverCell_Ipad.xib in Resources */,
 				143F30E01BC83F70006A6A21 /* Images.xcassets in Resources */,
 				140B97D71C1686C30030E266 /* touren_1.png in Resources */,
 				71FDAC241C62F52900CFCEF9 /* Hintss in Resources */,
 				14DFCB881C2472D900EE87CA /* NotificationDetailsViewController_ar.xib in Resources */,
 				14B00C981BFB921E004F46F7 /* ForgetPasswordViewController.xib in Resources */,
+				71C97E3F1CDEA6DD005C5C6F /* VehiclesViewController_ar_Ipad.xib in Resources */,
+				71B9D69C1CD42A9D003E973D /* SearchViewController_Ipad.xib in Resources */,
 				0453B2EC1BE55E1000007271 /* MostRidesCell.xib in Resources */,
+				713FD4531CCE97610011CFDE /* RegisterViewController_ar_Ipad.xib in Resources */,
 				044ECE9A1BC08A8000AF3E2D /* SearchResultCell.xib in Resources */,
-				04931B2D1BAAF814000F5434 /* Main.storyboard in Resources */,
+				71F7340E1C787F4A00CF1826 /* Main.storyboard in Resources */,
 				14DFCBB01C24925300EE87CA /* RideDetailsViewController.xib in Resources */,
 				14DFCBC41C24BF3300EE87CA /* SearchResultsViewController.xib in Resources */,
 				14DFCB911C24765A00EE87CA /* AdvancedSearchViewController_ar.xib in Resources */,
@@ -1234,38 +1368,44 @@
 				14DFCB7D1C24668900EE87CA /* RegisterViewController.xib in Resources */,
 				14DFCBBF1C24BEA400EE87CA /* HistoryViewController_ar.xib in Resources */,
 				14DFCB741C24619A00EE87CA /* WelcomeViewController_ar.xib in Resources */,
+				71E294D21CD8C32D00743C67 /* CreateRideViewController_ar_Ipad.xib in Resources */,
 				14DFCBA41C2488B300EE87CA /* SelectLocationViewController.xib in Resources */,
+				712F0DBA1C885A6D00721D9A /* RideDetailsVCInvitePassengers_ar.xib in Resources */,
 				140B97CE1C1686B90030E266 /* tourar_4.png in Resources */,
 				14DFCB891C2472D900EE87CA /* NotificationDetailsViewController.xib in Resources */,
+				71FBC7621CDA17A900CCA2DC /* MostRideDetailsCell_Ipad.xib in Resources */,
 				14E5D7C31C0276900089054A /* ActivatePermitViewController.xib in Resources */,
 				143F30EE1BC8488D006A6A21 /* Localizable.strings in Resources */,
 				87E5F7641BFB68DE004FF688 /* RidesJoinedViewController.xib in Resources */,
 				14DFCB781C24663B00EE87CA /* LoginViewController_ar.xib in Resources */,
 				14DFCB9E1C24873700EE87CA /* MostRideDetailsCell.xib in Resources */,
+				7140BB6D1CD6E3FD00207C47 /* EditProfileViewController_ar_Ipad.xib in Resources */,
 				14DFCB751C24619A00EE87CA /* WelcomeViewController.xib in Resources */,
-				04931B2D1BAAF814000F5434 /* Main.storyboard in Resources */,
+				712F0DB81C885A5D00721D9A /* RideDetailsVCInvitePassengers.xib in Resources */,
 				14C8CB781C1448C000AA16DF /* BestDriversViewController.xib in Resources */,
 				14DFCB851C24718C00EE87CA /* EditProfileViewController.xib in Resources */,
 				14DFCBC61C24CD4300EE87CA /* RideHistoryCell.xib in Resources */,
 				879AA9CC1C151E95005466F5 /* privacyPolicy_ar.html in Resources */,
 				14DFCBAC1C24911500EE87CA /* HomeViewController.xib in Resources */,
+				71F757291CCD8257006C92B3 /* WelcomeViewController_Ipad.xib in Resources */,
 				14DFCB9C1C24852D00EE87CA /* DriverDetailsViewController.xib in Resources */,
 				140B97CC1C1686B90030E266 /* tourar_2.png in Resources */,
 				140B97CA1C1686B90030E266 /* tourar_0.png in Resources */,
 				14E5D7B91C0270E80089054A /* PermitsViewController.xib in Resources */,
 				14DFCBC01C24BEA400EE87CA /* HistoryViewController.xib in Resources */,
+				71B9D69E1CD42AB1003E973D /* SearchViewController_ar_Ipad.xib in Resources */,
 				148795DC1BEA9CF900B940D8 /* ReviewCell.xib in Resources */,
 				8777FA691C01AD120022E368 /* PassengerCell.xib in Resources */,
-				04931B2D1BAAF814000F5434 /* Main.storyboard in Resources */,
 				140960921BFEB0C700BA3268 /* AddReviewViewController.xib in Resources */,
-				04931B2D1BAAF814000F5434 /* Main.storyboard in Resources */,
+				71D522D11C79A4EE00E0F8E7 /* SearchResultsViewControllerForMap.xib in Resources */,
 				14DFCB921C24765A00EE87CA /* AdvancedSearchViewController.xib in Resources */,
+				71F7572B1CCD8264006C92B3 /* WelcomeViewController_ar_Ipad.xib in Resources */,
 				140B97CB1C1686B90030E266 /* tourar_1.png in Resources */,
 				14DFCBA31C2488B300EE87CA /* SelectLocationViewController_ar.xib in Resources */,
 				14DFCB941C2478EC00EE87CA /* MostRidesViewController.xib in Resources */,
+				71D522C61C799A6600E0F8E7 /* MostRideDetailsForMap.xib in Resources */,
 				14DFCB7C1C24668900EE87CA /* RegisterViewController_ar.xib in Resources */,
 				8787E1EF1BF74EBC00CCD53B /* SharekniWebViewController.xib in Resources */,
-				04931B2D1BAAF814000F5434 /* Main.storyboard in Resources */,
 				14DFCB9A1C24850300EE87CA /* DriverDetailsViewController_ar.xib in Resources */,
 				14DFCB811C246C0900EE87CA /* SearchViewController.xib in Resources */,
 				140B97DA1C1686C30030E266 /* touren_4.png in Resources */,
@@ -1275,16 +1415,21 @@
 				14DFCB791C24663B00EE87CA /* LoginViewController.xib in Resources */,
 				14DFCB801C246C0900EE87CA /* SearchViewController_ar.xib in Resources */,
 				14DFCBA71C248A2900EE87CA /* CreateRideViewController_ar.xib in Resources */,
+				7140BB6B1CD6E3EE00207C47 /* EditProfileViewController_Ipad.xib in Resources */,
 				140B97D91C1686C30030E266 /* touren_3.png in Resources */,
+				7140BB651CD68FCB00207C47 /* AdvancedSearchViewController_ar_Ipad.xib in Resources */,
 				14D3E93B1C06A2290047F415 /* TourViewController.xib in Resources */,
 				14DFCBC31C24BF3300EE87CA /* SearchResultsViewController_ar.xib in Resources */,
 				14E5D7A01C01A6F10089054A /* NotificationCell.xib in Resources */,
 				140B97CD1C1686B90030E266 /* tourar_3.png in Resources */,
+				7103F4FC1CD52E6A00FFC52B /* HomeViewController_Ipad.xib in Resources */,
 				141352161C24E2A5003064DB /* PermitCell.xib in Resources */,
 				1425F8091BFF11B300AD086B /* SavedSearchViewController.xib in Resources */,
+				718925861C81ED8000BE8A6D /* MostRideDetailsViewControllerForPassenger.xib in Resources */,
 				14C8CB761C14483900AA16DF /* BestDriverCell.xib in Resources */,
 				879AA9CA1C151E7F005466F5 /* terms_condition_Ar.html in Resources */,
 				14DFCBA81C248A2900EE87CA /* CreateRideViewController.xib in Resources */,
+				71D522D31C79A5CB00E0F8E7 /* SearchResultsViewControllerForMap_ar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1337,6 +1482,7 @@
 			files = (
 				87D9D32A1BEE555B0096E17A /* SideMenuTableViewController.m in Sources */,
 				14E5D7C21C0276900089054A /* ActivatePermitViewController.m in Sources */,
+				718925811C81ECED00BE8A6D /* MostRideDetailsDataForPassenger.m in Sources */,
 				87D9D3291BEE55530096E17A /* BaseAPIManager.m in Sources */,
 				14E5D7BD1C0271090089054A /* PermitCell.m in Sources */,
 				0429B1C31BB9C84400161222 /* NSObject+Blocks.m in Sources */,
@@ -1356,6 +1502,7 @@
 				0453B2EA1BE54EC500007271 /* BaseViewController.m in Sources */,
 				87C571D91BDBD07700EFB618 /* MobVehicleManager.m in Sources */,
 				047E45501BC0960F000B5151 /* SearchViewController.m in Sources */,
+				719090051C79D796002D5214 /* MapLookupForPassenger.m in Sources */,
 				873E4C611BED30E4006C42F8 /* MapInfoWindow.m in Sources */,
 				87ED1B331C1221EF00EB58EB /* UploadImageManager.m in Sources */,
 				14C3F39F1C029A8300CEF11C /* RideHistoryCell.m in Sources */,
@@ -1367,6 +1514,7 @@
 				1425F8031BFF11A200AD086B /* VehiclesViewController.m in Sources */,
 				140960931BFEB0C700BA3268 /* MJPopupBackgroundView.m in Sources */,
 				0451C3AB1C05B76D009CA1FC /* SplashViewController.m in Sources */,
+				719090081C7A286D002D5214 /* AddRemarksViewControllerForMap.m in Sources */,
 				87C571DC1BDBD33F00EFB618 /* Vehicle.m in Sources */,
 				87B58B5D1BD388D100E73E55 /* MapLookupViewController.m in Sources */,
 				8787E1EE1BF74EBC00CCD53B /* SharekniWebViewController.m in Sources */,
@@ -1378,6 +1526,7 @@
 				87C571D61BDBCCA900EFB618 /* UIView+Borders.m in Sources */,
 				143BE6C71BB69327009F6496 /* MostRidesCell.m in Sources */,
 				1425F8081BFF11B300AD086B /* SavedSearchViewController.m in Sources */,
+				71D522C91C79A10400E0F8E7 /* SearchResultsViewControllerForMap.m in Sources */,
 				873E7BF31C12C8C000B9A68D /* NSObject+RZDataBinding.m in Sources */,
 				14022BEA1BE56B8B00585042 /* MostRideDetailsCell.m in Sources */,
 				14E5D79F1C01A6F10089054A /* NotificationCell.m in Sources */,
@@ -1415,10 +1564,12 @@
 				140960941BFEB0C700BA3268 /* UIViewController+MJPopupViewController.m in Sources */,
 				87FFDDB11BFD6A570031CE61 /* RouteDetails.m in Sources */,
 				1425F8171BFFCB5500AD086B /* AddRemarksViewController.m in Sources */,
+				718925841C81ED7300BE8A6D /* MostRideDetailsViewControllerForPassenger.m in Sources */,
 				047E455A1BC5831D000B5151 /* PickupLocationView.m in Sources */,
 				143BE6D91BB82363009F6496 /* CALayer+RuntimeAttribute.m in Sources */,
 				14D3E93A1C06A2290047F415 /* TourViewController.m in Sources */,
 				140960911BFEB0C700BA3268 /* AddReviewViewController.m in Sources */,
+				71D522C41C799A5000E0F8E7 /* MostRideDetailsForMap.m in Sources */,
 				8777FA601C00C4B20022E368 /* CreatedRidesViewController.m in Sources */,
 				14A61F6B1C2C472A00FF8F93 /* UINavigationController+Rotation.m in Sources */,
 				143BE6B21BB14BE5009F6496 /* WelcomeViewController.m in Sources */,
@@ -1430,6 +1581,7 @@
 				145C84751C15E8900051FDCB /* PageView.m in Sources */,
 				04931B211BAAF814000F5434 /* main.m in Sources */,
 				14ECD2431C1AAF170013FE1D /* EditProfileViewController.m in Sources */,
+				712F0DAB1C88555200721D9A /* RideDetailsVCInvitePassengers.m in Sources */,
 				146815541BFBB61000A78430 /* SideMenuCell.m in Sources */,
 				87B58B611BD38DD700E73E55 /* MapItemView.m in Sources */,
 				143BE6AF1BB14BD2009F6496 /* AppDelegate.m in Sources */,
@@ -1505,6 +1657,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1544,7 +1697,10 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1559,6 +1715,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1583,6 +1740,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = rta.ae.sharekni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1592,8 +1750,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Roads & Transport Authority (89SHAPC6FM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roads & Transport Authority (89SHAPC6FM)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1604,7 +1764,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rta.ae.sharekni;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "30e41b80-40f6-4538-8001-37f38e36971d";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1622,6 +1783,7 @@
 				);
 				INFOPLIST_FILE = SharekniTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sharekni.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sharekni.app/Sharekni";
 			};
@@ -1637,6 +1799,7 @@
 				);
 				INFOPLIST_FILE = SharekniTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sharekni.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sharekni.app/Sharekni";
 			};

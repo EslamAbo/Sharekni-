@@ -32,7 +32,9 @@
     mapping[@"NationalityChName"] = @"NationalityFrName";
     mapping[@"NationalityUrName"] = @"NationalityChName";
     mapping[@"NationalityUrName"] = @"NationalityUrName";
-    
+    mapping[@"PassengerAccept"] = @"PassengerAccept";//
+    mapping[@"NotificationName"] = @"NotificationName";//
+
 
     return mapping;
 }
@@ -47,6 +49,11 @@
     } Failure:^(NSString *error) {
         NSLog(@"Failed to download notification profile image");
     }];
+    if (![_PassengerName  isEqual: @"nil"]) {
+        _IsITDorD = @"Driver";
+    }else if (![_DriverName  isEqual: @"nil"]) {
+        _IsITDorD = @"Passenger";
+    }
 }
 
 @end

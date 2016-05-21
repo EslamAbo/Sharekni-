@@ -39,11 +39,11 @@
 @property (weak,nonatomic) IBOutlet MLPAutoCompleteTextField *nationalityTxt;
 @property (weak,nonatomic) IBOutlet UITextField *preferredLanguageTxt;
 
-@property (weak,nonatomic) IBOutlet UIView *datePickerView;
+//@property (weak,nonatomic) IBOutlet UIView *datePickerView;
 @property (weak,nonatomic) IBOutlet UIButton *switchBtn;
 
 @property (weak,nonatomic) IBOutlet UILabel *femaleLabel;
-@property (weak,nonatomic) IBOutlet UILabel *dateLabel;
+//@property (weak,nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak,nonatomic) IBOutlet UILabel *maleLabel;
 @property (nonatomic,assign) float animatedDistance ;
 
@@ -63,9 +63,10 @@
 @property (strong,nonatomic) NSString *firstName;
 @property (strong,nonatomic) NSString *lastName;
 @property (strong,nonatomic) NSString *mobileNumber ;
+@property (strong,nonatomic) NSString *NationalitySub ;
 
-@property (strong,nonatomic) NSDate *date;
-@property (strong,nonatomic) NSDateFormatter *dateFormatter;
+//@property (strong,nonatomic) NSDate *date;
+//@property (strong,nonatomic) NSDateFormatter *dateFormatter;
 @property (assign,nonatomic) BOOL isMale;
 
 @property (nonatomic,strong) User *sharedUser;
@@ -92,6 +93,7 @@
     [_backBtn setHighlighted:NO];
     [_backBtn addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_backBtn];
+    
     
     [self configureUI];
     [self configureData];
@@ -128,16 +130,16 @@
     self.profileImageView.clipsToBounds = YES;
     
     
-    self.dateLabel.textColor = [UIColor blackColor];
+//    self.dateLabel.textColor = [UIColor blackColor];
 
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showDatePicker)];
-    [self.datePickerView addGestureRecognizer:gesture];
-    [self.dateLabel addGestureRecognizer:gesture];
-    [self.dateLabel setUserInteractionEnabled:YES];
-    [self.datePickerView setUserInteractionEnabled:YES];
+//    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showDatePicker)];
+   // [self.datePickerView addGestureRecognizer:gesture];
+   // [self.dateLabel addGestureRecognizer:gesture];
+  //  [self.dateLabel setUserInteractionEnabled:YES];
+   // [self.datePickerView setUserInteractionEnabled:YES];
     
-    [self.switchBtn    setBackgroundImage:[UIImage imageNamed:@"select_Left"]       forState:UIControlStateNormal];
-    [self.switchBtn    setBackgroundImage:[UIImage imageNamed:@"select_Right"]      forState:UIControlStateSelected];
+//    [self.switchBtn    setBackgroundImage:[UIImage imageNamed:@"select_Left"]       forState:UIControlStateNormal];
+//    [self.switchBtn    setBackgroundImage:[UIImage imageNamed:@"select_Right"]      forState:UIControlStateSelected];
     
     self.maleLabel.textColor = Red_UIColor;
     self.femaleLabel.textColor = [UIColor darkGrayColor];
@@ -158,15 +160,15 @@
         self.firstNametxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"firstName") attributes:@{NSForegroundColorAttributeName: color}];
         self.lastNametxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"lastName") attributes:@{NSForegroundColorAttributeName: color}];
         self.mobileNumberTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"mobile") attributes:@{NSForegroundColorAttributeName: color}];
-        self.usernameTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"username") attributes:@{NSForegroundColorAttributeName: color}];
-        self.nationalityTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"nationality") attributes:@{NSForegroundColorAttributeName: color}];
+        self.usernameTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"Username (Your Email)") attributes:@{NSForegroundColorAttributeName: color}];
         self.preferredLanguageTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"pLanguage") attributes:@{NSForegroundColorAttributeName: color}];
+        self.nationalityTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"nationality") attributes:@{NSForegroundColorAttributeName: color}];
     } else {
         NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
         // TODO: Add fall-back code to set placeholder color.
     }
     
-    self.dateLabel.textColor = Red_UIColor;
+   // self.dateLabel.textColor = Red_UIColor;
 }
 
 - (void) femaleTapped
@@ -175,6 +177,8 @@
     self.switchBtn.selected = YES ;
     self.maleLabel.textColor =  [UIColor darkGrayColor];
     self.femaleLabel.textColor = Red_UIColor;
+    [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_right"]forState:UIControlStateNormal];
+
 }
 
 - (void) maleTapped{
@@ -182,6 +186,9 @@
     self.maleLabel.textColor = Red_UIColor;
     self.femaleLabel.textColor = [UIColor darkGrayColor];
     self.isMale = YES;
+    [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_Left"]forState:UIControlStateNormal];
+
+    
 }
 
 - (void) configrueNationalityAutoCompelete
@@ -200,7 +207,16 @@
 - (void) configureData
 {
     self.sharedUser = [[MobAccountManager sharedMobAccountManager] applicationUser];
-    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"thumbnail"];
+    if ([self.sharedUser.GenderEn  isEqual: @"Male"] || [self.sharedUser.GenderAr  isEqual: @"ذكر"]) {
+        self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"defaultdriver.jpg"];
+        [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_right"]forState:UIControlStateNormal];
+
+    }else {
+        self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"defaultdriverfemale.jpg"];
+        [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_Left"]forState:UIControlStateNormal];
+
+    }
+//    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"thumbnail"];
     self.firstName = self.sharedUser.FirstName ;
     self.firstNametxt.text = self.firstName ;
     self.lastName = self.sharedUser.LastName ;
@@ -209,18 +225,29 @@
     self.usernameTxt.text = self.sharedUser.Username ;
     self.nationalityTxt.text = (KIS_ARABIC)?self.sharedUser.NationalityArName:self.sharedUser.NationalityEnName ;
    
-    NSString *dateString = self.sharedUser.BirthDate;
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
-    self.date = [dateFormatter dateFromString:dateString];
-    self.dateLabel.text = self.sharedUser.BirthDate ;
+     if ([self.sharedUser.NationalityArName  isEqual: @"Not Specified"]|| [self.sharedUser.NationalityEnName  isEqual: @"Not Specified"]) {
+     NSLog(@"The Nationality is : Not Specified");
+         NSLog(_nationalityTxt.text);
+     _nationalityTxt.text = @"";
+     } else {
+     NSLog(_nationalityTxt.text);
+     }
     
+//    NSString *dateString = self.sharedUser.BirthDate;
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+//    self.date = [dateFormatter dateFromString:dateString];
+//    self.dateLabel.text = self.sharedUser.BirthDate ;
+//
     if ([self.sharedUser.GenderEn isEqualToString:@"Male"])
     {
         self.isMale = YES;
         [self.switchBtn setSelected:NO];
         self.maleLabel.textColor = Red_UIColor;
         self.femaleLabel.textColor = [UIColor darkGrayColor];
+        //SelectRight.png
+        [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_Left"]forState:UIControlStateNormal];
+
     }
     else
     {
@@ -228,6 +255,9 @@
         [self.switchBtn setSelected:YES];
         self.maleLabel.textColor =  [UIColor darkGrayColor];
         self.femaleLabel.textColor = Red_UIColor;
+        [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_right"]forState:UIControlStateNormal];
+
+
     }
 
     __block EditProfileViewController*blockSelf = self;
@@ -277,7 +307,7 @@
         [blockSelf handleManagerFailure];
     }];
     
-    self.dateFormatter = [[NSDateFormatter alloc] init];
+//    self.dateFormatter = [[NSDateFormatter alloc] init];
 }
 
 - (void) handleManagerFailure
@@ -318,6 +348,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     else if (textField == self.lastNametxt)
     {
         [self isValidLastName];
+    }
+    else if (textField == self.mobileNumberTxt){
+        [self isValidMobileNumber];
     }
     else if (textField == self.nationalityTxt)
     {
@@ -401,6 +434,22 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     [self.view setFrame:viewFrame];
     [UIView commitAnimations];
     
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if(textField == self.mobileNumberTxt)
+    {
+        if (textField.text.length <= 8)
+        {
+            return YES;
+        }
+        else if(string.length == 0)
+        {
+            return YES ;
+        }
+        return NO;
+    }
     return YES;
 }
 
@@ -494,39 +543,40 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     [self presentViewController:pickerController animated:YES completion:nil];
 }
 
-- (void)showDatePicker
-{
-    [self.view endEditing:YES];
-    __block EditProfileViewController *blockSelf = self;
-    RMAction *selectAction = [RMAction actionWithTitle:GET_STRING(@"Select") style:RMActionStyleDone andHandler:^(RMActionController *controller) {
-        NSDate *date =  ((UIDatePicker *)controller.contentView).date;
-        blockSelf.dateFormatter.dateFormat = @"dd, MMM, yyyy";
-        NSString * dateString = [self.dateFormatter stringFromDate:date];
-        self.dateLabel.text = dateString;
-        blockSelf.date = date;
-        if (([[HelpManager sharedHelpManager] yearsBetweenDate:[NSDate date] andDate:blockSelf.date] < 18)){
-            UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:GET_STRING(@"Error") message:GET_STRING(@"You should be older than 18 Years") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
-            [alertView show];
-            self.date = nil;
-            [self configureBorders];
-        }
-    }];
-    
-    //Create cancel action
-    RMAction *cancelAction = [RMAction actionWithTitle:GET_STRING(@"Cancel") style:RMActionStyleCancel andHandler:^(RMActionController *controller) {
-        
-    }];
-    
-    //Create date selection view controller
-    RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:RMActionControllerStyleWhite selectAction:selectAction andCancelAction:cancelAction];
-    dateSelectionController.title = GET_STRING(@"Select date of birth");
-    dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
-    dateSelectionController.datePicker.date = self.date;
-    
-    //Now just present the date selection controller using the standard iOS presentation method
-    [self presentViewController:dateSelectionController animated:YES completion:nil];
-}
+//- (void)showDatePicker
+//{
+//    [self.view endEditing:YES];
+//    __block EditProfileViewController *blockSelf = self;
+//    RMAction *selectAction = [RMAction actionWithTitle:GET_STRING(@"Select") style:RMActionStyleDone andHandler:^(RMActionController *controller) {
+//        NSDate *date =  ((UIDatePicker *)controller.contentView).date;
+//        blockSelf.dateFormatter.dateFormat = @"dd, MMM, yyyy";
+//        NSString * dateString = [self.dateFormatter stringFromDate:date];
+//        self.dateLabel.text = dateString;
+//        blockSelf.date = date;
+//        if (([[HelpManager sharedHelpManager] yearsBetweenDate:[NSDate date] andDate:blockSelf.date] < 18)){
+//            UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:GET_STRING(@"Error") message:GET_STRING(@"You should be older than 18 Years") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
+//            [alertView show];
+//            self.date = nil;
+//            [self configureBorders];
+//        }
+//    }];
+//    
+//    //Create cancel action
+//    RMAction *cancelAction = [RMAction actionWithTitle:GET_STRING(@"Cancel") style:RMActionStyleCancel andHandler:^(RMActionController *controller) {
+//        
+//    }];
+//    
+//    //Create date selection view controller
+//    RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:RMActionControllerStyleWhite selectAction:selectAction andCancelAction:cancelAction];
+//    dateSelectionController.title = GET_STRING(@"Select date of birth");
+//    dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
+//    dateSelectionController.datePicker.date = self.date;
+//    
+//    //Now just present the date selection controller using the standard iOS presentation method
+//    [self presentViewController:dateSelectionController animated:YES completion:nil];
+//}
 
+//GonEdit
 #pragma Actions
 - (IBAction)updateAction:(id)sender
 {
@@ -545,7 +595,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
         self.selectedNationality = [self.nationalties objectAtIndex:[self.nationaltiesStringsArray indexOfObject:self.nationalityTxt.text]];
     }
     
-    if(self.firstName.length == 0 || self.lastName.length == 0 || !self.date)
+    if(self.firstName.length == 0 || self.lastName.length == 0 /*|| !self.date*/)
     {
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please fill all fields")];
         [self configureBorders];
@@ -561,13 +611,13 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     else if (![self isValidMobileNumber]){
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Mobile Number should be only 9 and should start with [50 – 55 – 56 – 52]")];
     }
-    else if (([[HelpManager sharedHelpManager] yearsBetweenDate:[NSDate date] andDate:self.date] < 18))
+   /* else if (([[HelpManager sharedHelpManager] yearsBetweenDate:[NSDate date] andDate:self.date] < 18))
     {
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"You should be older than 18 Years")];
         self.date = nil;
         [self configureBorders];
-    }
-    else if (!validNationality)
+    }*/
+    else if (!validNationality && [_nationalityTxt.text length] != 0)
     {
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please Choose a valid nationality.")];
     }
@@ -632,6 +682,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
         self.maleLabel.textColor = Red_UIColor;
         self.femaleLabel.textColor = [UIColor darkGrayColor];
         self.isMale = YES;
+        [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_Left"]forState:UIControlStateNormal];
+
     }
     else
     {
@@ -639,19 +691,28 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
         self.switchBtn.selected = YES ;
         self.maleLabel.textColor =  [UIColor darkGrayColor];
         self.femaleLabel.textColor = Red_UIColor;
+        [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_right"]forState:UIControlStateNormal];
+
     }
 }
 
 
 - (void) registerDriverWithPhotoName:(NSString *)photoName{
 
-self.dateFormatter.dateFormat = @"dd/MM/yyyy";
-NSString *dateString = [self.dateFormatter stringFromDate:self.date];
+//self.dateFormatter.dateFormat = @"dd/MM/yyyy";
+//NSString *dateString = [self.dateFormatter stringFromDate:self.date];
 [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
 
 //GonMade Bos ya sede u will give the imagePath the name of your image
 
-[[MobAccountManager sharedMobAccountManager] updateUserProfileWithAccountID:[NSString stringWithFormat:@"%@",self.sharedUser.ID] firstName:[self SpacesRemover:self.firstName] lastName:[self SpacesRemover:self.lastName] gender:self.isMale ? @"M":@"F" imagePath:photoName birthDate:dateString nationalityID:self.selectedNationality.ID PreferredLanguageId:self.selectedLanguage.LanguageId Mobile:[self.sharedUser.Mobile stringByReplacingOccurrencesOfString:@"+971" withString:@""] WithSuccess:^(NSString *user) {
+    if([_nationalityTxt.text length] != 0) {
+        
+        _NationalitySub = self.selectedNationality.ID;
+    }else {
+            _NationalitySub = @"0";
+    }
+
+[[MobAccountManager sharedMobAccountManager] updateUserProfileWithAccountID:[NSString stringWithFormat:@"%@",self.sharedUser.ID] firstName:[self SpacesRemover:self.firstName] lastName:[self SpacesRemover:self.lastName] gender:self.isMale ? @"M":@"F" imagePath:photoName birthDate:11/11/1988 nationalityID: _NationalitySub /*self.selectedNationality.ID */PreferredLanguageId:self.selectedLanguage.LanguageId Mobile:self.mobileNumber WithSuccess:^(NSString *user) {
     
     [KVNProgress dismiss];
     [KVNProgress showSuccessWithStatus:GET_STRING(@"Edit profile info success")];
@@ -738,7 +799,8 @@ NSString *dateString = [self.dateFormatter stringFromDate:self.date];
 {
     self.firstName = self.firstNametxt.text;
     self.lastName = self.lastNametxt.text;
-    
+    self.mobileNumber = self.mobileNumberTxt.text;
+
     if (self.firstName.length == 0)
     {
         [self addRedBorderToView:self.firstNameView];
@@ -753,6 +815,12 @@ NSString *dateString = [self.dateFormatter stringFromDate:self.date];
     else{
         [self addGreyBorderToView:self.lastNameView];
     }
+    if(self.mobileNumber.length == 0){
+        [self addRedBorderToView:self.mobileNumberView];
+    }
+    else{
+        [self addGreyBorderToView:self.mobileNumberView];
+    }
     
     BOOL validNationality = [self.nationaltiesStringsArray containsObject:self.nationalityTxt.text];
     if (!validNationality){
@@ -762,12 +830,12 @@ NSString *dateString = [self.dateFormatter stringFromDate:self.date];
         [self addGreyBorderToView:self.nationalityView];
     }
 
-    if (!self.date){
-        [self addRedBorderToView:self.datePickerView];
-    }
-    else{
-        [self addGreyBorderToView:self.datePickerView];
-    }
+//    if (!self.date){
+//        [self addRedBorderToView:self.datePickerView];
+//    }
+//    else{
+//        [self addGreyBorderToView:self.datePickerView];
+//    }
 }
 
 - (void) addRedBorderToView :(UIView *)view{
@@ -869,7 +937,19 @@ shouldStyleAutoCompleteTableView:(UITableView *)autoCompleteTableView
 
 - (REFrostedViewController *) homeViewController
 {
-    HomeViewController *homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar":@"HomeViewController" bundle:nil];
+    
+    HomeViewController *homeViewControlle;
+    if ( IDIOM == IPAD )
+    {
+        homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar_Ipad":@"HomeViewController_Ipad" bundle:nil];
+        
+        
+    }else {
+        homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar":@"HomeViewController" bundle:nil];
+        
+    }
+    
+    
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewControlle];
     SideMenuTableViewController  *menuController = [[SideMenuTableViewController alloc] initWithNavigationController:navigationController];
     

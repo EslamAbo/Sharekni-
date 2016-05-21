@@ -151,11 +151,11 @@
     self.saveSearchEnabled = !self.saveSearchEnabled;
     if (self.saveSearchEnabled) {
         self.saveSearchLabel.textColor = Red_UIColor;
-        self.SwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_Left":@"select_Right"];
+        self.SwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_Left":@"select_right"];
     }
     else{
         self.saveSearchLabel.textColor = [UIColor darkGrayColor];
-        self.SwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_Right":@"select_Left"];
+        self.SwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_right":@"select_Left"];
     }
 }
 
@@ -257,8 +257,25 @@
             compareResult = [pickupDate_ compare:todayDate_];
     }
     
-    if (!self.fromEmirate) {
+  /*
+   if (!self.fromEmirate || !self.toRegion ) {
+   if (!self.saveSearchEnabled) {
+   if (!self.fromEmirate ) {
+   [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please set direction")];}
+   }else if (self.saveSearchEnabled) {
+   if (!self.fromEmirate || !self.toRegion) {
+   [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please set direction for both Pick up and Drop off")];
+   }
+   }
+   }
+   */
+    if (!self.fromEmirate ) {
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please set direction")];
+    }else if (!self.self.toRegion && self.saveSearchEnabled) {
+        [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please set direction for both Pick up and Drop off")];
+    }
+    else if (!self.self.toRegion && self.saveSearchEnabled) {
+        [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please set direction for both Pick up and Drop off")];
     }
     else if (compareResult == NSOrderedAscending){
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"invalid start date or time")];
@@ -266,7 +283,33 @@
     else{
         __block SearchViewController *blockSelf = self;
         [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
-        [[MobDriverManager sharedMobDriverManager] findRidesFromEmirate:self.fromEmirate andFromRegion:self.fromRegion toEmirate:self.toEmirate andToRegion:self.toRegion PerfferedLanguage:nil nationality:nil ageRange:nil date:self.pickupDate isPeriodic:nil saveSearch:self.saveSearchEnabled Gender:@"N" Smoke:@"" WithSuccess:^(NSArray *searchResults){
+        //GonMade New passenger_FindRide?AccountID with the new coors
+        Region *fromRegion = self.fromRegion;
+        Region *toRegion = self.toRegion;
+        
+        NSString *startLat ;
+        NSString *startLng ;
+        
+        NSString *endLat ;
+        NSString *endLng ;
+        
+        if (self.saveSearchEnabled) {
+            startLat = fromRegion.RegionLatitude;
+            startLng = fromRegion.RegionLongitude;
+            endLat = toRegion.RegionLatitude;
+            endLng = toRegion.RegionLongitude;
+        }
+        else{
+            startLat = @"0";
+            startLng = @"0";
+            endLat = @"0";
+            endLng = @"0";
+        }
+        NSLog(@"Start Lat %@",startLat);
+        NSLog(@"startLng Lat %@",startLng);
+        NSLog(@"endLat Lat %@",endLat);
+        NSLog(@"endLng Lat %@",endLng);
+        [[MobDriverManager sharedMobDriverManager] findRidesFromEmirate:self.fromEmirate andFromRegion:self.fromRegion toEmirate:self.toEmirate andToRegion:self.toRegion PerfferedLanguage:nil nationality:nil ageRange:nil date:self.pickupDate isPeriodic:nil saveSearch:self.saveSearchEnabled Gender:@"N" Smoke:@"" startLat:startLat startLng:startLng EndLat:endLat EndLng:endLng WithSuccess:^(NSArray *searchResults){
             [KVNProgress dismiss];
             if(searchResults){
                 SearchResultsViewController *resultViewController = [[SearchResultsViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchResultsViewController_ar":@"SearchResultsViewController" bundle:nil];
@@ -279,7 +322,6 @@
             }
             else{ //GonMade Back To home view
                 [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"No Rides Found")];
-                [self.navigationController popToRootViewControllerAnimated:true];
             }
         } Failure:^(NSString *error) {
             [KVNProgress dismiss];
@@ -298,13 +340,29 @@
 }
 
 - (IBAction) advancedSearch:(id)sender{
-    AdvancedSearchViewController *advancedSearchView = [[AdvancedSearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"AdvancedSearchViewController_ar":@"AdvancedSearchViewController" bundle:nil];
-    [self.navigationController pushViewController:advancedSearchView animated:YES];
+
+    if ( IDIOM == IPAD ) {
+        /* do something specifically for iPad. */
+        AdvancedSearchViewController *advancedSearchView = [[AdvancedSearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"AdvancedSearchViewController_ar_Ipad":@"AdvancedSearchViewController_Ipad" bundle:nil];
+        [self.navigationController pushViewController:advancedSearchView animated:YES];
+    } else {
+        /* do something specifically for iPhone or iPod touch. */
+        AdvancedSearchViewController *advancedSearchView = [[AdvancedSearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"AdvancedSearchViewController_ar":@"AdvancedSearchViewController" bundle:nil];
+        [self.navigationController pushViewController:advancedSearchView animated:YES];
+    }
+    
+    
+    
+    
+ 
 }
 
 - (IBAction) mapLookUp:(id)sender {
-    MapLookupViewController *mapLookupViewController = [[MapLookupViewController alloc] initWithNibName:@"MapLookupViewController" bundle:nil];
-    [self.navigationController pushViewController:mapLookupViewController animated:YES];
+    
+
+        MapLookupViewController *mapLookupViewController = [[MapLookupViewController alloc] initWithNibName:@"MapLookupViewController" bundle:nil];
+        [self.navigationController pushViewController:mapLookupViewController animated:YES];
+    
 }
 
 - (IBAction) topRides:(id)sender{

@@ -234,7 +234,7 @@
 {
     [self.view endEditing:YES];
     __block VehiclesViewController *blockSelf = self;
-    RMAction *selectAction = [RMAction actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController *controller) {
+    RMAction *selectAction = [RMAction actionWithTitle:GET_STRING(@"Select") style:RMActionStyleDone andHandler:^(RMActionController *controller) {
         NSDate *date =  ((UIDatePicker *)controller.contentView).date;
         
         blockSelf.dateFormatter.dateFormat = @"dd, MMM, yyyy";
@@ -255,7 +255,7 @@
     
     //Create date selection view controller
     RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:RMActionControllerStyleWhite selectAction:selectAction andCancelAction:cancelAction];
-    dateSelectionController.title = @"select date of birth";
+    dateSelectionController.title = GET_STRING(@"Select date of birth");
     dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
     dateSelectionController.datePicker.date = [NSDate date];
     

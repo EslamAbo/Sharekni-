@@ -28,6 +28,8 @@
 
 #define Nationality_Tag 70
 @interface RegisterViewController ()<UIPickerViewDataSource,UIPickerViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,MLPAutoCompleteTextFieldDataSource,MLPAutoCompleteTextFieldDelegate,REFrostedViewControllerDelegate,UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *LegalAgeCerOutLet;
+@property (weak, nonatomic) IBOutlet UILabel *Plus18Label;
 
 @property (weak, nonatomic) IBOutlet UIButton *privacyButton;
 //O
@@ -80,6 +82,7 @@
 @property (strong,nonatomic) NSDate *date;
 @property (strong,nonatomic) NSDateFormatter *dateFormatter;
 @property (assign,nonatomic) BOOL isMale;
+@property (assign,nonatomic) BOOL Plus18;
 @property (assign,nonatomic) AccountType accountType;
 @property (weak, nonatomic) IBOutlet UIButton *uploadButton;
 
@@ -92,6 +95,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    self.selectedNationality.ID = @"0" ;
     // Do any additional setup after loading the view.
     
     switch ([[Languages sharedLanguageInstance] language]) {
@@ -146,7 +150,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_backBtn];
    
     [self configureUI];
-    [self configrueNationalityAutoCompelete];
+//    [self configrueNationalityAutoCompelete];
     [self configureData];
     [self configureTextFields];
     self.isMale = YES;
@@ -203,7 +207,7 @@
     self.accountType = AccountTypeNone;
 
     [self.switchBtn    setBackgroundImage:[UIImage imageNamed:@"select_Left"]       forState:UIControlStateNormal];
-    [self.switchBtn    setBackgroundImage:[UIImage imageNamed:@"select_Right"]      forState:UIControlStateSelected];
+    [self.switchBtn    setBackgroundImage:[UIImage imageNamed:@"select_right"]      forState:UIControlStateSelected];
     [self.switchBtn    setSelected:NO];
     
     self.maleLabel.textColor = Red_UIColor;
@@ -224,9 +228,9 @@
         self.firstNametxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"firstName") attributes:@{NSForegroundColorAttributeName: color}];
         self.lastNametxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"lastName") attributes:@{NSForegroundColorAttributeName: color}];
         self.mobileNumberTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"mobile") attributes:@{NSForegroundColorAttributeName: color}];
-        self.usernameTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"username") attributes:@{NSForegroundColorAttributeName: color}];
+        self.usernameTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"Username (Your Email)") attributes:@{NSForegroundColorAttributeName: color}];
         self.passwordTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"Password") attributes:@{NSForegroundColorAttributeName: color}];
-        self.nationalityTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"nationality") attributes:@{NSForegroundColorAttributeName: color}];
+//        self.nationalityTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"nationality") attributes:@{NSForegroundColorAttributeName: color}];
         self.preferredLanguageTxt.attributedPlaceholder = [[NSAttributedString alloc] initWithString:GET_STRING(@"pLanguage") attributes:@{NSForegroundColorAttributeName: color}];
     } else {
         NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
@@ -244,6 +248,8 @@
     self.switchBtn.selected = YES ;
     self.maleLabel.textColor =  [UIColor darkGrayColor];
     self.femaleLabel.textColor = Red_UIColor;
+    [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_right"]forState:UIControlStateNormal];
+
 }
 
 - (void) maleTapped{
@@ -251,22 +257,24 @@
     self.maleLabel.textColor = Red_UIColor;
     self.femaleLabel.textColor = [UIColor darkGrayColor];
     self.isMale = YES;
+    [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_Left"]forState:UIControlStateNormal];
+
 }
 
-- (void) configrueNationalityAutoCompelete{
-    self.nationalityTxt.delegate = self;
-    self.nationalityTxt.autoCompleteDataSource = self;
-    self.nationalityTxt.autoCompleteDelegate = self;
-    self.nationalityTxt.autoCompleteTableBorderColor = Red_UIColor;
-    self.nationalityTxt.autoCompleteTableBorderWidth = 2;
-    self.nationalityTxt.autoCompleteTableBackgroundColor = [UIColor whiteColor];
-    self.nationalityTxt.autoCompleteTableAppearsAsKeyboardAccessory = YES;
-    self.nationalityTxt.autoCompleteTableCellTextColor = [UIColor blackColor];
-    [self.nationalityTxt setTintColor:Red_UIColor];
-    if (KIS_ARABIC) {
-        self.nationalityTxt.textAlignment = NSTextAlignmentRight ;
-    }
-}
+//- (void) configrueNationalityAutoCompelete{
+//    self.nationalityTxt.delegate = self;
+//    self.nationalityTxt.autoCompleteDataSource = self;
+//    self.nationalityTxt.autoCompleteDelegate = self;
+//    self.nationalityTxt.autoCompleteTableBorderColor = Red_UIColor;
+//    self.nationalityTxt.autoCompleteTableBorderWidth = 2;
+//    self.nationalityTxt.autoCompleteTableBackgroundColor = [UIColor whiteColor];
+//    self.nationalityTxt.autoCompleteTableAppearsAsKeyboardAccessory = YES;
+//    self.nationalityTxt.autoCompleteTableCellTextColor = [UIColor blackColor];
+//    [self.nationalityTxt setTintColor:Red_UIColor];
+//    if (KIS_ARABIC) {
+//        self.nationalityTxt.textAlignment = NSTextAlignmentRight ;
+//    }
+//}
 
 - (void) configureData{
     __block RegisterViewController*blockSelf = self;
@@ -329,18 +337,18 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     else if (textField == self.mobileNumberTxt){
         [self isValidMobileNumber];
     }
-    else if (textField == self.nationalityTxt){
-        [self isValidNationality];
-    }
+//    else if (textField == self.nationalityTxt){
+//        [self isValidNationality];
+//    }
     return [self textSouldEndEditing];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField*)textField{
     NSInteger nextTag = textField.tag + 10;
     // Try to find next responder
-    if (nextTag == Nationality_Tag) {
-        [textField resignFirstResponder];
-    }
+//    if (nextTag == Nationality_Tag) {
+//        [textField resignFirstResponder];
+//    }
     UIResponder* nextResponder = [self.view viewWithTag:nextTag];
     if (nextResponder) {
         // Found next responder, so set it.
@@ -394,11 +402,12 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
 //    [self.view endEditing:YES];
-    if (textField == self.nationalityTxt){
-        return YES;
-//        [self showPickerWithTextFieldType:NationalityTextField];
-    }
-    else if (textField == self.preferredLanguageTxt){
+//    if (textField == self.nationalityTxt){
+//        return YES;
+////        [self showPickerWithTextFieldType:NationalityTextField];
+//    }
+//    else
+        if (textField == self.preferredLanguageTxt){
         [self showPickerWithTextFieldType:LanguageTextField];
     }
     else{
@@ -457,19 +466,19 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
         UIPickerView *picker = ((RMPickerViewController *)controller).picker;
         NSInteger selectedRow = [picker selectedRowInComponent:0];
         switch (picker.tag) {
-            case NationalityTextField:
-            {
-                Nationality *nationality = [self.nationalties objectAtIndex:selectedRow];
-                if (KIS_ARABIC) {
-                    self.nationalityTxt.text = nationality.NationalityArName;
-                }else{
-                    self.nationalityTxt.text = nationality.NationalityEnName;
-                }
-
-                self.selectedNationality = nationality;
-                [self configureBorders];
-            }
-                break;
+//            case NationalityTextField:
+//            {
+//                Nationality *nationality = [self.nationalties objectAtIndex:selectedRow];
+//                if (KIS_ARABIC) {
+//                    self.nationalityTxt.text = nationality.NationalityArName;
+//                }else{
+//                    self.nationalityTxt.text = nationality.NationalityEnName;
+//                }
+//
+//                self.selectedNationality = nationality;
+//                [self configureBorders];
+//            }
+//                break;
             case LanguageTextField:
             {
                 Language *language = [self.languages objectAtIndex:selectedRow];
@@ -502,13 +511,13 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     pickerController.picker.tag = type;
     NSInteger selectedRow = 0;
     switch (type) {
-        case NationalityTextField:
-        {
-            if (self.selectedNationality) {
-                selectedRow = [self.nationalties indexOfObject:self.selectedNationality];
-            }
-        }
-            break;
+//        case NationalityTextField:
+//        {
+//            if (self.selectedNationality) {
+//                selectedRow = [self.nationalties indexOfObject:self.selectedNationality];
+//            }
+//        }
+//            break;
         case LanguageTextField:
         {
             if (self.selectedLanguage) {
@@ -523,48 +532,68 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     [self presentViewController:pickerController animated:YES completion:nil];
 }
 
-- (void)showDatePicker{
-    
-    [self.view endEditing:YES];
-    __block RegisterViewController *blockSelf = self;
-    RMAction *selectAction = [RMAction actionWithTitle:GET_STRING(@"Select") style:RMActionStyleDone andHandler:^(RMActionController *controller) {
-        NSDate *date =  ((UIDatePicker *)controller.contentView).date;
+//- (void)showDatePicker{
+//    
+//    [self.view endEditing:YES];
+//    __block RegisterViewController *blockSelf = self;
+//    RMAction *selectAction = [RMAction actionWithTitle:GET_STRING(@"Select") style:RMActionStyleDone andHandler:^(RMActionController *controller) {
+//        NSDate *date =  ((UIDatePicker *)controller.contentView).date;
+//        
+//        blockSelf.dateFormatter.dateFormat = @"dd, MMM, yyyy";
+//        NSString * dateString = [self.dateFormatter stringFromDate:date];
+//        self.dateLabel.text = dateString;
+//        blockSelf.date = date;
+//        if (([[HelpManager sharedHelpManager] yearsBetweenDate:[NSDate date] andDate:blockSelf.date] < 18)){
+//            UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:@"" message:GET_STRING(@"You should be older than 18 Years") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
+//            [alertView show];
+//            self.date = nil;
+//            [self configureBorders];
+//        }
+//        else if ([[HelpManager sharedHelpManager] isDateBefor1900:self.date]){
+//            UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:@"" message:GET_STRING(@"You cannot choose year before 1900") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
+//            [alertView show];
+//            self.date = nil;
+//            [self configureBorders];
+//        }
+//        else{
+//            [self configureBorders];
+//        }
+//    }];
+//    
+//    //Create cancel action
+//    RMAction *cancelAction = [RMAction actionWithTitle:GET_STRING(@"Cancel") style:RMActionStyleCancel andHandler:^(RMActionController *controller) {
+//        
+//    }];
+//    
+//    //Create date selection view controller
+//    RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:RMActionControllerStyleWhite selectAction:selectAction andCancelAction:cancelAction];
+//    dateSelectionController.title = @"select date of birth";
+//    dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
+//    dateSelectionController.datePicker.date = [NSDate date];
+//    
+//    //Now just present the date selection controller using the standard iOS presentation method
+//    [self presentViewController:dateSelectionController animated:YES completion:nil];
+//}
+
+- (IBAction)LegalAgeAction:(id)sender {
+    if ([sender isSelected]) {
+        [_LegalAgeCerOutLet setImage:[UIImage imageNamed:@"checked-checkbox-256.png"] forState:UIControlStateNormal];
+        [sender setSelected:NO];
+        _Plus18 = NO;
+        NSLog(@"Not Checked");
         
-        blockSelf.dateFormatter.dateFormat = @"dd, MMM, yyyy";
-        NSString * dateString = [self.dateFormatter stringFromDate:date];
-        self.dateLabel.text = dateString;
-        blockSelf.date = date;
-        if (([[HelpManager sharedHelpManager] yearsBetweenDate:[NSDate date] andDate:blockSelf.date] < 18)){
-            UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:@"" message:GET_STRING(@"You should be older than 18 Years") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
-            [alertView show];
-            self.date = nil;
-            [self configureBorders];
-        }
-        else if ([[HelpManager sharedHelpManager] isDateBefor1900:self.date]){
-            UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:@"" message:GET_STRING(@"You cannot choose year before 1900") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
-            [alertView show];
-            self.date = nil;
-            [self configureBorders];
-        }
-        else{
-            [self configureBorders];
-        }
-    }];
-    
-    //Create cancel action
-    RMAction *cancelAction = [RMAction actionWithTitle:GET_STRING(@"Cancel") style:RMActionStyleCancel andHandler:^(RMActionController *controller) {
-        
-    }];
-    
-    //Create date selection view controller
-    RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:RMActionControllerStyleWhite selectAction:selectAction andCancelAction:cancelAction];
-    dateSelectionController.title = @"select date of birth";
-    dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
-    dateSelectionController.datePicker.date = [NSDate date];
-    
-    //Now just present the date selection controller using the standard iOS presentation method
-    [self presentViewController:dateSelectionController animated:YES completion:nil];
+    } else {
+        [_LegalAgeCerOutLet setImage:[UIImage imageNamed:@"checked-checkbox-256-2.png"] forState:UIControlStateNormal];
+        [sender setSelected:YES];
+        _Plus18 = YES;
+        NSLog(@"Yes Checked");
+    }
 }
+
+
+
+
+
  // GonKey SaveRegistration
 #pragma Actions
 - (IBAction)registerAction:(id)sender
@@ -579,16 +608,16 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     self.mobileNumber = self.mobileNumberTxt.text;
     self.mobileNumber = [self SpacesRemover:self.mobileNumber];
 
-    BOOL validNationality = [self.nationaltiesStringsArray containsObject:self.nationalityTxt.text];
-    if (validNationality){
-        self.selectedNationality = [self.nationalties objectAtIndex:[self.nationaltiesStringsArray indexOfObject:self.nationalityTxt.text]];
-    }
+//    BOOL validNationality = [self.nationaltiesStringsArray containsObject:self.nationalityTxt.text];
+//    if (validNationality){
+//        self.selectedNationality = [self.nationalties objectAtIndex:[self.nationaltiesStringsArray indexOfObject:self.nationalityTxt.text]];
+//    }
     
     if(self.accountType == AccountTypeNone){
         UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:NSLocalizedString(@"", nil) message:GET_STRING(@"Please Choose account type.") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
         [alertView show];
     }
-    else if(self.firstName.length == 0 || self.lastName.length == 0 || self.userName.length == 0 || self.mobileNumber.length == 0 || !self.date || !self.selectedLanguage){
+    else if(self.firstName.length == 0 || self.lastName.length == 0 || self.userName.length == 0 || self.mobileNumber.length == 0 /*|| !self.date */|| !self.selectedLanguage){
         UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:NSLocalizedString(@"", nil) message:GET_STRING(@"Please fill all fields") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
         [alertView show];
         [self configureBorders];
@@ -613,22 +642,24 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
         [alertView show];
         [self configureBorders];
     }
-    else if (([[HelpManager sharedHelpManager] yearsBetweenDate:[NSDate date] andDate:self.date] < 18)){
+    else if (_Plus18 == NO){
         UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:NSLocalizedString(@"", nil) message:GET_STRING(@"You should be older than 18 Years") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
         [alertView show];
         self.date = nil;
         [self configureBorders];
     }
-    else if ([[HelpManager sharedHelpManager] isDateBefor1900:self.date]){
-        UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:NSLocalizedString(@"", nil) message:GET_STRING(@"You cannot choose year before 1900") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
-        [alertView show];
-        self.date = nil;
-        [self configureBorders];
-    }
-    else if (!validNationality){
-        UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:NSLocalizedString(@"", nil) message:GET_STRING(@"Please Choose a valid nationality.") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
-        [alertView show];
-    }
+//    else if ([[HelpManager sharedHelpManager] isDateBefor1900:self.date]){
+//        UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:NSLocalizedString(@"", nil) message:GET_STRING(@"You cannot choose year before 1900") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
+//        [alertView show];	
+//        self.date = nil;
+//        [self configureBorders];
+//    }
+    
+    
+//    else if (!validNationality){
+//        UIAlertView *alertView = [[UIAlertView  alloc] initWithTitle:NSLocalizedString(@"", nil) message:GET_STRING(@"Please Choose a valid nationality.") delegate:self cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
+//        [alertView show];
+//    }
 
     else{
         if (self.profileImage) {
@@ -670,7 +701,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     self.dateFormatter.dateFormat = @"dd/MM/yyyy";
     NSString *dateString = [self.dateFormatter stringFromDate:self.date];
     [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
-    [[MobAccountManager sharedMobAccountManager] registerDriverWithFirstName:self.firstName lastName:self.lastName mobile:self.mobileNumber username:self.userName password:self.password gender:self.isMale ? @"M":@"F" imagePath:photoName birthDate:dateString nationalityID:self.selectedNationality.ID PreferredLanguageId:self.selectedLanguage.LanguageId WithSuccess:^(NSMutableArray *array) {
+    [[MobAccountManager sharedMobAccountManager] registerDriverWithFirstName:self.firstName lastName:self.lastName mobile:self.mobileNumber username:self.userName password:self.password gender:self.isMale ? @"M":@"F" imagePath:photoName birthDate:dateString nationalityID:@"0" PreferredLanguageId:self.selectedLanguage.LanguageId WithSuccess:^(NSMutableArray *array) {
         [KVNProgress dismiss];
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Registration done successfully")];
         [self loginAfterRegisteration];
@@ -684,7 +715,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     self.dateFormatter.dateFormat = @"dd/MM/yyyy";
     NSString *dateString = [self.dateFormatter stringFromDate:self.date];
     [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
-    [[MobAccountManager sharedMobAccountManager] registerPassengerWithFirstName:self.firstName lastName:self.lastName mobile:self.mobileNumber username:self.userName password:self.password gender:self.isMale ? @"M":@"F" imagePath:photoName birthDate:dateString nationalityID:self.selectedNationality.ID PreferredLanguageId:self.selectedLanguage.LanguageId WithSuccess:^(NSMutableArray *array) {
+    [[MobAccountManager sharedMobAccountManager] registerPassengerWithFirstName:self.firstName lastName:self.lastName mobile:self.mobileNumber username:self.userName password:self.password gender:self.isMale ? @"M":@"F" imagePath:photoName birthDate:dateString nationalityID:@"0" PreferredLanguageId:self.selectedLanguage.LanguageId WithSuccess:^(NSMutableArray *array) {
         [KVNProgress dismiss];
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Registration done successfully")];
         [self loginAfterRegisteration];
@@ -750,11 +781,15 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
         self.maleLabel.textColor = Red_UIColor;
         self.femaleLabel.textColor = [UIColor darkGrayColor];
         self.isMale = YES;
+        [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_Left"]forState:UIControlStateNormal];
+
     }else{
         self.isMale = NO;
         self.switchBtn.selected = YES ;
         self.maleLabel.textColor =  [UIColor darkGrayColor];
         self.femaleLabel.textColor = Red_UIColor;;
+        [self.switchBtn setBackgroundImage:[UIImage imageNamed:@"select_right"]forState:UIControlStateNormal];
+
     }
 }
 
@@ -774,16 +809,16 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     NSString *title = @"";
     switch (pickerView.tag) {
-        case NationalityTextField:
-        {
-            Nationality *nationality = [self.nationalties objectAtIndex:row];
-            if (KIS_ARABIC) {
-                title = nationality.NationalityArName;
-            }else{
-                title = nationality.NationalityEnName;
-            }
-        }
-            break;
+//        case NationalityTextField:
+//        {
+//            Nationality *nationality = [self.nationalties objectAtIndex:row];
+//            if (KIS_ARABIC) {
+//                title = nationality.NationalityArName;
+//            }else{
+//                title = nationality.NationalityEnName;
+//            }
+//        }
+//            break;
         case LanguageTextField:
         {
             Language *language = [self.languages objectAtIndex:row];
@@ -806,11 +841,11 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     switch (pickerView.tag) {
-        case NationalityTextField:
-        {
-            return self.nationalties.count;
-        }
-            break;
+//        case NationalityTextField:
+//        {
+//            return self.nationalties.count;
+//        }
+//            break;
         case LanguageTextField:
         {
             return self.languages.count;
@@ -877,13 +912,13 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     else{
         [self addGreyBorderToView:self.mobileNumberView];
     }
-    BOOL validNationality = [self.nationaltiesStringsArray containsObject:self.nationalityTxt.text];
-    if (!validNationality){
-        [self addRedBorderToView:self.nationalityView];
-    }
-    else{
-        [self addGreyBorderToView:self.nationalityView];
-    }
+//    BOOL validNationality = [self.nationaltiesStringsArray containsObject:self.nationalityTxt.text];
+//    if (!validNationality){
+//        [self addRedBorderToView:self.nationalityView];
+//    }
+//    else{
+//        [self addGreyBorderToView:self.nationalityView];
+//    }
     
     if (!self.selectedLanguage){
         [self addRedBorderToView:self.languageView];
@@ -1106,15 +1141,15 @@ shouldStyleAutoCompleteTableView:(UITableView *)autoCompleteTableView
     return [emailTest evaluateWithObject:checkString];
 }
 
-- (BOOL) isValidNationality{
-    BOOL validNationality = [self.nationaltiesStringsArray containsObject:self.nationalityTxt.text];
-    if (!validNationality) {
-        [self addRedBorderToView:self.nationalityView];
-        return NO;
-    }
-    [self addGreyBorderToView:self.nationalityView];
-    return YES;
-}
+//- (BOOL) isValidNationality{
+//    BOOL validNationality = [self.nationaltiesStringsArray containsObject:self.nationalityTxt.text];
+//    if (!validNationality) {
+//        [self addRedBorderToView:self.nationalityView];
+//        return NO;
+//    }
+//    [self addGreyBorderToView:self.nationalityView];
+//    return YES;
+//}
 
 - (BOOL) isValidPassword{
     if (self.passwordTxt.text.length < 5) {
@@ -1125,7 +1160,18 @@ shouldStyleAutoCompleteTableView:(UITableView *)autoCompleteTableView
 
 - (REFrostedViewController *) homeViewController {
     
-    HomeViewController *homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar":@"HomeViewController" bundle:nil];
+    
+    HomeViewController *homeViewControlle;
+    if ( IDIOM == IPAD )
+    {
+        homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar_Ipad":@"HomeViewController_Ipad" bundle:nil];
+        
+        
+    }else {
+        homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar":@"HomeViewController" bundle:nil];
+        
+    }
+    
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewControlle];
     SideMenuTableViewController  *menuController = [[SideMenuTableViewController alloc] initWithNavigationController:navigationController];
     

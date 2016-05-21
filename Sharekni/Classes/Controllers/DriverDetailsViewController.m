@@ -56,6 +56,7 @@
     self.driverImage.layer.cornerRadius = self.driverImage.frame.size.width / 2.0f ;
     self.driverImage.clipsToBounds = YES ;
     
+    
     [self.ridesList registerClass:[DriverRideCell class] forCellReuseIdentifier:RIDE_CELLID];
     [self configureData];
 }
@@ -190,10 +191,62 @@
          {
              blockSelf.driverRides = array;
              [self.ridesList reloadData];
-             
+             //GreenPoint
              [[MobAccountManager sharedMobAccountManager] getUser:driverID WithSuccess:^(User *user) {
                  blockSelf.driver = user;
                  blockSelf.country.text = (KIS_ARABIC)?blockSelf.driver.NationalityArName:blockSelf.driver.NationalityEnName ;
+                 //GreenPoint
+                 NSNumber *test = blockSelf.driver.GreenPoints;
+                 NSNumber *test1 = blockSelf.driver.TotalDistance;
+                 NSNumber *test2 = blockSelf.driver.DriverMyRidesCount;
+                 NSNumber *test3 = blockSelf.driver.VehiclesCount;
+                 NSNumber *test4 = blockSelf.driver.CO2Saved;
+
+                 int number = [test4 intValue];
+                 NSLog(@"CO2 Saved BEfore : %d",number);
+                 int Co2Saved = (number/1000);
+                 NSLog(@"CO2 Saved BEfore : %d",Co2Saved);
+                                
+                 NSString *StringScorePlayer = [test stringValue];
+                 NSString *StringScorePlayer1 = [test1 stringValue];
+                 NSString *StringScorePlayer2 = [test2 stringValue];
+                 NSString *StringScorePlayer3 = [test3 stringValue];
+                 NSString *StringScorePlayer4 = [NSString stringWithFormat:@"%d",Co2Saved];
+
+//                 NSString *myString = [NSNumber stringValue];
+//                 NSString *myString = [NSNumber stringValue];
+//                 NSString *myString = [NSNumber stringValue];
+//                 NSString *myString = [NSNumber stringValue];
+                 blockSelf.PointsOutLet.text = StringScorePlayer;
+                 blockSelf.KmOutLet.text = StringScorePlayer1;
+                 blockSelf.RoutesOutLet.text = StringScorePlayer2;
+                 blockSelf.VehiclesOutLet.text = StringScorePlayer3;
+                 blockSelf.GreenPointKmOutLets.text = StringScorePlayer4;
+
+                 if (([self.KmOutLet.text length] > 5) ){
+                     // User cannot type more than 15 characters
+                     self.KmOutLet.text = [self.KmOutLet.text substringToIndex:5];
+                 } else if (([self.PointsOutLet.text length] > 5) ){
+                     // User cannot type more than 15 characters
+                     self.PointsOutLet.text = [self.PointsOutLet.text substringToIndex:5];
+                 }
+//                 else if (([self.GreenPointKmOutLets.text length] > 5) ){
+//                     // User cannot type more than 15 characters
+//                     self.GreenPointKmOutLets.text = [self.GreenPointKmOutLets.text substringToIndex:5];
+//                 } else if (([self.VehiclesOutLet.text length] > 5) ){
+//                     // User cannot type more than 15 characters
+//                     self.VehiclesOutLet.text = [self.VehiclesOutLet.text substringToIndex:5];
+//                 }else if (([self.RoutesOutLet.text length] > 5) ){
+//                     // User cannot type more than 15 characters
+//                     self.RoutesOutLet.text = [self.RoutesOutLet.text substringToIndex:5];
+//                 }
+                 
+//                 blockSelf.KmOutLet.text = blockSelf.driver.TotalDistance;
+//                 blockSelf.RoutesOutLet.text = blockSelf.driver.DriverMyRidesCount;
+//                 blockSelf.VehiclesOutLet.text = blockSelf.driver.VehiclesCount;
+//                 blockSelf.GreenPointKmOutLets.text = blockSelf.driver.CO2Saved;
+                 
+                 
                  [blockSelf.driver rz_addTarget:self action:@selector(ratingChanged) forKeyPathChange:@"AccountRating"];
              [KVNProgress dismiss];
 

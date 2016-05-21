@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "SelectRight.png",
+      "filename" : "MostRide.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "SelectRight-2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "SelectRight-1.png",
       "scale" : "3x"
     }
   ],

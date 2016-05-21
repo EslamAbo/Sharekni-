@@ -5,7 +5,7 @@
 //  Created by ITWORX on 11/25/15.
 //
 //
-
+#import "LoginViewController.h"
 #import "SplashViewController.h"
 #import "MasterDataManager.h"
 #import "Emirate.h"
@@ -79,6 +79,15 @@
             }
         } Failure:^(NSString *error) {
             blockSelf.getUserFinished = YES;
+        }];
+        
+        
+        [[MobAccountManager sharedMobAccountManager] checkLoginWithUserName:userName andPassword:password WithSuccess:^(User *user) {
+            NSLog(@"IS Logged in the Splash Screen");
+            //
+        } Failure:^(NSString *error) {
+            NSLog(@"ISNOT Logged in the Splash Screen");
+
         }];
     }
     else{

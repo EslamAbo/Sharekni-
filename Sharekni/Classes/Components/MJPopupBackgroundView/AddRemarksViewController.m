@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+
     [viewText becomeFirstResponder];
     viewText.text = GET_STRING(@"I’d like to join your ride");
     
@@ -44,6 +44,8 @@
 
 - (IBAction)closePopup:(id)sender
 {
+
+    
     if (viewText.text.length == 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:GET_STRING(@"Attention") message:GET_STRING(@"You must write your remark first") delegate:nil cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil, nil];
         [alert show];
@@ -54,7 +56,7 @@
     
     User *user = [[MobAccountManager sharedMobAccountManager] applicationUser];
     
-    [[MobAccountManager sharedMobAccountManager] joinRidePassenger:[NSString stringWithFormat:@"%@",user.ID] RouteID:self.driverDetails.RouteId DriverID:self.driverDetails.AccountId Remark:viewText.text WithSuccess:^(NSString *user) {
+    [[MobAccountManager sharedMobAccountManager] joinRidePassenger:[NSString stringWithFormat:@"%@",user.ID] RouteID:[NSString stringWithFormat:@"%@",self.driverDetails.RouteId] DriverID:[NSString stringWithFormat:@"%@",self.driverDetails.AccountId] Remark:viewText.text WithSuccess:^(NSString *user) {
         
         [KVNProgress dismiss];
         
@@ -76,13 +78,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

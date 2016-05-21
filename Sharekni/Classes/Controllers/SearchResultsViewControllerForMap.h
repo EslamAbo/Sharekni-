@@ -6,8 +6,23 @@
 //
 //
 
-#ifndef SearchResultsViewControllerForMap_h
-#define SearchResultsViewControllerForMap_h
 
+#import <UIKit/UIKit.h>
+#import "Emirate.h"
+#import "Region.h"
+#import "DriverDetails.h"
 
-#endif /* SearchResultsViewControllerForMap_h */
+@interface SearchResultsViewControllerForMap : UIViewController
+
+@property (nonatomic,strong) NSArray *results;
+
+@property (nonatomic,strong) NSString *fromEmirate;
+@property (nonatomic,strong) NSString *fromRegion;
+@property (nonatomic,strong) NSString *toEmirate;
+@property (nonatomic,strong) NSString *toRegion;
+
+@property (nonatomic,strong) NSString *LanguageIs;
+
+@property (nonatomic ,strong) DriverDetails *driverDetails;
+
+@end

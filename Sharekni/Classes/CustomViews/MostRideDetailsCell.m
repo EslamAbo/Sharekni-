@@ -19,9 +19,18 @@ static void* const MyKVOContext = (void *)&MyKVOContext;
 {
     if(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
     {
-        self = (MostRideDetailsCell *)[[[NSBundle mainBundle] loadNibNamed:@"MostRideDetailsCell" owner:nil options:nil] objectAtIndex:(KIS_ARABIC)?1:0];
-        self.driverImage.layer.cornerRadius = self.driverImage.frame.size.width / 2.0f ;
-        self.driverImage.clipsToBounds = YES ;
+        if (IDIOM == IPAD) {
+            self = (MostRideDetailsCell *)[[[NSBundle mainBundle] loadNibNamed:@"MostRideDetailsCell_Ipad" owner:nil options:nil] objectAtIndex:(KIS_ARABIC)?1:0];
+            self.driverImage.layer.cornerRadius = self.driverImage.frame.size.width / 2.0f ;
+            self.driverImage.clipsToBounds = YES ;
+            
+        }else {
+            self = (MostRideDetailsCell *)[[[NSBundle mainBundle] loadNibNamed:@"MostRideDetailsCell" owner:nil options:nil] objectAtIndex:(KIS_ARABIC)?1:0];
+            self.driverImage.layer.cornerRadius = self.driverImage.frame.size.width / 2.0f ;
+            self.driverImage.clipsToBounds = YES ;
+        }
+        
+      
     }
     return self;
 }
@@ -38,6 +47,34 @@ static void* const MyKVOContext = (void *)&MyKVOContext;
     _mostRide = mostRide;
     self.driverName.text = mostRide.DriverName ;
     self.country.text = (KIS_ARABIC)?mostRide.NationalityArName:mostRide.NationlityEnName ;
+    
+    //GonMake LastSeen Hidden
+//    _HideLastSeen.hidden = YES;
+    self.LastSeen.text = mostRide.LastSeen;
+
+    //GreenPoint
+    NSNumber *test = mostRide.GreenPoints;
+    NSNumber *test4 = mostRide.CO2Saved;
+    
+    int number = [test4 intValue];
+    NSLog(@"CO2 Saved BEfore : %d",number);
+    int Co2Saved = (number/1000);
+    NSLog(@"CO2 Saved BEfore : %d",Co2Saved);
+    
+    NSString *StringScorePlayer = [test stringValue];
+    NSString *StringScorePlayer4 = [NSString stringWithFormat:@"%d",Co2Saved];
+    
+    self.GreenPointPoints.text = StringScorePlayer;
+    self.GreenPointCo2Saving.text = StringScorePlayer4;
+    
+//    if (([self.GreenPointCo2Saving.text length] > 5) ){
+//        // User cannot type more than 15 characters
+//        self.GreenPointCo2Saving.text = [self.GreenPointCo2Saving.text substringToIndex:5];
+//    } else if (([self.GreenPointPoints.text length] > 4) ){
+//        // User cannot type more than 15 characters
+//        self.GreenPointPoints.text = [self.GreenPointPoints.text substringToIndex:4];
+//    }
+    
     self.driverImage.image = mostRide.driverImage;
     self.startingTime.text = [NSString stringWithFormat:@"%@ %@",GET_STRING(@"Starting Time :"),mostRide.StartTime];
     self.availableDays.text = [self getAvailableDays:mostRide];
@@ -50,10 +87,22 @@ static void* const MyKVOContext = (void *)&MyKVOContext;
 - (void)setDriver:(DriverSearchResult *)driver
 {
     _driver = driver;
+    _HideLastSeen.hidden = NO;
     self.driverImage.image = driver.driverImage;
+    //GreenPoint
+    NSNumber *test = driver.GreenPoints;
+    NSNumber *test4 = driver.CO2Saved;
+    
+    NSString *StringScorePlayer = [test stringValue];
+    NSString *StringScorePlayer4 = [test4 stringValue];
+    
+    self.GreenPointCo2Saving.text = StringScorePlayer;
+    self.GreenPointPoints.text = StringScorePlayer4;
+    
     
     self.driverName.text = driver.AccountName;
     self.country.text = (KIS_ARABIC)?driver.Nationality_ar:driver.Nationality_en;
+    self.LastSeen.text = driver.LastSeen;
     self.phone = driver.AccountMobile ;
     self.startingTime.text = [NSString stringWithFormat:@"%@ %@",GET_STRING(@"Starting Time :"),driver.SDG_Route_Start_FromTime];
     

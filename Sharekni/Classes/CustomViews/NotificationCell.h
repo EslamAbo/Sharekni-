@@ -17,7 +17,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *deleteRequestBtn;
 
 @property (nonatomic, copy) void (^deleteHandler)(void);
+@property (nonatomic,strong) NSString *NotificationName;
 
+@property (nonatomic ,strong) Notification *notification ;
+@property (nonatomic,strong) NSString *NotificationNameVC;
 
 - (void)setNotification:(Notification *)notification ;
 

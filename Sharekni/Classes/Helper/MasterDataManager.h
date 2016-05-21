@@ -40,6 +40,8 @@
 
 - (void)getRideDetails:(NSString *)accountID FromEmirateID:(NSString *)fromEmirateID FromRegionID:(NSString *)fromRegionID ToEmirateID:(NSString *)toEmirateID ToRegionID:(NSString *)toRegionID WithSuccess:(void (^)(NSMutableArray *array))success Failure:(void (^)(NSString *error))failure ;
 
+- (void) getRideDetailsFORPASSENGER:(NSString *)accountID FromEmirateID:(NSString *)fromEmirateID FromRegionID:(NSString *)fromRegionID ToEmirateID:(NSString *)toEmirateID ToRegionID:(NSString *)toRegionID  RouteID:(NSString *)RouteID WithSuccess:(void (^)(NSMutableArray *array))success Failure:(void (^)(NSString *error))failure;
+
 - (void)getDriverRideDetails:(NSString *)accountID WithSuccess:(void (^)(NSMutableArray *array))success Failure:(void (^)(NSString *error))failure ;
 
 - (void) GetRouteByRouteId:(NSString *)routeID withSuccess:(void (^)(RouteDetails *routeDetails))success Failure:(void (^)(NSString *error))failure;
@@ -61,8 +63,10 @@
 - (void) deletePassengerWithID:(NSString *)passengerID withSuccess:(void (^)(NSString *response))success Failure:(void (^)(NSString *error))failure;
 
 - (void)getPermits:(NSString *)accountID WithSuccess:(void (^)(NSMutableArray *array))success Failure:(void (^)(NSString *error))failure ;
-
-- (void)deleteRequestWithID:(NSString *)requestID WithSuccess:(void (^)(BOOL deleted))success Failure:(void (^)(NSString *error))failure ;
+/*
+ - (void)deleteRequestWithID:(NSString *)requestID WithSuccess:(void (^)(BOOL deleted))success Failure:(void (^)(NSString *error))failure ;
+ */
+- (void)deleteRequestWithID:(NSString *)ID notificationType:(deleteRequestWithID)type WithSuccess:(void (^)(BOOL deleted))success Failure:(void (^)(NSString *error))failure;
 
 - (Region *) getRegionByID:(NSString *)regionID inEmirateWithID:(NSString *)emirateID;
 

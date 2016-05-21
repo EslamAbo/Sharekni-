@@ -133,8 +133,18 @@
 
 - (IBAction)signupAction:(id)sender{
     [self.view endEditing:YES];
-    RegisterViewController *registerView = [[RegisterViewController alloc] initWithNibName:(KIS_ARABIC)?@"RegisterViewController_ar":@"RegisterViewController" bundle:nil];
-    [self.navigationController pushViewController:registerView animated:YES];
+    
+    if ( IDIOM == IPAD ) {
+        /* do something specifically for iPad. */
+        RegisterViewController *registerView = [[RegisterViewController alloc] initWithNibName:(KIS_ARABIC)?@"RegisterViewController_ar_Ipad":@"RegisterViewController_Ipad" bundle:nil];
+        [self.navigationController pushViewController:registerView animated:YES];
+    } else {
+        /* do something specifically for iPhone or iPod touch. */
+        RegisterViewController *registerView = [[RegisterViewController alloc] initWithNibName:(KIS_ARABIC)?@"RegisterViewController_ar":@"RegisterViewController" bundle:nil];
+        [self.navigationController pushViewController:registerView animated:YES];
+    }
+    
+
 }
 
 - (IBAction)forgotPasswordAction:(id)sender
@@ -229,7 +239,20 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
 
 - (REFrostedViewController *) mainViewController
 {
-    HomeViewController *homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar":@"HomeViewController" bundle:nil];
+    
+    HomeViewController *homeViewControlle;
+    if ( IDIOM == IPAD )
+    {
+        homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar_Ipad":@"HomeViewController_Ipad" bundle:nil];
+        
+        
+    }else {
+        homeViewControlle = [[HomeViewController alloc] initWithNibName:(KIS_ARABIC)?@"HomeViewController_ar":@"HomeViewController" bundle:nil];
+        
+    }
+    
+    
+    
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeViewControlle];
     SideMenuTableViewController  *menuController = [[SideMenuTableViewController alloc] initWithNavigationController:navigationController];
     

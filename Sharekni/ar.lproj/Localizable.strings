@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  Sharekni
-
-  Created by Ahmed Askar on 10/9/15.
-
-*/
+/*
+ Localizable.strings
+ Sharekni
+ 
+ Created by Ahmed Askar on 10/9/15.
+ 
+ */
 
 "In order to change language you have to re-open the application" =  "لكي تتمكن من تغيير اللغة يجب إعادة فتح التطبيق مرة أخري";
 "Close Now" = "إغلاق الآن";
@@ -20,7 +20,7 @@
 "mobile"    = "رقم الهاتف";
 "nationality" = "الجنسية";
 "pLanguage" = "اللغة المفضلة";
-"Submit" = "تأكيد";
+"Submit" = "إرسال";
 
 "nameReq" = "من فضلك أدخل اسم المستخدم";
 "passReq" = "من فضلك أدخل كلمة المرور";
@@ -36,6 +36,11 @@
 "advancedSearch" = "بحث متقدم";
 "quickSearch" = "بحث";
 
+"Please set direction for both Pick up and Drop off" = "من فضلك اختر وجهتى الإنطلاق و الوصول";
+
+"Sorry, you can't send any more invitations" = "لا يمكن ارسال المزيد من الدعوات";
+
+"Kg" = "كج";
 "loading" = "تحميل";
 "Loading..." = "تحميل...";
 
@@ -44,16 +49,22 @@
 "driverDetails" = "تفاصيل السائق";
 "rideDetails" = "تفاصيل الرحلة";
 
+"Sorry, you can't send any more invitations" = "Sorry, you can't send any more invitations";
 
 "submit" = "تأكيد";
 "forget" = "نسيت كلمة المرور";
 "preferedLang" = "الجنسية المفضلة";
 
+//ForgetPassword
+
+"A reset password link has been sent to your email" = "تم إرسال رسالة تغيير رقم المرور إلى بريدك الإلكترونى";
+
+"Email are not matching" = "بريد إلكترونى غير متوفر";
 
 //Registeration
 "Please Choose a valid nationality." = "يرجي اختيار الجنيسة";
 "Please Choose acconut type." = "يرجي اختيار نوع الحساب";
-"Please fill all fields" = "جميع الحقول الزامية";
+"Please fill all fields" = "يرجى تعبئة جميع الحقول الالزامية";
 "First name mustn't have numbers" = "الاسم الاول يجب ألا يحتوي علي ارقام";
 "Last name mustn't have numbers" = "الاسم الاخير يجب ألا يحتوي علي أرقام";
 "Mobile Number should be only 9 and should start with [50 – 55 – 56 – 52]" = "رقم الجوال يجب أن يكون ٩ أرقام ويبدأ ب [50 – 55 – 56 – 52]";
@@ -85,7 +96,10 @@
 "Search" = "بحث";
 "Saved Search" = "حفظ البحث";
 "Create Ride"  = "إنشاء رحلة";
-
+"Register Vehicle" = "تسجيل مركبة";
+"Dismiss" = "إلغاء";
+"You Don't Have Any Vehcile Registered" = "ليس لديك اى مركبه مسجله";
+"Do you want to Register it now?" = "هل تريد تسجيل مركبه الآن؟";
 "No permits found" = "عفوا لاتوجد تصاريح";
 //Create Rides
 "No rides joined yet" = "عفوا لاتوجد رحلات مشتركة حتي الآن";
@@ -94,6 +108,7 @@
 "Select vehicle" = "اختر المركبة";
 "Confirm" = "موافق";
 "Delete" = "حذف";
+"DeleteNotifcationHeaderNot" = "حذف";
 "Edit" = "تعديل";
 "Do you want to delete this ride ?" = "هل تريد حذف هذه الرحلة؟";
 "Ride Deleted successfully." = "تم حذف الرحلة بنجاح";
@@ -108,18 +123,26 @@
 "You must write your review first" = "يجب كتابة التعليق أولا";
 "You must write your remark first" = "يجب كتابة رسالتك أولا";
 
+//Creat Drive
+"You can't use this file number" = "عذرا,لا يمكنك استخدام ملف المرور ذلك";
+"License verified, but no cars found" = "الرخصه مصرح بها ولاكن لاتوجد مركبة";
+"Invalid data please check again" = "بيانات غير صحيحة حاول مرة اخرى";
 //Driver Ride
 "Details" = "التفاصيل";
 "Driver" = "السائق";
 "Leave" = "مغادرة";
+
+"Sorry, you can't send any more invitations" = "لا يمكن ارسال المزيد من الدعوات";
+
 
 //Add review
 "Write Your Review" = "اكتب تعليقك";
 "Your Review" = "تعليقك";
 "Review" = "تعليق";
 "I’d like to join your ride" = "أريد الإنضمام إلي هذه الرحلة";
-"Write Your Remarks" = "اكتب ملاحظتك";
-"Your Remarks" = "ملاحظتك";
+"I’d like to invite you to my ride" = "ادعوك للإنضمام إلى رحلتي";
+"Write Your Remarks" = "إرسال دعوة إنضمام";
+"Your Remarks" = "الرسالة";
 
 
 "Map Lookup" = "الخريطة";
@@ -138,6 +161,9 @@
 "Please select to Emirate first" = "من فضلك اختر الإمارة أولا";
 "Please enter a valid to region name" = "من فضلك أدخل اسم المنطقة بطريقة صحيحة";
 "invalid start date or time" = "خطأ في تاريخ البدء أو وقت البدء";
+
+"Drivers" = "السائقين";
+"Passengers" = "الركاب";
 
 "Drivers :" = "السائقين :";
 "Passengers :" = "الركاب :";
@@ -176,7 +202,7 @@
 
 "Edit Profile" = "تعديل الحساب";
 "Nationalty must be selected" = "يجب عليك اختيار الجنسية";
-"Please check your username and password" = "يرجي التأكد من الاسم وكلمة المرور";
+"Please check your username and password" = "يرجى التأكد من اسم المستخدم وكلمة المرور";
 "Edit profile info success" = "تم تحديث البيانات بنجاح";
 "Select date of birth" = "اختر تاريخ الميلاد";
 "Verification Code is wrong" = "كود التفعيل غير صحيح";
@@ -229,9 +255,9 @@
 "Camera" = "الكاميرا";
 
 
-"You don't have joined rides yet" = "عفوا لا توجد رحلات مشتركة";
+"You don't have joined rides yet" = "عفوا، لا توجد رحلات مشترك بها";
 "You don't have created rides yet" = "عفوا لا توجد رحلات منشأة";
-"Received your request and waiting for approval" = "تم إرسال طلب الإشتراك وفي انتظار موافقة السائق";
+"Received your request and waiting for approval" = "تم إرسال الطلب بنجاح و انتظر موافقة السائق";
 
 "Request deleted successfully" = "تم حذف الطلب بنجاح";
 "Cannot delete Request" = "لا يمكن حذف الطلب";
@@ -248,3 +274,16 @@
 "Error" = "خطأ";
 "You don't have any notifications" = "لا يوجد لديك تنبيهات";
 "Do you want to delete this request ?" = "هل تريد حذف هذا الطلب ؟";
+"Request had been sent Successfully , Wait for driver Approval." = "تم إرسال الطلب بنجاح و انتظر موافقة السائق";
+"Received your request and waiting for The approval" = "تم إرسال الطلب بنجاح , انتظر الوافقة على الطلب";
+
+"Has Accepted your invitation" = "قام بقبول دعوتك";
+"Received your invitation and waiting for approval" = "تم إستلام دعوتك , انتظر الموافقة";
+"Send you a invitation request" = "بعث لك بطلب دعوه";
+
+"Cannot delete invitation" =  "لا يمكن حذف الطلب";
+"Invitation deleted successfully" = "تم مسح الطلب بنجاح";
+"Do you want to delete this invitation ?" = "هل تريد مسح الدعوة؟";
+"Has Rejected your invitation" = "قد رفض طلبك";
+
+"Share" = "مشاركة";

@@ -103,9 +103,19 @@
     static NSString *driverIdentifier = @"BestDriverCell";
     BestDriverCell *driverCell = (BestDriverCell*)[tableView dequeueReusableCellWithIdentifier:driverIdentifier];
     if (driverCell == nil) {
-        driverCell = (BestDriverCell *)[[[NSBundle mainBundle] loadNibNamed:@"BestDriverCell" owner:nil options:nil] objectAtIndex:(KIS_ARABIC)?1:0];
+        
+        if (IDIOM == IPAD) {
+            driverCell = (BestDriverCell *)[[[NSBundle mainBundle] loadNibNamed:@"BestDriverCell_Ipad" owner:nil options:nil] objectAtIndex:(KIS_ARABIC)?1:0];
+            
+            driverCell.contentView.backgroundColor = [UIColor clearColor];
+            
+        }else {
+            driverCell = (BestDriverCell *)[[[NSBundle mainBundle] loadNibNamed:@"BestDriverCell" owner:nil options:nil] objectAtIndex:(KIS_ARABIC)?1:0];
+            
+            driverCell.contentView.backgroundColor = [UIColor clearColor];
+        }
 
-        driverCell.contentView.backgroundColor = [UIColor clearColor];
+        
     }
     
     driverCell.delegate = self ;
@@ -129,7 +139,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 91;
+    return 199;
 }
 
 #pragma mark - Message Delegate

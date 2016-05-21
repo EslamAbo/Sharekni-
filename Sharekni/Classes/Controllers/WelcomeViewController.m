@@ -50,6 +50,9 @@
     [self.navigationItem setHidesBackButton:YES];
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     [self configureUI];
+    if ( IDIOM == IPAD) {
+        NSLog(@"YAY IPAD ");
+    }
 }
 
 - (BOOL)shouldAutorotate
@@ -73,15 +76,24 @@
     self.navigationController.navigationBar.translucent = YES;
     
     language = [NSArray new];
-    
-    self.bestDriversView.layer.cornerRadius = 10;
-    self.bestDriversView.layer.borderWidth = 1.5;
+   if ( IDIOM == IPAD ) {
+       self.bestDriversView.layer.cornerRadius = 20;
+       self.bestDriversView.layer.borderWidth = 3.5;
+   }else {
+       self.bestDriversView.layer.cornerRadius = 10;
+       self.bestDriversView.layer.borderWidth = 1.5;}
+   
     self.bestDriversView.layer.borderColor = Red_UIColor.CGColor;
     UITapGestureRecognizer *BestDrivertapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bestDriverTapped)];
     [self.bestDriversView addGestureRecognizer:BestDrivertapGesture];
     
-    self.mostRidesView.layer.cornerRadius = 10;
-    self.mostRidesView.layer.borderWidth = 1.5;
+    if ( IDIOM == IPAD ) {
+        self.mostRidesView.layer.cornerRadius = 20;
+        self.mostRidesView.layer.borderWidth = 3.5;
+    }else {
+        self.mostRidesView.layer.cornerRadius = 10;
+        self.mostRidesView.layer.borderWidth = 1.5;}
+
     self.mostRidesView.layer.borderColor = Red_UIColor.CGColor;
     UITapGestureRecognizer *mostRidestapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mostRidesTapped)];
     [self.mostRidesView addGestureRecognizer:mostRidestapGesture];
@@ -89,21 +101,54 @@
 
 - (IBAction)login:(id)sender
 {
-    LoginViewController *loginView = [[LoginViewController alloc] initWithNibName:(KIS_ARABIC)?@"LoginViewController_ar":@"LoginViewController" bundle:nil];
-    [self.navigationController pushViewController:loginView animated:YES];
+    if ( IDIOM == IPAD ) {
+        /* do something specifically for iPad. */
+        
+        LoginViewController *loginView = [[LoginViewController alloc] initWithNibName:(KIS_ARABIC)?@"LoginViewController_ar_Ipad":@"LoginViewController_Ipad" bundle:nil];
+        [self.navigationController pushViewController:loginView animated:YES];
+        
+    } else {
+        /* do something specifically for iPhone or iPod touch. */
+        LoginViewController *loginView = [[LoginViewController alloc] initWithNibName:(KIS_ARABIC)?@"LoginViewController_ar":@"LoginViewController" bundle:nil];
+        [self.navigationController pushViewController:loginView animated:YES];
+        
+    }
 }
 
 - (IBAction)Register:(id)sender
 {
-    RegisterViewController *registerView = [[RegisterViewController alloc] initWithNibName:(KIS_ARABIC)?@"RegisterViewController_ar":@"RegisterViewController" bundle:nil];
-    [self.navigationController pushViewController:registerView animated:YES];
+    if ( IDIOM == IPAD ) {
+        /* do something specifically for iPad. */
+        RegisterViewController *registerView = [[RegisterViewController alloc] initWithNibName:(KIS_ARABIC)?@"RegisterViewController_ar_Ipad":@"RegisterViewController_Ipad" bundle:nil];
+        [self.navigationController pushViewController:registerView animated:YES];
+    } else {
+        /* do something specifically for iPhone or iPod touch. */
+        RegisterViewController *registerView = [[RegisterViewController alloc] initWithNibName:(KIS_ARABIC)?@"RegisterViewController_ar":@"RegisterViewController" bundle:nil];
+        [self.navigationController pushViewController:registerView animated:YES];
+    }
+    
+
 }
 
 - (IBAction)search:(id)sender
 {
-    SearchViewController *searchView = [[SearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchViewController_ar":@"SearchViewController" bundle:nil];
-    searchView.enableBackButton = YES;
-    [self.navigationController pushViewController:searchView animated:YES];
+    
+    if ( IDIOM == IPAD ) {
+        /* do something specifically for iPad. */
+        SearchViewController *searchView = [[SearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchViewController_ar_Ipad":@"SearchViewController_Ipad" bundle:nil];
+        searchView.enableBackButton = YES;
+        [self.navigationController pushViewController:searchView animated:YES];
+    } else {
+        /* do something specifically for iPhone or iPod touch. */
+        SearchViewController *searchView = [[SearchViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchViewController_ar":@"SearchViewController" bundle:nil];
+        searchView.enableBackButton = YES;
+        [self.navigationController pushViewController:searchView animated:YES];
+        
+    }
+    
+    
+    
+
 }
 
 - (IBAction)makeATour:(id)sender

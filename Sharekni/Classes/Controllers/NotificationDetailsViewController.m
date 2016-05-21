@@ -33,6 +33,25 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSString *PassengerNameValue = [NSString stringWithFormat:@"%@",_notification.PassengerName];
+    NSString *DriverNameValue = [NSString stringWithFormat:@"%@",_notification.DriverName];
+    
+    
+    if ([PassengerNameValue containsString:@"(null)"]){
+        NSLog(@"testPassengerName contain Null");
+        _IsItPorDHuH = @"Passenger";\
+        NSLog(_IsItPorDHuH);
+    }else {
+        NSLog(@"TestPassengerName doesn't contain nul");
+    }
+    if ([DriverNameValue containsString:@"(null)"]){
+        NSLog(@"testPassengerName contain Null");
+        _IsItPorDHuH = @"Driver";
+        NSLog(_IsItPorDHuH);
+        
+    }else {
+        NSLog(@"TestPassengerName doesn't contain nul");
+    }
     
     self.title = GET_STRING(@"Notification Details");
     
@@ -83,34 +102,75 @@
 
 - (IBAction)declineReqquest:(id)sender
 {
-    [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
-    [[MobAccountManager sharedMobAccountManager] acceptRequest:[NSString stringWithFormat:@"%@",self.notification.RequestId] andIsAccepted:@"0" WithSuccess:^(NSString *response) {
-        
-        [KVNProgress dismiss];
-        [self popViewController];
-        [self.delegate reloadNotifications];
-
-    } Failure:^(NSString *error) {
-//        NSLog(@"Error in Best Drivers");
-        [KVNProgress dismiss];
-        [KVNProgress showErrorWithStatus:@"an error occured when trying to accept request please try again ."];
-    }];
+    NSLog(_IsItPorDHuH);
+    if ([_IsItPorDHuH isEqual:@"Driver"]) {
+        NSLog(@"decline Driver Request");
+        [[MobAccountManager sharedMobAccountManager] acceptRequest:[NSString stringWithFormat:@"%@",self.notification.RequestId] andIsAccepted:@"0" notificationType:DriverRequest WithSuccess:^(NSString *response) {
+            
+            [KVNProgress dismiss];
+            [self popViewController];
+            [self.delegate reloadNotifications];
+            
+        } Failure:^(NSString *error) {
+            //        NSLog(@"Error in Best Drivers");
+            [KVNProgress dismiss];
+            [KVNProgress showErrorWithStatus:@"an error occured when trying to accept request please try again ."];
+        }];
+    }else {
+        NSLog(@"Error with the decline button in alert");
+    }
+    if ([_IsItPorDHuH isEqual:@"Passenger"]) {
+        NSLog(@"decline passenger Request");
+        [[MobAccountManager sharedMobAccountManager] acceptRequest:[NSString stringWithFormat:@"%@",self.notification.RequestId] andIsAccepted:@"0" notificationType:PassengerJoin WithSuccess:^(NSString *response) {
+            
+            [KVNProgress dismiss];
+            [self popViewController];
+            [self.delegate reloadNotifications];
+            
+        } Failure:^(NSString *error) {
+            //        NSLog(@"Error in Best Drivers");
+            [KVNProgress dismiss];
+            [KVNProgress showErrorWithStatus:@"an error occured when trying to accept request please try again ."];
+        }];
+    }else { NSLog(@"Error with the decline button in alert");}
 }
 
 - (IBAction)acceptRequest:(id)sender
 {
-    [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
-    [[MobAccountManager sharedMobAccountManager] acceptRequest:[NSString stringWithFormat:@"%@",self.notification.RequestId] andIsAccepted:@"1" WithSuccess:^(NSString *response) {
-        
-        [KVNProgress dismiss];
-        [self popViewController];
-        [self.delegate reloadNotifications];
-        
-    } Failure:^(NSString *error) {
-        NSLog(@"Error in Best Drivers");
-        [KVNProgress dismiss];
-        [KVNProgress showErrorWithStatus:@"Error"];
-    }];
+    NSLog(_IsItPorDHuH);
+    if ([_IsItPorDHuH isEqual:@"Driver"]) {
+        NSLog(@"Accepted Driver Request");
+        [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
+        [[MobAccountManager sharedMobAccountManager] acceptRequest:[NSString stringWithFormat:@"%@",self.notification.RequestId] andIsAccepted:@"1" notificationType:DriverRequest WithSuccess:^(NSString *response) {
+            
+            [KVNProgress dismiss];
+            [self popViewController];
+            [self.delegate reloadNotifications];
+            
+        } Failure:^(NSString *error) {
+            NSLog(@"Error in Best Drivers");
+            [KVNProgress dismiss];
+            [KVNProgress showErrorWithStatus:@"Error"];
+        }];
+    }else
+    {
+        NSLog(@"Error with the accept button in alert");
+    }
+    if ([_IsItPorDHuH isEqual:@"Passenger"]) {
+        NSLog(@"Accepted passenger Join");
+        [[MobAccountManager sharedMobAccountManager] acceptRequest:[NSString stringWithFormat:@"%@",self.notification.RequestId] andIsAccepted:@"1" notificationType:PassengerJoin WithSuccess:^(NSString *response) {
+            
+            [KVNProgress dismiss];
+            [self popViewController];
+            [self.delegate reloadNotifications];
+            
+        } Failure:^(NSString *error) {
+            //        NSLog(@"Error in Best Drivers");
+            [KVNProgress dismiss];
+            [KVNProgress showErrorWithStatus:@"an error occured when trying to accept request please try again ."];
+        }];
+    }else { NSLog(@"Error with the accept button in alert");}
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,13 +179,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

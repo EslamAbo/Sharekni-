@@ -294,7 +294,7 @@
         case PeriodicType:
             self.periodicLabel.textColor = [UIColor add_colorWithRGBHexString:Red_HEX];
             self.singleRideLabel.textColor = [UIColor darkGrayColor];
-            self.typeSwitchImage.image = [UIImage imageNamed:@"select_Right"];
+            self.typeSwitchImage.image = [UIImage imageNamed:@"select_right"];
             break;
         default:
             break;
@@ -304,10 +304,10 @@
 - (void) configureGenderView{
     if (self.isFemaleOnly)
     {
-        self.genderSwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_Left":@"select_Right"];
+        self.genderSwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_Left":@"select_right"];
         self.genderLabel.textColor = [UIColor add_colorWithRGBHexString:Red_HEX];
     }else{
-        self.genderSwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_Right":@"select_Left"];
+        self.genderSwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_right":@"select_Left"];
         self.genderLabel.textColor = [UIColor darkGrayColor];
     }
 }
@@ -338,10 +338,10 @@
     if (self.saveSearchEnabled)
     {
         self.saveSearchLabel.textColor = Red_UIColor;
-        self.saveSearchSwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_Left":@"select_Right"];
+        self.saveSearchSwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_Left":@"select_right"];
     }else{
         self.saveSearchLabel.textColor = [UIColor darkGrayColor];
-        self.saveSearchSwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_Right":@"select_Left"];
+        self.saveSearchSwitchImage.image = [UIImage imageNamed:(KIS_ARABIC)?@"select_right":@"select_Left"];
     }
 }
 
@@ -382,8 +382,10 @@
         acceptSmoke = @"";
     }
     
-    if (!self.fromEmirate) {
-          [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please select start point")];
+    if (!self.fromEmirate ) {
+        [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please set direction")];
+    }else if (!self.self.toRegion && self.saveSearchEnabled) {
+        [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please set direction for both Pick up and Drop off")];
     }
     else if (compareResult == NSOrderedAscending){
         [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"invalid start date or time ")];
@@ -391,7 +393,35 @@
     else{
         __block AdvancedSearchViewController *blockSelf = self;
         [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
-        [[MobDriverManager sharedMobDriverManager] findRidesFromEmirate:self.fromEmirate andFromRegion:self.fromRegion toEmirate:self.toEmirate andToRegion:self.toRegion PerfferedLanguage:self.selectedLanguage nationality:self.selectedNationality ageRange:self.selectedAgeRange date:self.pickupDate isPeriodic:(self.selectedType == PeriodicType) ?@(YES):@(NO) saveSearch:self.saveSearchEnabled Gender:gender Smoke:acceptSmoke WithSuccess:^(NSArray *searchResults) {
+        //GonMade passenger_FindRide?AccountID
+        
+        Region *fromRegion = self.fromRegion;
+        Region *toRegion = self.toRegion;
+       
+        NSString *startLat ;
+        NSString *startLng ;
+        
+        NSString *endLat ;
+        NSString *endLng ;
+        
+        if (self.saveSearchEnabled) {
+            startLat = fromRegion.RegionLatitude;
+            startLng = fromRegion.RegionLongitude;
+            endLat = toRegion.RegionLatitude;
+            endLng = toRegion.RegionLongitude;
+        }
+        else{
+            startLat = @"0";
+            startLng = @"0";
+            endLat = @"0";
+            endLng = @"0";
+        }
+        NSLog(@"Start Lat %@",startLat);
+        NSLog(@"startLng Lat %@",startLng);
+        NSLog(@"endLat Lat %@",endLat);
+        NSLog(@"endLng Lat %@",endLng);
+
+        [[MobDriverManager sharedMobDriverManager] findRidesFromEmirate:self.fromEmirate andFromRegion:self.fromRegion toEmirate:self.toEmirate andToRegion:self.toRegion PerfferedLanguage:self.selectedLanguage nationality:self.selectedNationality ageRange:self.selectedAgeRange date:self.pickupDate isPeriodic:(self.selectedType == PeriodicType) ?@(YES):@(NO) saveSearch:self.saveSearchEnabled Gender:gender Smoke:acceptSmoke  startLat:startLat startLng:startLng EndLat:endLat EndLng:endLng WithSuccess:^(NSArray *searchResults) {
             [KVNProgress dismiss];
             if(searchResults){
                 SearchResultsViewController *resultViewController = [[SearchResultsViewController alloc] initWithNibName:(KIS_ARABIC)?@"SearchResultsViewController_ar":@"SearchResultsViewController" bundle:nil];
