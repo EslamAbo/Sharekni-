@@ -206,7 +206,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2j-mf-AN9">
                             <rect key="frame" x="13" y="243" width="574" height="45"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Periodic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7N-1A-kkZ">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Periodic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7N-1A-kkZ">
                                     <rect key="frame" x="494" y="12" width="63" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="63" id="sk1-Wh-o2x">
@@ -1956,7 +1956,7 @@
                     <include reference="tR8-zD-yvg"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="365" y="272"/>
+            <point key="canvasLocation" x="410" y="266"/>
         </view>
     </objects>
     <resources>

@@ -198,6 +198,7 @@
 		71FBC7621CDA17A900CCA2DC /* MostRideDetailsCell_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FBC7611CDA17A900CCA2DC /* MostRideDetailsCell_Ipad.xib */; };
 		71FBC7641CDA2B8D00CCA2DC /* BestDriverCell_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FBC7631CDA2B8D00CCA2DC /* BestDriverCell_Ipad.xib */; };
 		71FDAC241C62F52900CFCEF9 /* Hintss in Resources */ = {isa = PBXBuildFile; fileRef = 71FDAC231C62F52900CFCEF9 /* Hintss */; };
+		71FDB73C1CF3E16100D90EA4 /* MostRidesCell_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71FDB73B1CF3E16100D90EA4 /* MostRidesCell_Ipad.xib */; };
 		87196D461BF0A30500A94370 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87196D451BF0A30500A94370 /* Launch Screen.storyboard */; };
 		873E4C611BED30E4006C42F8 /* MapInfoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E4C601BED30E4006C42F8 /* MapInfoWindow.m */; };
 		873E7BF31C12C8C000B9A68D /* NSObject+RZDataBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 873E7BEC1C12C8C000B9A68D /* NSObject+RZDataBinding.m */; };
@@ -541,6 +542,7 @@
 		71FBC7611CDA17A900CCA2DC /* MostRideDetailsCell_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MostRideDetailsCell_Ipad.xib; sourceTree = "<group>"; };
 		71FBC7631CDA2B8D00CCA2DC /* BestDriverCell_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BestDriverCell_Ipad.xib; sourceTree = "<group>"; };
 		71FDAC231C62F52900CFCEF9 /* Hintss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Hintss; sourceTree = "<group>"; };
+		71FDB73B1CF3E16100D90EA4 /* MostRidesCell_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MostRidesCell_Ipad.xib; sourceTree = "<group>"; };
 		87196D451BF0A30500A94370 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		873E4C5F1BED30E4006C42F8 /* MapInfoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapInfoWindow.h; sourceTree = "<group>"; };
 		873E4C601BED30E4006C42F8 /* MapInfoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapInfoWindow.m; sourceTree = "<group>"; };
@@ -829,6 +831,7 @@
 				143BE6C51BB69327009F6496 /* MostRidesCell.h */,
 				143BE6C61BB69327009F6496 /* MostRidesCell.m */,
 				0453B2EB1BE55E1000007271 /* MostRidesCell.xib */,
+				71FDB73B1CF3E16100D90EA4 /* MostRidesCell_Ipad.xib */,
 				047E45581BC5831D000B5151 /* PickupLocationView.h */,
 				047E45591BC5831D000B5151 /* PickupLocationView.m */,
 				047E455B1BC58330000B5151 /* PickupLocationView.xib */,
@@ -1417,6 +1420,7 @@
 				14DFCBA71C248A2900EE87CA /* CreateRideViewController_ar.xib in Resources */,
 				7140BB6B1CD6E3EE00207C47 /* EditProfileViewController_Ipad.xib in Resources */,
 				140B97D91C1686C30030E266 /* touren_3.png in Resources */,
+				71FDB73C1CF3E16100D90EA4 /* MostRidesCell_Ipad.xib in Resources */,
 				7140BB651CD68FCB00207C47 /* AdvancedSearchViewController_ar_Ipad.xib in Resources */,
 				14D3E93B1C06A2290047F415 /* TourViewController.xib in Resources */,
 				14DFCBC31C24BF3300EE87CA /* SearchResultsViewController_ar.xib in Resources */,

@@ -110,8 +110,15 @@
 {
     static NSString *rideIdentifier = @"MostRideCell";
     MostRidesCell *rideCell = (MostRidesCell*)[tableView dequeueReusableCellWithIdentifier:rideIdentifier];
+    NSString *CellInterface = @"";
+    if (IDIOM == IPAD) {
+        CellInterface = @"MostRidesCell_Ipad";
+        
+    }else {
+        CellInterface = @"MostRidesCell";
+    }
     if (rideCell == nil) {
-        rideCell = (MostRidesCell *)[[[NSBundle mainBundle] loadNibNamed:@"MostRidesCell" owner:nil options:nil] objectAtIndex:(KIS_ARABIC)?1:0];
+        rideCell = (MostRidesCell *)[[[NSBundle mainBundle] loadNibNamed:CellInterface owner:nil options:nil] objectAtIndex:(KIS_ARABIC)?1:0];
         rideCell.contentView.backgroundColor = [UIColor clearColor];
     }
     MostRide *ride = self.mostRides [indexPath.row];

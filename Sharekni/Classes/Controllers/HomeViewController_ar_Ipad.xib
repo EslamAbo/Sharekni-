@@ -224,14 +224,7 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rate" translatesAutoresizingMaskIntoConstraints="NO" id="Nd7-4j-sOi">
-                    <rect key="frame" x="484" y="12" width="40" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="AS7-NX-1lN"/>
-                        <constraint firstAttribute="width" constant="40" id="yYz-te-A3z"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVH-pm-vML">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVH-pm-vML">
                     <rect key="frame" x="416" y="17" width="64" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="koH-4n-YCV"/>
@@ -431,6 +424,13 @@
                         <action selector="editAction:" destination="-1" eventType="touchUpInside" id="dnx-tH-SEM"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rate" translatesAutoresizingMaskIntoConstraints="NO" id="Nd7-4j-sOi">
+                    <rect key="frame" x="484" y="12" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="AS7-NX-1lN"/>
+                        <constraint firstAttribute="width" constant="40" id="yYz-te-A3z"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -439,12 +439,15 @@
                 <constraint firstItem="hNu-LX-rRR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="19" id="2hl-t9-w3U"/>
                 <constraint firstItem="lSL-dZ-CEY" firstAttribute="trailing" secondItem="ec8-PH-DSi" secondAttribute="trailing" constant="56" id="4P8-zy-PK5"/>
                 <constraint firstItem="lb1-8H-wGV" firstAttribute="leading" secondItem="hNu-LX-rRR" secondAttribute="leading" constant="18" id="5sQ-Yx-Li4"/>
+                <constraint firstAttribute="trailing" secondItem="hNu-LX-rRR" secondAttribute="trailing" constant="19" id="6OF-iQ-3cn"/>
                 <constraint firstItem="q45-XM-Qb1" firstAttribute="bottom" secondItem="Id1-yf-Gaf" secondAttribute="bottom" id="EFB-iu-T9a"/>
                 <constraint firstItem="Nd7-4j-sOi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="Eo8-RB-dMQ"/>
                 <constraint firstItem="lLb-KN-xZz" firstAttribute="top" secondItem="q45-XM-Qb1" secondAttribute="bottom" constant="8" id="Grf-ko-f7N"/>
                 <constraint firstAttribute="trailing" secondItem="0JZ-Cs-1AW" secondAttribute="trailing" constant="14" id="HDE-Ux-faR"/>
                 <constraint firstItem="sRX-Os-AaR" firstAttribute="top" secondItem="iCS-JN-zcc" secondAttribute="bottom" id="HPe-To-65y"/>
-                <constraint firstItem="IVH-pm-vML" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="17" id="Hij-6R-fKR"/>
+                <constraint firstItem="IVH-pm-vML" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="17" id="Hij-6R-fKR">
+                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                </constraint>
                 <constraint firstItem="q45-XM-Qb1" firstAttribute="trailing" secondItem="Id1-yf-Gaf" secondAttribute="trailing" id="I08-pZ-8Wc"/>
                 <constraint firstItem="lSL-dZ-CEY" firstAttribute="bottom" secondItem="ec8-PH-DSi" secondAttribute="bottom" constant="3" id="IY3-X6-w2j"/>
                 <constraint firstItem="hNu-LX-rRR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="12" id="IgK-Gz-Ynm"/>
@@ -453,13 +456,18 @@
                 <constraint firstItem="lb1-8H-wGV" firstAttribute="bottom" secondItem="hNu-LX-rRR" secondAttribute="bottom" constant="-8" id="KHa-Kx-swM"/>
                 <constraint firstItem="lLb-KN-xZz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KLX-qG-PCy"/>
                 <constraint firstItem="sRX-Os-AaR" firstAttribute="top" secondItem="56Z-YV-Kev" secondAttribute="bottom" constant="-7" id="LGu-m6-PTr"/>
-                <constraint firstItem="Nd7-4j-sOi" firstAttribute="leading" secondItem="IVH-pm-vML" secondAttribute="trailing" constant="4" id="Q08-Uc-F9Z"/>
+                <constraint firstItem="0JZ-Cs-1AW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="N0Q-QV-k5o"/>
+                <constraint firstItem="Nd7-4j-sOi" firstAttribute="leading" secondItem="IVH-pm-vML" secondAttribute="trailing" constant="4" id="Q08-Uc-F9Z">
+                    <variation key="heightClass=regular-widthClass=regular" constant="8"/>
+                </constraint>
                 <constraint firstAttribute="trailing" secondItem="cvI-78-rbb" secondAttribute="trailing" constant="14" id="RdE-ag-n5X"/>
                 <constraint firstItem="OlQ-sK-FMJ" firstAttribute="bottom" secondItem="ec8-PH-DSi" secondAttribute="bottom" constant="8" id="Rdz-gC-A7n"/>
                 <constraint firstAttribute="bottom" secondItem="sRX-Os-AaR" secondAttribute="bottom" id="TOq-wH-e5k"/>
                 <constraint firstItem="snq-sb-XX4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VHb-ig-KA8"/>
                 <constraint firstItem="56Z-YV-Kev" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="19" id="WWf-yF-3Ub"/>
-                <constraint firstItem="0JZ-Cs-1AW" firstAttribute="leading" secondItem="Nd7-4j-sOi" secondAttribute="trailing" constant="22" id="XRC-MO-kVQ"/>
+                <constraint firstItem="0JZ-Cs-1AW" firstAttribute="leading" secondItem="Nd7-4j-sOi" secondAttribute="trailing" constant="22" id="XRC-MO-kVQ">
+                    <variation key="heightClass=regular-widthClass=regular" constant="-128"/>
+                </constraint>
                 <constraint firstItem="gqU-mT-yaT" firstAttribute="top" secondItem="q45-XM-Qb1" secondAttribute="bottom" constant="4" id="Y3z-1F-5l9"/>
                 <constraint firstAttribute="trailing" secondItem="iCS-JN-zcc" secondAttribute="trailing" id="ZY9-s3-CBd"/>
                 <constraint firstItem="o0S-gd-BQj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zcz-cm-q3D"/>
@@ -481,7 +489,17 @@
             <nil key="simulatedTopBarMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="6OF-iQ-3cn"/>
                     <exclude reference="Ihr-jr-WTs"/>
+                    <exclude reference="N0Q-QV-k5o"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <exclude reference="2hl-t9-w3U"/>
+                    <include reference="6OF-iQ-3cn"/>
+                    <exclude reference="HDE-Ux-faR"/>
+                    <include reference="N0Q-QV-k5o"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="594" y="76"/>
