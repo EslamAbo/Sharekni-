@@ -60,7 +60,13 @@
 {
     self.items = [NSMutableArray array];
     NSDictionary *dictionary;
-    if ([self.applicationUser.AccountStatus containsString:@"D"] || [self.applicationUser.AccountStatus containsString:@"B"]) {
+//    if ([self.applicationUser.AccountStatus containsString:@"D"] || [self.applicationUser.AccountStatus containsString:@"B"]) {
+    
+    NSLog(@"that is passenger value :%@",self.applicationUser.IsPassenger);
+    NSString *LOL = [NSString stringWithFormat:@"%@",self.applicationUser.IsPassenger];
+    NSLog(@"that is LOL Value :%@",LOL);
+    if ([LOL containsString:@"0"] || [LOL containsString:@"false"]) {
+        
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Home Page"),@"Side_Home"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
         

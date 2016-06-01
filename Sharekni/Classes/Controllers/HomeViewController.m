@@ -207,7 +207,13 @@
     self.bottomLeftView.backgroundColor = Red_UIColor;
     self.bottomRightView.backgroundColor = Red_UIColor;
     
-    if ([self.sharedUser.AccountStatus containsString:@"D"] || [self.sharedUser.AccountStatus containsString:@"B"]) {      //Driver
+//    if ([self.sharedUser.AccountStatus containsString:@"D"] || [self.sharedUser.AccountStatus containsString:@"B"]) {      //Driver
+    
+        NSLog(@"that is passenger value :%@",self.sharedUser.IsPassenger);
+        NSString *LOL = [NSString stringWithFormat:@"%@",self.sharedUser.IsPassenger];
+        NSLog(@"that is LOL Value :%@",LOL);
+        if ([LOL containsString:@"0"] || [LOL containsString:@"false"]) {
+            
         self.topLeftIcon.image = [UIImage imageNamed:@"search-icon"];
         self.topLeftLabel.text = GET_STRING(@"Search");
         UITapGestureRecognizer *topLeftGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchAction)];
@@ -485,8 +491,13 @@
 
 - (void) historyAction
 {
-    if ([[[[MobAccountManager sharedMobAccountManager] applicationUser] AccountStatus] isEqualToString:@"P"])
-    {
+//    if ([[[[MobAccountManager sharedMobAccountManager] applicationUser] AccountStatus] isEqualToString:@"P"])
+//    {
+    
+        NSLog(@"that is passenger value For H:%@",[[[MobAccountManager sharedMobAccountManager] applicationUser] IsPassenger]);
+        NSString *LOL = [NSString stringWithFormat:@"%@",[[[MobAccountManager sharedMobAccountManager] applicationUser] IsPassenger]];
+        NSLog(@"that is LOL Value :%@",LOL);
+        if ([LOL containsString:@"1"] || [LOL containsString:@"true"]) {
         RidesJoinedViewController *joinedRidesViewController =  [[RidesJoinedViewController alloc] initWithNibName:@"RidesJoinedViewController" bundle:nil];
         joinedRidesViewController.title =  GET_STRING(@"History");
         [self.navigationController pushViewController:joinedRidesViewController animated:YES];

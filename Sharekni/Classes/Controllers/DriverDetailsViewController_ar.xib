@@ -405,6 +405,7 @@
                             <variation key="heightClass=regular-widthClass=regular" constant="22"/>
                         </constraint>
                         <constraint firstItem="O7u-Kl-2CG" firstAttribute="top" secondItem="B9G-6c-jKm" secondAttribute="top" constant="29" id="5rm-Zd-Tqj">
+                            <variation key="widthClass=compact" constant="28"/>
                             <variation key="heightClass=regular-widthClass=regular" constant="33"/>
                         </constraint>
                         <constraint firstItem="WlV-rX-0ep" firstAttribute="top" secondItem="6OQ-Dg-ees" secondAttribute="top" id="5sz-bF-Bbb"/>
@@ -464,6 +465,7 @@
                             <variation key="heightClass=regular-widthClass=regular" constant="1.5"/>
                         </constraint>
                         <constraint firstItem="isq-FR-J9g" firstAttribute="top" secondItem="B9G-6c-jKm" secondAttribute="top" constant="30" id="T5l-bS-ubI">
+                            <variation key="widthClass=compact" constant="28"/>
                             <variation key="heightClass=regular-widthClass=regular" constant="33"/>
                         </constraint>
                         <constraint firstItem="AT9-Bf-aYP" firstAttribute="bottom" secondItem="WlV-rX-0ep" secondAttribute="bottom" id="Uz2-W9-h4q"/>
