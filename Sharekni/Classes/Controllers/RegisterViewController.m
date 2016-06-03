@@ -996,16 +996,53 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     [imageSourceOptions showInView:self.view];
 }
 
-- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
+//- (void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    
+//    UIImagePickerControllerSourceType source;
+//    
+//    if(buttonIndex == 0)
+//    {
+//        source = UIImagePickerControllerSourceTypePhotoLibrary;
+//        NSLog(@"HE Picked Gallery");
+//    }
+//    else if (buttonIndex == 1)
+//    {
+//        NSLog(@"HE Picked Camera");
+//        if(![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+//        {
+//            [[[UIAlertView alloc] initWithTitle:nil message:GET_STRING(@"No camera on device") delegate:nil cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil] show];
+//            return;
+//        }
+//        source = UIImagePickerControllerSourceTypeCamera;
+//    }
+//    else
+//    {
+//        return;
+//    }
+//    
+//    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+//    imagePickerController.sourceType = source;
+//    imagePickerController.delegate = self;
+//    if (source != UIImagePickerControllerSourceTypeCamera) {
+//        imagePickerController.modalPresentationStyle = UIModalPresentationFormSheet;
+//    }
+//    imagePickerController.allowsEditing = YES;
+//    [self presentViewController:imagePickerController];
+//}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex;  // after animation
+{
+    // my code
     UIImagePickerControllerSourceType source;
     
     if(buttonIndex == 0)
     {
         source = UIImagePickerControllerSourceTypePhotoLibrary;
+        NSLog(@"HE Picked Gallery");
     }
     else if (buttonIndex == 1)
     {
+        NSLog(@"HE Picked Camera");
         if(![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
         {
             [[[UIAlertView alloc] initWithTitle:nil message:GET_STRING(@"No camera on device") delegate:nil cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil] show];
@@ -1026,7 +1063,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 140;
     }
     imagePickerController.allowsEditing = YES;
     [self presentViewController:imagePickerController];
+    
 }
+
 
 #pragma mark UIImagePickerController Delegate
 
