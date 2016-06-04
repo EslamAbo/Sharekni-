@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -27,27 +27,6 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Login_BG" translatesAutoresizingMaskIntoConstraints="NO" id="al8-NN-cFP">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="1Bq-RW-1hd">
-                    <rect key="frame" x="110" y="95" width="100" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="222" id="HrL-ol-LFf"/>
-                        <constraint firstAttribute="height" constant="192" id="Oc2-Cu-b8W">
-                            <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                        </constraint>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="HrL-ol-LFf"/>
-                            <exclude reference="Oc2-Cu-b8W"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <mask key="constraints">
-                            <include reference="HrL-ol-LFf"/>
-                            <include reference="Oc2-Cu-b8W"/>
-                        </mask>
-                    </variation>
                 </imageView>
                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGA-SL-v1P">
                     <rect key="frame" x="13" y="331" width="294" height="40"/>
@@ -154,10 +133,10 @@
                     </variation>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="zbb-hj-hns">
-                    <rect key="frame" x="171" y="714" width="335" height="50"/>
+                    <rect key="frame" x="171" y="714" width="247" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBw-yo-PeY">
-                            <rect key="frame" x="0.0" y="0.0" width="115" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="68" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="RLe-P3-h0B"/>
                                 <constraint firstAttribute="width" constant="169" id="n5W-Lo-pLA"/>
@@ -184,7 +163,7 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Is-1R-W9U">
-                            <rect key="frame" x="124" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="77" y="0.0" width="50" height="50"/>
                             <color key="backgroundColor" red="1" green="0.0" blue="0.06479849268" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="7mS-Uj-VBf"/>
@@ -204,7 +183,7 @@
                             </variation>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glK-02-bbD">
-                            <rect key="frame" x="183" y="0.0" width="152" height="50"/>
+                            <rect key="frame" x="136" y="0.0" width="111" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="ihP-X8-gay"/>
                                 <constraint firstAttribute="width" constant="186" id="qwH-AG-RDd"/>
@@ -236,7 +215,9 @@
                     <color key="backgroundColor" red="0.90196078430000004" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="160" id="HMa-95-0KK"/>
-                        <constraint firstAttribute="height" constant="40" id="xUd-jn-GS3"/>
+                        <constraint firstAttribute="height" constant="40" id="xUd-jn-GS3">
+                            <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                        </constraint>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <state key="normal" title="تسجيل الدخول">
@@ -263,6 +244,27 @@
                         <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="vC5-nn-pyQ"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="1Bq-RW-1hd">
+                    <rect key="frame" x="110" y="95" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="222" id="HrL-ol-LFf"/>
+                        <constraint firstAttribute="height" constant="192" id="Oc2-Cu-b8W">
+                            <variation key="heightClass=regular-widthClass=regular" constant="222"/>
+                        </constraint>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="HrL-ol-LFf"/>
+                            <exclude reference="Oc2-Cu-b8W"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="HrL-ol-LFf"/>
+                            <include reference="Oc2-Cu-b8W"/>
+                        </mask>
+                    </variation>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>

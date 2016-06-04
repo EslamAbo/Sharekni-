@@ -178,6 +178,7 @@
 		718925811C81ECED00BE8A6D /* MostRideDetailsDataForPassenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 718925801C81ECED00BE8A6D /* MostRideDetailsDataForPassenger.m */; };
 		718925841C81ED7300BE8A6D /* MostRideDetailsViewControllerForPassenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 718925831C81ED7300BE8A6D /* MostRideDetailsViewControllerForPassenger.m */; };
 		718925861C81ED8000BE8A6D /* MostRideDetailsViewControllerForPassenger.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718925851C81ED8000BE8A6D /* MostRideDetailsViewControllerForPassenger.xib */; };
+		718FD7211D02613F002D7087 /* MostRideDetailsForMap_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718FD7201D02613F002D7087 /* MostRideDetailsForMap_Ipad.xib */; };
 		719090051C79D796002D5214 /* MapLookupForPassenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 719090041C79D796002D5214 /* MapLookupForPassenger.m */; };
 		719090081C7A286D002D5214 /* AddRemarksViewControllerForMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 719090071C7A286D002D5214 /* AddRemarksViewControllerForMap.m */; };
 		7190900A1C7A287C002D5214 /* AddRemarksViewControllerForMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719090091C7A287C002D5214 /* AddRemarksViewControllerForMap.xib */; };
@@ -515,6 +516,7 @@
 		718925821C81ED6900BE8A6D /* MostRideDetailsViewControllerForPassenger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MostRideDetailsViewControllerForPassenger.h; sourceTree = "<group>"; };
 		718925831C81ED7300BE8A6D /* MostRideDetailsViewControllerForPassenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRideDetailsViewControllerForPassenger.m; sourceTree = "<group>"; };
 		718925851C81ED8000BE8A6D /* MostRideDetailsViewControllerForPassenger.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MostRideDetailsViewControllerForPassenger.xib; sourceTree = "<group>"; };
+		718FD7201D02613F002D7087 /* MostRideDetailsForMap_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MostRideDetailsForMap_Ipad.xib; sourceTree = "<group>"; };
 		719090031C79D776002D5214 /* MapLookupForPassenger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapLookupForPassenger.h; sourceTree = "<group>"; };
 		719090041C79D796002D5214 /* MapLookupForPassenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLookupForPassenger.m; sourceTree = "<group>"; };
 		719090061C7A285E002D5214 /* AddRemarksViewControllerForMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddRemarksViewControllerForMap.h; sourceTree = "<group>"; };
@@ -845,6 +847,7 @@
 				71D522C21C799A4200E0F8E7 /* MostRideDetailsForMap.h */,
 				71D522C31C799A5000E0F8E7 /* MostRideDetailsForMap.m */,
 				71D522C51C799A6600E0F8E7 /* MostRideDetailsForMap.xib */,
+				718FD7201D02613F002D7087 /* MostRideDetailsForMap_Ipad.xib */,
 				148795CA1BEA679800B940D8 /* DriverRideCell.h */,
 				148795CB1BEA679800B940D8 /* DriverRideCell.m */,
 				14DFCB9F1C24873E00EE87CA /* DriverRideCell.xib */,
@@ -1341,6 +1344,7 @@
 				141352181C24E2B0003064DB /* MapInfoWindow.xib in Resources */,
 				1425F8131BFF9C9F00AD086B /* NotificationsViewController.xib in Resources */,
 				140B97D81C1686C30030E266 /* touren_2.png in Resources */,
+				718FD7211D02613F002D7087 /* MostRideDetailsForMap_Ipad.xib in Resources */,
 				140B97D61C1686C30030E266 /* touren_0.png in Resources */,
 				8787E1F31BF7534100CCD53B /* terms_en.html in Resources */,
 				713FD4511CCE97400011CFDE /* RegisterViewController_Ipad.xib in Resources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -45,7 +45,7 @@
                             <rect key="frame" x="13" y="129" width="574" height="40"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-iX-DxU">
-                                    <rect key="frame" x="6" y="5" width="563" height="30"/>
+                                    <rect key="frame" x="6" y="5" width="552" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -62,6 +62,7 @@
                                 <constraint firstItem="y9R-iX-DxU" firstAttribute="leading" secondItem="gUp-6F-44y" secondAttribute="leading" constant="6" id="d9y-SU-9b2"/>
                                 <constraint firstAttribute="trailing" secondItem="y9R-iX-DxU" secondAttribute="trailing" constant="3" id="gYL-Lx-0ZT"/>
                                 <constraint firstAttribute="bottom" secondItem="y9R-iX-DxU" secondAttribute="bottom" constant="2" id="ibB-TB-pus"/>
+                                <constraint firstAttribute="trailing" secondItem="y9R-iX-DxU" secondAttribute="trailing" constant="16" id="j3P-A9-SQ1"/>
                                 <constraint firstAttribute="height" constant="40" id="rmf-ZD-Kbs">
                                     <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                                 </constraint>
@@ -82,6 +83,7 @@
                             </userDefinedRuntimeAttributes>
                             <variation key="default">
                                 <mask key="constraints">
+                                    <exclude reference="Ajb-iT-rA1"/>
                                     <exclude reference="I7k-Hi-3HL"/>
                                     <exclude reference="d9y-SU-9b2"/>
                                     <exclude reference="gYL-Lx-0ZT"/>
@@ -105,7 +107,7 @@
                             <rect key="frame" x="13" y="180" width="574" height="40"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IUp-5u-gE7">
-                                    <rect key="frame" x="6" y="5" width="563" height="30"/>
+                                    <rect key="frame" x="6" y="5" width="552" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -116,6 +118,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="IUp-5u-gE7" firstAttribute="centerX" secondItem="zBf-8S-6aq" secondAttribute="centerX" id="5Ta-kH-GRp"/>
+                                <constraint firstAttribute="trailing" secondItem="IUp-5u-gE7" secondAttribute="trailing" constant="16" id="7Is-IT-oiR"/>
                                 <constraint firstItem="IUp-5u-gE7" firstAttribute="leading" secondItem="zBf-8S-6aq" secondAttribute="leading" constant="6" id="8Yh-6A-ZXM"/>
                                 <constraint firstItem="IUp-5u-gE7" firstAttribute="leading" secondItem="zBf-8S-6aq" secondAttribute="leading" constant="6" id="Gkg-gh-zR5"/>
                                 <constraint firstItem="IUp-5u-gE7" firstAttribute="top" secondItem="zBf-8S-6aq" secondAttribute="top" constant="5" id="ZHr-iF-Gsz"/>
@@ -142,6 +145,7 @@
                             </userDefinedRuntimeAttributes>
                             <variation key="default">
                                 <mask key="constraints">
+                                    <exclude reference="5Ta-kH-GRp"/>
                                     <exclude reference="Gkg-gh-zR5"/>
                                     <exclude reference="fKz-PB-HHx"/>
                                     <exclude reference="fkl-OC-4MO"/>
@@ -165,7 +169,7 @@
                             <rect key="frame" x="13" y="231" width="574" height="40"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Mcc-PL-otV">
-                                    <rect key="frame" x="43" y="5" width="526" height="30"/>
+                                    <rect key="frame" x="59" y="5" width="510" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     <connections>
@@ -173,7 +177,7 @@
                                     </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+971-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EQ-IV-zlt">
-                                    <rect key="frame" x="0.0" y="5" width="41" height="30"/>
+                                    <rect key="frame" x="16" y="5" width="41" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="41" id="TVt-ve-zYk"/>
                                         <constraint firstAttribute="height" constant="40" id="U39-Ql-lJj"/>
@@ -206,7 +210,7 @@
                                     <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                                 </constraint>
                                 <constraint firstItem="Mcc-PL-otV" firstAttribute="bottom" secondItem="7EQ-IV-zlt" secondAttribute="bottom" id="9VX-vZ-JXw"/>
-                                <constraint firstItem="7EQ-IV-zlt" firstAttribute="leading" secondItem="aUw-RD-lGZ" secondAttribute="leading" id="9tj-Ba-OD3"/>
+                                <constraint firstItem="7EQ-IV-zlt" firstAttribute="leading" secondItem="aUw-RD-lGZ" secondAttribute="leading" constant="16" id="9tj-Ba-OD3"/>
                                 <constraint firstItem="7EQ-IV-zlt" firstAttribute="top" secondItem="aUw-RD-lGZ" secondAttribute="top" constant="5" id="Dq5-ob-RuG"/>
                                 <constraint firstItem="Mcc-PL-otV" firstAttribute="centerY" secondItem="aUw-RD-lGZ" secondAttribute="centerY" id="MOK-CP-PeA">
                                     <variation key="heightClass=regular-widthClass=regular" constant="-5"/>
@@ -265,7 +269,7 @@
                             <rect key="frame" x="13" y="282" width="574" height="40"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username (your email)" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-gU-OcB">
-                                    <rect key="frame" x="6" y="5" width="563" height="30"/>
+                                    <rect key="frame" x="6" y="5" width="552" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -277,6 +281,7 @@
                             <constraints>
                                 <constraint firstItem="5bl-gU-OcB" firstAttribute="top" secondItem="XmP-bT-yel" secondAttribute="top" constant="5" id="4ML-8T-EFE"/>
                                 <constraint firstAttribute="trailing" secondItem="5bl-gU-OcB" secondAttribute="trailing" constant="3" id="C0Z-ib-r35"/>
+                                <constraint firstAttribute="trailing" secondItem="5bl-gU-OcB" secondAttribute="trailing" constant="16" id="Lt1-AH-0jL"/>
                                 <constraint firstItem="5bl-gU-OcB" firstAttribute="centerX" secondItem="XmP-bT-yel" secondAttribute="centerX" id="Lyp-MC-wMd"/>
                                 <constraint firstItem="5bl-gU-OcB" firstAttribute="leading" secondItem="XmP-bT-yel" secondAttribute="leading" constant="6" id="PVR-YO-ZOW"/>
                                 <constraint firstAttribute="bottom" secondItem="5bl-gU-OcB" secondAttribute="bottom" constant="3" id="TCA-GR-dHe"/>
@@ -303,6 +308,7 @@
                             <variation key="default">
                                 <mask key="constraints">
                                     <exclude reference="C0Z-ib-r35"/>
+                                    <exclude reference="Lyp-MC-wMd"/>
                                     <exclude reference="TCA-GR-dHe"/>
                                     <exclude reference="aTC-3z-9ts"/>
                                     <exclude reference="kA9-Ca-pwI"/>
@@ -325,7 +331,7 @@
                             <rect key="frame" x="13" y="334" width="574" height="40"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nationality" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ygw-Ri-mGp" customClass="MLPAutoCompleteTextField">
-                                    <rect key="frame" x="3" y="5" width="563" height="30"/>
+                                    <rect key="frame" x="3" y="5" width="547" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -335,7 +341,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="Ygw-Ri-mGp" firstAttribute="trailing" secondItem="qRE-Sj-4sv" secondAttribute="trailingMargin" id="5k1-Cs-6Yl"/>
+                                <constraint firstItem="Ygw-Ri-mGp" firstAttribute="trailing" secondItem="qRE-Sj-4sv" secondAttribute="trailingMargin" constant="-16" id="5k1-Cs-6Yl"/>
                                 <constraint firstAttribute="bottom" secondItem="Ygw-Ri-mGp" secondAttribute="bottom" constant="3" id="TPk-v4-QqD"/>
                                 <constraint firstItem="Ygw-Ri-mGp" firstAttribute="centerY" secondItem="qRE-Sj-4sv" secondAttribute="centerY" id="Vtv-A5-zKZ">
                                     <variation key="heightClass=regular-widthClass=regular" constant="-5"/>
@@ -385,7 +391,7 @@
                             <rect key="frame" x="13" y="386" width="574" height="40"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Preferred Language" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="r5S-Yt-gnv">
-                                    <rect key="frame" x="6" y="5" width="563" height="30"/>
+                                    <rect key="frame" x="6" y="5" width="552" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -395,6 +401,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="r5S-Yt-gnv" secondAttribute="trailing" constant="16" id="11r-Na-pSv"/>
                                 <constraint firstItem="r5S-Yt-gnv" firstAttribute="top" secondItem="fRT-2t-zaJ" secondAttribute="top" constant="3" id="6lO-eM-5lS"/>
                                 <constraint firstAttribute="bottom" secondItem="r5S-Yt-gnv" secondAttribute="bottom" constant="3" id="Aqu-uR-Zpg"/>
                                 <constraint firstItem="r5S-Yt-gnv" firstAttribute="top" secondItem="fRT-2t-zaJ" secondAttribute="top" constant="5" id="EHd-r0-LqN"/>
@@ -425,6 +432,7 @@
                                     <exclude reference="6lO-eM-5lS"/>
                                     <exclude reference="Aqu-uR-Zpg"/>
                                     <exclude reference="b1t-zz-HqI"/>
+                                    <exclude reference="i4o-X0-dzH"/>
                                     <exclude reference="kyc-Y5-7wh"/>
                                 </mask>
                             </variation>

@@ -1029,22 +1029,17 @@
                                         <mask key="constraints">
                                             <exclude reference="3vp-M1-yMG"/>
                                             <exclude reference="6Gc-ZU-XXW"/>
-                                            <exclude reference="CTS-tY-5zX"/>
                                             <exclude reference="9Wr-mQ-bj1"/>
                                             <exclude reference="DJG-6o-X7O"/>
                                             <exclude reference="IUr-eU-HVZ"/>
                                             <exclude reference="KGT-81-pS4"/>
+                                            <exclude reference="CTS-tY-5zX"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=regular">
                                         <mask key="constraints">
                                             <exclude reference="3vp-M1-yMG"/>
                                             <exclude reference="6Gc-ZU-XXW"/>
-                                            <include reference="CTS-tY-5zX"/>
-                                            <exclude reference="Q33-3R-YvR"/>
-                                            <exclude reference="Q8O-2T-kSz"/>
-                                            <exclude reference="Qtz-Ae-sQY"/>
-                                            <exclude reference="hnG-lP-dJe"/>
                                             <include reference="9Wr-mQ-bj1"/>
                                             <exclude reference="DJG-6o-X7O"/>
                                             <include reference="IUr-eU-HVZ"/>
@@ -1052,6 +1047,11 @@
                                             <exclude reference="ZGI-1G-jKU"/>
                                             <exclude reference="vwQ-1f-0f5"/>
                                             <exclude reference="yjb-Bn-heg"/>
+                                            <include reference="CTS-tY-5zX"/>
+                                            <exclude reference="Q33-3R-YvR"/>
+                                            <exclude reference="Q8O-2T-kSz"/>
+                                            <exclude reference="Qtz-Ae-sQY"/>
+                                            <exclude reference="hnG-lP-dJe"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -1146,22 +1146,17 @@
                                         <mask key="constraints">
                                             <exclude reference="oyK-fF-Lsh"/>
                                             <exclude reference="vug-Aj-jk2"/>
-                                            <exclude reference="BYT-hb-adM"/>
                                             <exclude reference="ASc-uM-owp"/>
                                             <exclude reference="LFn-X7-3mp"/>
                                             <exclude reference="bpd-gi-OUK"/>
                                             <exclude reference="isx-aJ-xU5"/>
+                                            <exclude reference="BYT-hb-adM"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=regular">
                                         <mask key="constraints">
                                             <exclude reference="oyK-fF-Lsh"/>
                                             <exclude reference="vug-Aj-jk2"/>
-                                            <exclude reference="48S-LZ-rEg"/>
-                                            <include reference="BYT-hb-adM"/>
-                                            <exclude reference="Db8-47-Ufw"/>
-                                            <exclude reference="Oux-5J-hpf"/>
-                                            <exclude reference="Tbu-zo-h3G"/>
                                             <exclude reference="60c-ci-vwF"/>
                                             <exclude reference="ASc-uM-owp"/>
                                             <include reference="LFn-X7-3mp"/>
@@ -1169,6 +1164,11 @@
                                             <include reference="bpd-gi-OUK"/>
                                             <exclude reference="hPg-6E-Yxq"/>
                                             <include reference="isx-aJ-xU5"/>
+                                            <exclude reference="48S-LZ-rEg"/>
+                                            <include reference="BYT-hb-adM"/>
+                                            <exclude reference="Db8-47-Ufw"/>
+                                            <exclude reference="Oux-5J-hpf"/>
+                                            <exclude reference="Tbu-zo-h3G"/>
                                         </mask>
                                     </variation>
                                 </view>
@@ -1327,13 +1327,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="sEK-My-KWC">
-                                            <rect key="frame" x="63" y="17" width="391" height="300"/>
+                                            <rect key="frame" x="63" y="17" width="394" height="300"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="oeG-4m-gWu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="77" height="300"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="78" height="300"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="أنثى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7L-hN-YYh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="36" height="300"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="37" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="5Uu-tT-oHw"/>
                                                                 <constraint firstAttribute="width" constant="56" id="6fU-hj-SmO"/>
@@ -1355,7 +1355,7 @@
                                                             </variation>
                                                         </label>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohc-h0-Zgy">
-                                                            <rect key="frame" x="49" y="0.0" width="28" height="300"/>
+                                                            <rect key="frame" x="50" y="0.0" width="28" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="80f-uh-yPu"/>
                                                                 <constraint firstAttribute="width" constant="28" id="ZmY-D3-czc"/>
@@ -1382,11 +1382,11 @@
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="yP0-Ib-VUS">
-                                                    <rect key="frame" x="157" y="0.0" width="77" height="300"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="yP0-Ib-VUS">
+                                                    <rect key="frame" x="158" y="0.0" width="78" height="300"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ذكر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXq-sm-Wkl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="36" height="300"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="37" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="37" id="0Ow-Nu-4lC">
                                                                     <variation key="heightClass=regular-widthClass=regular" constant="56"/>
@@ -1412,7 +1412,7 @@
                                                             </variation>
                                                         </label>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-G4-TUj">
-                                                            <rect key="frame" x="49" y="0.0" width="28" height="300"/>
+                                                            <rect key="frame" x="50" y="0.0" width="28" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="Nj1-sh-Ucs"/>
                                                                 <constraint firstAttribute="width" constant="28" id="bPe-ho-FOe"/>
@@ -1440,10 +1440,10 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="C2c-YT-Zkx">
-                                                    <rect key="frame" x="314" y="0.0" width="77" height="300"/>
+                                                    <rect key="frame" x="316" y="0.0" width="78" height="300"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="كلاهما" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLT-tM-88T">
-                                                            <rect key="frame" x="0.0" y="0.0" width="36" height="300"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="37" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="OOd-ST-tsp"/>
                                                                 <constraint firstAttribute="width" constant="36" id="w15-sI-FAh"/>
@@ -1469,7 +1469,7 @@
                                                             </variation>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMF-Xz-GYU">
-                                                            <rect key="frame" x="49" y="0.0" width="28" height="300"/>
+                                                            <rect key="frame" x="50" y="0.0" width="28" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="d7N-0m-TgQ"/>
                                                                 <constraint firstAttribute="width" constant="28" id="ehE-2c-FFm"/>

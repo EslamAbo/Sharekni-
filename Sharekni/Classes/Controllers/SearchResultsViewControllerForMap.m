@@ -123,9 +123,17 @@
 - (MostRideDetailsForMap *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MostRideDetailsForMap *cell = (MostRideDetailsForMap*)[tableView dequeueReusableCellWithIdentifier:MOST_RIDE_DETAILS_CELLID];
+    if(IDIOM == IPAD) {
+        
+        if (cell == nil) {
+            cell = (MostRideDetailsForMap *)[[[NSBundle mainBundle] loadNibNamed:@"MostRideDetailsForMap_Ipad" owner:nil options:nil] objectAtIndex:0];
+            cell.contentView.backgroundColor = [UIColor clearColor];
+        }
+    }else {
     if (cell == nil) {
         cell = (MostRideDetailsForMap *)[[[NSBundle mainBundle] loadNibNamed:@"MostRideDetailsForMap" owner:nil options:nil] objectAtIndex:0];
         cell.contentView.backgroundColor = [UIColor clearColor];
+    }
     }
     cell.delegate = self ;
     DriverSearchResult *driver = [self.results objectAtIndex:indexPath.row];

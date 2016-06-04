@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -59,7 +59,9 @@
                                 <constraint firstItem="y9R-iX-DxU" firstAttribute="top" secondItem="gUp-6F-44y" secondAttribute="top" constant="5" id="H6I-vc-bb1"/>
                                 <constraint firstItem="y9R-iX-DxU" firstAttribute="top" secondItem="gUp-6F-44y" secondAttribute="top" constant="2" id="I7k-Hi-3HL"/>
                                 <constraint firstItem="y9R-iX-DxU" firstAttribute="leading" secondItem="gUp-6F-44y" secondAttribute="leading" constant="6" id="YMK-Sb-5fs"/>
-                                <constraint firstItem="y9R-iX-DxU" firstAttribute="leading" secondItem="gUp-6F-44y" secondAttribute="leading" constant="6" id="d9y-SU-9b2"/>
+                                <constraint firstItem="y9R-iX-DxU" firstAttribute="leading" secondItem="gUp-6F-44y" secondAttribute="leading" constant="6" id="d9y-SU-9b2">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                                </constraint>
                                 <constraint firstAttribute="trailing" secondItem="y9R-iX-DxU" secondAttribute="trailing" constant="3" id="gYL-Lx-0ZT"/>
                                 <constraint firstAttribute="bottom" secondItem="y9R-iX-DxU" secondAttribute="bottom" constant="2" id="ibB-TB-pus"/>
                                 <constraint firstAttribute="height" constant="40" id="rmf-ZD-Kbs">
@@ -117,7 +119,9 @@
                             <constraints>
                                 <constraint firstItem="IUp-5u-gE7" firstAttribute="centerX" secondItem="zBf-8S-6aq" secondAttribute="centerX" id="5Ta-kH-GRp"/>
                                 <constraint firstItem="IUp-5u-gE7" firstAttribute="leading" secondItem="zBf-8S-6aq" secondAttribute="leading" constant="6" id="8Yh-6A-ZXM"/>
-                                <constraint firstItem="IUp-5u-gE7" firstAttribute="leading" secondItem="zBf-8S-6aq" secondAttribute="leading" constant="6" id="Gkg-gh-zR5"/>
+                                <constraint firstItem="IUp-5u-gE7" firstAttribute="leading" secondItem="zBf-8S-6aq" secondAttribute="leading" constant="6" id="Gkg-gh-zR5">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                                </constraint>
                                 <constraint firstItem="IUp-5u-gE7" firstAttribute="top" secondItem="zBf-8S-6aq" secondAttribute="top" constant="5" id="ZHr-iF-Gsz"/>
                                 <constraint firstItem="IUp-5u-gE7" firstAttribute="centerY" secondItem="zBf-8S-6aq" secondAttribute="centerY" id="ef0-dW-E3j">
                                     <variation key="heightClass=regular-widthClass=regular" constant="-5"/>
@@ -214,7 +218,9 @@
                                 <constraint firstAttribute="trailing" secondItem="Mcc-PL-otV" secondAttribute="trailing" constant="5" id="SUA-Bp-qaq"/>
                                 <constraint firstItem="Mcc-PL-otV" firstAttribute="leading" secondItem="7EQ-IV-zlt" secondAttribute="trailing" constant="2" id="TJs-PS-I9C"/>
                                 <constraint firstItem="7EQ-IV-zlt" firstAttribute="top" secondItem="Mcc-PL-otV" secondAttribute="top" id="VRC-YG-5Wg"/>
-                                <constraint firstItem="7EQ-IV-zlt" firstAttribute="leading" secondItem="aUw-RD-lGZ" secondAttribute="leading" id="gYv-z6-rmo"/>
+                                <constraint firstItem="7EQ-IV-zlt" firstAttribute="leading" secondItem="aUw-RD-lGZ" secondAttribute="leading" id="gYv-z6-rmo">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                                </constraint>
                                 <constraint firstItem="Mcc-PL-otV" firstAttribute="leading" secondItem="7EQ-IV-zlt" secondAttribute="trailing" constant="4" id="k4d-2O-KRE"/>
                                 <constraint firstAttribute="bottom" secondItem="Mcc-PL-otV" secondAttribute="bottom" constant="3" id="vPc-mh-f6F">
                                     <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
@@ -280,7 +286,9 @@
                                 <constraint firstItem="5bl-gU-OcB" firstAttribute="centerX" secondItem="XmP-bT-yel" secondAttribute="centerX" id="Lyp-MC-wMd"/>
                                 <constraint firstItem="5bl-gU-OcB" firstAttribute="leading" secondItem="XmP-bT-yel" secondAttribute="leading" constant="6" id="PVR-YO-ZOW"/>
                                 <constraint firstAttribute="bottom" secondItem="5bl-gU-OcB" secondAttribute="bottom" constant="3" id="TCA-GR-dHe"/>
-                                <constraint firstItem="5bl-gU-OcB" firstAttribute="leading" secondItem="XmP-bT-yel" secondAttribute="leading" constant="6" id="aTC-3z-9ts"/>
+                                <constraint firstItem="5bl-gU-OcB" firstAttribute="leading" secondItem="XmP-bT-yel" secondAttribute="leading" constant="6" id="aTC-3z-9ts">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                                </constraint>
                                 <constraint firstAttribute="height" constant="40" id="aXA-L6-ghl">
                                     <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                                 </constraint>
@@ -347,7 +355,9 @@
                                 <constraint firstItem="Ygw-Ri-mGp" firstAttribute="top" secondItem="qRE-Sj-4sv" secondAttribute="top" constant="5" id="ZIZ-ie-Mrd"/>
                                 <constraint firstItem="Ygw-Ri-mGp" firstAttribute="leading" secondItem="qRE-Sj-4sv" secondAttribute="leading" constant="3" id="nhJ-cw-Rny"/>
                                 <constraint firstAttribute="trailing" secondItem="Ygw-Ri-mGp" secondAttribute="trailing" constant="3" id="uK9-jE-djT"/>
-                                <constraint firstItem="Ygw-Ri-mGp" firstAttribute="leading" secondItem="qRE-Sj-4sv" secondAttribute="leading" constant="6" id="yHm-VZ-mB1"/>
+                                <constraint firstItem="Ygw-Ri-mGp" firstAttribute="leading" secondItem="qRE-Sj-4sv" secondAttribute="leading" constant="6" id="yHm-VZ-mB1">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                                </constraint>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -399,7 +409,9 @@
                                 <constraint firstAttribute="bottom" secondItem="r5S-Yt-gnv" secondAttribute="bottom" constant="3" id="Aqu-uR-Zpg"/>
                                 <constraint firstItem="r5S-Yt-gnv" firstAttribute="top" secondItem="fRT-2t-zaJ" secondAttribute="top" constant="5" id="EHd-r0-LqN"/>
                                 <constraint firstItem="r5S-Yt-gnv" firstAttribute="leading" secondItem="fRT-2t-zaJ" secondAttribute="leading" constant="6" id="Nur-xW-HpD"/>
-                                <constraint firstItem="r5S-Yt-gnv" firstAttribute="leading" secondItem="fRT-2t-zaJ" secondAttribute="leading" constant="6" id="b1t-zz-HqI"/>
+                                <constraint firstItem="r5S-Yt-gnv" firstAttribute="leading" secondItem="fRT-2t-zaJ" secondAttribute="leading" constant="6" id="b1t-zz-HqI">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                                </constraint>
                                 <constraint firstAttribute="height" constant="40" id="bJN-jA-CDP">
                                     <variation key="heightClass=regular-widthClass=regular" constant="50"/>
                                 </constraint>
@@ -536,7 +548,9 @@
                             <rect key="frame" x="75" y="527" width="451" height="39"/>
                             <color key="backgroundColor" red="0.90196078430000004" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="39" id="IkR-HC-lZR"/>
+                                <constraint firstAttribute="height" constant="39" id="IkR-HC-lZR">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                </constraint>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="Update">
