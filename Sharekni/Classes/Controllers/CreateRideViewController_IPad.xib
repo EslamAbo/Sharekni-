@@ -10,6 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateRideViewController">
             <connections>
+                <outlet property="LAccept" destination="HcW-IR-qi3" id="M1E-h7-Dkk"/>
+                <outlet property="LBoth" destination="iLT-tM-88T" id="FL5-ZC-VEW"/>
+                <outlet property="LDoesnotAccept" destination="D5h-fZ-2Nx" id="b6M-QB-IuE"/>
+                <outlet property="LFemale" destination="e7L-hN-YYh" id="sno-KU-fA3"/>
+                <outlet property="LMale" destination="mXq-sm-Wkl" id="3Ng-3k-x7k"/>
+                <outlet property="LPrefGender" destination="ywe-dB-C8V" id="uyW-3k-hi8"/>
+                <outlet property="LSmokers" destination="WEE-8n-Yo6" id="HeE-Ma-XS6"/>
                 <outlet property="acceptBtn" destination="U0f-vw-Ftp" id="jlu-0F-Nff"/>
                 <outlet property="availableSeatsLabel" destination="T3d-m3-W4U" id="OdH-6f-3El"/>
                 <outlet property="bothBtn" destination="xMF-Xz-GYU" id="o5c-1G-nnV"/>
@@ -592,7 +599,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dR8-pE-cHV">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dR8-pE-cHV">
                                             <rect key="frame" x="187" y="37" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="FhQ-rB-9Fe"/>
@@ -616,7 +623,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZR-UK-AYX">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vZR-UK-AYX">
                                             <rect key="frame" x="331" y="37" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="CC8-hc-Wpd"/>
@@ -640,7 +647,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W7-8G-yv9">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="2W7-8G-yv9">
                                             <rect key="frame" x="75" y="90" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="Pdm-YB-rtk"/>
@@ -662,7 +669,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-wM-mKD">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thr" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-wM-mKD">
                                             <rect key="frame" x="187" y="90" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="AGu-qJ-IQl"/>
@@ -684,7 +691,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0g-D2-q9k">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fri" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="O0g-D2-q9k">
                                             <rect key="frame" x="331" y="90" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="Fyn-Bm-fgi"/>
@@ -706,7 +713,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-SW-9Mw">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-SW-9Mw">
                                             <rect key="frame" x="427" y="37" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="JLc-Ft-3pC"/>
@@ -730,7 +737,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-o0-gvc">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sat" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-o0-gvc">
                                             <rect key="frame" x="75" y="37" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="Rzg-1V-fUa"/>

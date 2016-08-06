@@ -10,6 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateRideViewController">
             <connections>
+                <outlet property="LAccept" destination="HcW-IR-qi3" id="fjm-bE-0ep"/>
+                <outlet property="LBoth" destination="iLT-tM-88T" id="2P0-XW-tN8"/>
+                <outlet property="LDoesnotAccept" destination="D5h-fZ-2Nx" id="nu6-SM-0WI"/>
+                <outlet property="LFemale" destination="e7L-hN-YYh" id="HMq-kr-K4x"/>
+                <outlet property="LMale" destination="mXq-sm-Wkl" id="fsM-cZ-lXT"/>
+                <outlet property="LPrefGender" destination="ywe-dB-C8V" id="Fjn-V5-rGM"/>
+                <outlet property="LSmokers" destination="WEE-8n-Yo6" id="UWK-By-ZXb"/>
                 <outlet property="acceptBtn" destination="U0f-vw-Ftp" id="jlu-0F-Nff"/>
                 <outlet property="availableSeatsLabel" destination="T3d-m3-W4U" id="OdH-6f-3El"/>
                 <outlet property="bothBtn" destination="xMF-Xz-GYU" id="o5c-1G-nnV"/>
@@ -623,31 +630,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجمعة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-o0-gvc">
-                                            <rect key="frame" x="75" y="37" width="45" height="45"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="45" id="Rzg-1V-fUa"/>
-                                                <constraint firstAttribute="height" constant="45" id="fX0-SN-VeO"/>
-                                                <constraint firstAttribute="width" constant="45" id="tDr-Nk-ola"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="fX0-SN-VeO"/>
-                                                    <exclude reference="tDr-Nk-ola"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="heightClass=regular-widthClass=regular">
-                                                <mask key="constraints">
-                                                    <exclude reference="Rzg-1V-fUa"/>
-                                                    <include reference="fX0-SN-VeO"/>
-                                                    <include reference="tDr-Nk-ola"/>
-                                                </mask>
-                                            </variation>
-                                        </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="الخميس" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dR8-pE-cHV">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="الخميس" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="dR8-pE-cHV">
                                             <rect key="frame" x="187" y="37" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="FhQ-rB-9Fe"/>
@@ -671,7 +654,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الأربعاء" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZR-UK-AYX">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الأربعاء" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vZR-UK-AYX">
                                             <rect key="frame" x="331" y="37" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="CC8-hc-Wpd"/>
@@ -695,7 +678,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الثلاثاء" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-SW-9Mw">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الثلاثاء" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-SW-9Mw">
                                             <rect key="frame" x="427" y="37" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="JLc-Ft-3pC"/>
@@ -719,7 +702,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإثنين" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W7-8G-yv9">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الإثنين" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="2W7-8G-yv9">
                                             <rect key="frame" x="75" y="90" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="Pdm-YB-rtk"/>
@@ -741,7 +724,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الأحد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-wM-mKD">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الأحد" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-wM-mKD">
                                             <rect key="frame" x="187" y="90" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="AGu-qJ-IQl"/>
@@ -763,7 +746,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السبت" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0g-D2-q9k">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السبت" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="O0g-D2-q9k">
                                             <rect key="frame" x="331" y="90" width="45" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="Fyn-Bm-fgi"/>
@@ -782,6 +765,31 @@
                                                 <mask key="constraints">
                                                     <include reference="Fyn-Bm-fgi"/>
                                                     <include reference="XlW-FZ-LDp"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجمعة" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-o0-gvc">
+                                            <rect key="frame" x="75" y="37" width="45" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="45" id="Rzg-1V-fUa"/>
+                                                <constraint firstAttribute="height" constant="45" id="fX0-SN-VeO"/>
+                                                <constraint firstAttribute="width" constant="45" id="tDr-Nk-ola"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="fX0-SN-VeO"/>
+                                                    <exclude reference="tDr-Nk-ola"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                <rect key="frame" x="34" y="61" width="45" height="45"/>
+                                                <mask key="constraints">
+                                                    <exclude reference="Rzg-1V-fUa"/>
+                                                    <include reference="fX0-SN-VeO"/>
+                                                    <include reference="tDr-Nk-ola"/>
                                                 </mask>
                                             </variation>
                                         </label>
@@ -1329,10 +1337,10 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="sEK-My-KWC">
                                             <rect key="frame" x="63" y="17" width="394" height="300"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="oeG-4m-gWu">
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="oeG-4m-gWu">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="300"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="أنثى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7L-hN-YYh">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="أنثى" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7L-hN-YYh">
                                                             <rect key="frame" x="0.0" y="0.0" width="37" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="5Uu-tT-oHw"/>
@@ -1354,7 +1362,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohc-h0-Zgy">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohc-h0-Zgy">
                                                             <rect key="frame" x="50" y="0.0" width="28" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="80f-uh-yPu"/>
@@ -1382,10 +1390,10 @@
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="yP0-Ib-VUS">
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="yP0-Ib-VUS">
                                                     <rect key="frame" x="158" y="0.0" width="78" height="300"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="ذكر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXq-sm-Wkl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ذكر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXq-sm-Wkl">
                                                             <rect key="frame" x="0.0" y="0.0" width="37" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="37" id="0Ow-Nu-4lC">
@@ -1411,7 +1419,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-G4-TUj">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8I5-G4-TUj">
                                                             <rect key="frame" x="50" y="0.0" width="28" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="Nj1-sh-Ucs"/>
@@ -1439,10 +1447,10 @@
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="C2c-YT-Zkx">
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="C2c-YT-Zkx">
                                                     <rect key="frame" x="316" y="0.0" width="78" height="300"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="كلاهما" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLT-tM-88T">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="كلاهما" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLT-tM-88T">
                                                             <rect key="frame" x="0.0" y="0.0" width="37" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="OOd-ST-tsp"/>
@@ -1468,7 +1476,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMF-Xz-GYU">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMF-Xz-GYU">
                                                             <rect key="frame" x="50" y="0.0" width="28" height="300"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="d7N-0m-TgQ"/>

@@ -39,6 +39,10 @@
 
 #import "MostRideDetailsViewControllerForPassenger.h"
 
+#import "User.h"
+
+#import "HappyMeter.h"
+
 
 #define VERTICAL_SPACE 15
 #define REVIEWS_CELL_HEIGHT  117
@@ -200,6 +204,8 @@
     [self configureMapView];
     [self configureData];
     [self getDriverRate];
+    
+   
 }
 
 - (BOOL)shouldAutorotate
@@ -750,7 +756,7 @@
     //        {
     //            [self.navigationController popToViewController:controller animated:YES];
     if (self.alreadyJoined == NO) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:GET_STRING(@"Received your request and waiting for The approval") preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:GET_STRING(@"Request had been sent Successfully , Wait for driver Approval.") preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *ok = [UIAlertAction actionWithTitle:GET_STRING(@"Ok") style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:ok];
@@ -1001,7 +1007,7 @@
     else if (IS_IPHONE_6P)
     {
         frame =  CGRectMake(_MKmapView.frame.origin.x, _MKmapView.frame.origin.y, 414.0f, 280);
-    }if (IDIOM == IPAD) {
+    }else if (IDIOM == IPAD) {
         CGFloat width = [UIScreen mainScreen].bounds.size.width;
         
         frame =  CGRectMake(_MKmapView.frame.origin.x, _MKmapView.frame.origin.y, width, 280);

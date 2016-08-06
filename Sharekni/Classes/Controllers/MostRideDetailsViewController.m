@@ -21,7 +21,9 @@
 #import "User.h"
 #import "LoginViewController.h"
 
-@interface MostRideDetailsViewController ()<SendMSGDelegate,MFMessageComposeViewControllerDelegate>
+#import "HappyMeter.h"
+#import "UIViewController+MJPopupViewController.h"
+@interface MostRideDetailsViewController ()<SendMSGDelegate,MFMessageComposeViewControllerDelegate,MJAddRemarkPopupDelegate>
 
 @property (nonatomic ,weak) IBOutlet UILabel *FromRegionName ;
 @property (nonatomic ,weak) IBOutlet UILabel *ToRegionName ;
@@ -71,7 +73,9 @@
     }
 
     [self getRideDetails];
+   
 }
+
 
 - (BOOL)shouldAutorotate
 {

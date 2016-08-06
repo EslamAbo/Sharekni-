@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController">
             <connections>
+                <outlet property="TextViaPicker" destination="XD2-XI-SiA" id="ELc-W9-gHr"/>
                 <outlet property="bestDriversView" destination="PxC-jE-2qJ" id="AbF-Bk-esM"/>
                 <outlet property="enBtn" destination="JIY-cG-9Qa" id="MaJ-7o-McW"/>
                 <outlet property="mostRidesView" destination="y4V-HN-rDg" id="UFz-pe-AZ1"/>
@@ -44,7 +45,7 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="أكثر الرحلات طلبا" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vol-a4-G1b">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="أكثر الرحلات طلبا" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Vol-a4-G1b">
                             <rect key="frame" x="39" y="8" width="124" height="30"/>
                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="27"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,7 +193,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdR-QC-z2C" userLabel="جولة">
                             <rect key="frame" x="162" y="480" width="75" height="75"/>
-                            <state key="normal" backgroundImage="tour_icon">
+                            <state key="normal" backgroundImage="Happy_icon">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -208,28 +209,6 @@
                                 <action selector="login:" destination="-1" eventType="touchUpInside" id="mi2-5n-Pfw"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جولة فى شاركنى" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWt-Oo-qBc">
-                            <rect key="frame" x="169" y="529" width="60" height="23"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="18" id="bur-Sp-eYr"/>
-                                <constraint firstAttribute="width" constant="120" id="mSe-ha-azI"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                            <color key="textColor" red="0.90196078431372551" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="bur-Sp-eYr"/>
-                                    <exclude reference="mSe-ha-azI"/>
-                                </mask>
-                            </variation>
-                            <variation key="heightClass=regular-widthClass=regular">
-                                <mask key="constraints">
-                                    <include reference="bur-Sp-eYr"/>
-                                    <include reference="mSe-ha-azI"/>
-                                </mask>
-                            </variation>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ub-Al-00A">
                             <rect key="frame" x="17" y="529" width="54" height="21"/>
                             <constraints>
@@ -305,6 +284,28 @@
                                 <action selector="search:" destination="-1" eventType="touchUpInside" id="baT-OT-02Z"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مقياس السعادة" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWt-Oo-qBc">
+                            <rect key="frame" x="169" y="529" width="60" height="23"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="bur-Sp-eYr"/>
+                                <constraint firstAttribute="width" constant="120" id="mSe-ha-azI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                            <color key="textColor" red="0.90196078431372551" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="bur-Sp-eYr"/>
+                                    <exclude reference="mSe-ha-azI"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=regular">
+                                <mask key="constraints">
+                                    <include reference="bur-Sp-eYr"/>
+                                    <include reference="mSe-ha-azI"/>
+                                </mask>
+                            </variation>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -373,11 +374,11 @@
                             <exclude reference="rEX-hD-ryj"/>
                             <exclude reference="tdR-QC-z2C"/>
                             <exclude reference="KMG-Mz-UdC"/>
-                            <exclude reference="iWt-Oo-qBc"/>
                             <exclude reference="0Ub-Al-00A"/>
                             <exclude reference="9wC-Ct-Hoy"/>
                             <exclude reference="v8C-CB-YJe"/>
                             <exclude reference="fih-H5-jsf"/>
+                            <exclude reference="iWt-Oo-qBc"/>
                         </mask>
                         <mask key="constraints">
                             <exclude reference="LOz-5o-noD"/>
@@ -418,11 +419,11 @@
                             <include reference="rEX-hD-ryj"/>
                             <include reference="tdR-QC-z2C"/>
                             <include reference="KMG-Mz-UdC"/>
-                            <include reference="iWt-Oo-qBc"/>
                             <include reference="0Ub-Al-00A"/>
                             <include reference="9wC-Ct-Hoy"/>
                             <include reference="v8C-CB-YJe"/>
                             <include reference="fih-H5-jsf"/>
+                            <include reference="iWt-Oo-qBc"/>
                         </mask>
                         <mask key="constraints">
                             <include reference="LOz-5o-noD"/>
@@ -505,6 +506,30 @@
                         </mask>
                     </variation>
                 </imageView>
+                <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XD2-XI-SiA">
+                    <rect key="frame" x="251" y="285" width="97" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="008-SO-j1a"/>
+                        <constraint firstAttribute="height" constant="30" id="EMc-pm-ogr"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="008-SO-j1a"/>
+                            <exclude reference="EMc-pm-ogr"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="008-SO-j1a"/>
+                            <include reference="EMc-pm-ogr"/>
+                        </mask>
+                    </variation>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -519,11 +544,13 @@
                 <constraint firstItem="Xbc-i7-zln" firstAttribute="top" secondItem="qQ8-4g-oNU" secondAttribute="top" constant="83" id="Jro-u9-0hX">
                     <variation key="heightClass=regular-widthClass=regular" constant="91"/>
                 </constraint>
+                <constraint firstItem="XD2-XI-SiA" firstAttribute="top" secondItem="fEs-t3-EbW" secondAttribute="top" constant="86" id="QWo-Fr-2p6"/>
                 <constraint firstItem="PxC-jE-2qJ" firstAttribute="bottom" secondItem="qQ8-4g-oNU" secondAttribute="bottom" constant="-52" id="S2A-Oh-ubm">
                     <variation key="heightClass=regular-widthClass=regular" constant="-67"/>
                 </constraint>
                 <constraint firstAttribute="trailing" secondItem="qQ8-4g-oNU" secondAttribute="trailing" id="U68-jc-YEL"/>
                 <constraint firstItem="Xbc-i7-zln" firstAttribute="centerX" secondItem="fEs-t3-EbW" secondAttribute="centerX" id="ZjB-dn-fDi"/>
+                <constraint firstItem="JIY-cG-9Qa" firstAttribute="leading" secondItem="XD2-XI-SiA" secondAttribute="trailing" constant="63" id="cuf-jZ-f1h"/>
                 <constraint firstAttribute="trailing" secondItem="Nej-7v-xze" secondAttribute="trailing" id="dWd-Mc-feS"/>
                 <constraint firstItem="y4V-HN-rDg" firstAttribute="centerX" secondItem="fEs-t3-EbW" secondAttribute="centerX" id="gM4-1y-vOc"/>
                 <constraint firstItem="PxC-jE-2qJ" firstAttribute="centerX" secondItem="fEs-t3-EbW" secondAttribute="centerX" id="ltr-uN-9l3"/>
@@ -546,10 +573,12 @@
                     <exclude reference="4pJ-5s-vlp"/>
                     <exclude reference="U68-jc-YEL"/>
                     <exclude reference="JJJ-fR-b8y"/>
+                    <exclude reference="cuf-jZ-f1h"/>
                     <exclude reference="vkC-hp-ZTC"/>
                     <exclude reference="Jro-u9-0hX"/>
                     <exclude reference="ZjB-dn-fDi"/>
                     <exclude reference="gM4-1y-vOc"/>
+                    <exclude reference="QWo-Fr-2p6"/>
                     <exclude reference="1lv-vE-UC3"/>
                     <exclude reference="S2A-Oh-ubm"/>
                     <exclude reference="ltr-uN-9l3"/>
@@ -568,10 +597,12 @@
                     <include reference="4pJ-5s-vlp"/>
                     <include reference="U68-jc-YEL"/>
                     <include reference="JJJ-fR-b8y"/>
+                    <include reference="cuf-jZ-f1h"/>
                     <include reference="vkC-hp-ZTC"/>
                     <include reference="Jro-u9-0hX"/>
                     <include reference="ZjB-dn-fDi"/>
                     <include reference="gM4-1y-vOc"/>
+                    <include reference="QWo-Fr-2p6"/>
                     <include reference="1lv-vE-UC3"/>
                     <include reference="S2A-Oh-ubm"/>
                     <include reference="ltr-uN-9l3"/>
@@ -582,13 +613,13 @@
     </objects>
     <resources>
         <image name="Best_Driver" width="25" height="25"/>
+        <image name="Happy_icon" width="75" height="75"/>
         <image name="Language_En" width="50" height="50"/>
         <image name="Logo" width="600" height="600"/>
         <image name="Most_Ride" width="40" height="40"/>
         <image name="login_icon" width="75" height="75"/>
         <image name="register_icon" width="75" height="75"/>
         <image name="search_icon" width="75" height="75"/>
-        <image name="tour_icon" width="75" height="75"/>
         <image name="welcome-BG" width="320" height="415"/>
     </resources>
 </document>

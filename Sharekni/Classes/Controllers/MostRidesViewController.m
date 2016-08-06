@@ -19,7 +19,12 @@
 #import <UIViewController+REFrostedViewController.h>
 #import <REFrostedViewController.h>
 
-@interface MostRidesViewController ()
+#import "MobAccountManager.h"
+#import "User.h"
+
+#import "HappyMeter.h"
+#import "UIViewController+MJPopupViewController.h"
+@interface MostRidesViewController () <MJAddRemarkPopupDelegate>
 @property (nonatomic ,weak) IBOutlet UITableView *ridesList ;
 @property (nonatomic ,strong) NSMutableArray *mostRides ;
 @end
@@ -55,6 +60,7 @@
     }
     
     [self getMostRides];
+    
 }
 
 - (BOOL)shouldAutorotate

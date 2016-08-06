@@ -24,6 +24,7 @@
 #import "NotificationsViewController.h"
 #import "VehiclesViewController.h"
 #import "HomeViewController.h"
+#import "FAQ.h"
 
 #define Title_Key @"Title"
 #define Image_Key @"ImageName"
@@ -72,10 +73,10 @@
         
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Vehicles"),@"Side_vehicles"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
-        
-//        dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Saved Search"),@"Side_savesearch"] forKeys:@[Title_Key,Image_Key]];
-//        [self.items addObject:dictionary];
-        
+        //Add new sidemenu 1
+        dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Help & FAQ"),@"Side_savesearch"] forKeys:@[Title_Key,Image_Key]];
+        [self.items addObject:dictionary];
+        // End of add new 1
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Most Rides"),@"Side_mostrides"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
         
@@ -87,20 +88,20 @@
         
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Notifications"),@"Side_notifications"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
-        
+        /*
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Language"),(KIS_ARABIC)?@"Language_En":@"Language_Ar"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
-
+*/
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Logout"),@"Side_Logout"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
     }
     else{
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Home Page"),@"Side_Home"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
-        
-//        dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Saved Search"),@"Side_savesearch"] forKeys:@[Title_Key,Image_Key]];
-//        [self.items addObject:dictionary];
-        
+        //Add new sidemenu
+        dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Help & FAQ"),@"Side_savesearch"] forKeys:@[Title_Key,Image_Key]];
+        [self.items addObject:dictionary];
+        //end of add new 2
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Most Rides"),@"Side_mostrides"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
         
@@ -112,10 +113,10 @@
         
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Notifications"),@"Side_notifications"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
-        
+        /*
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Language"),(KIS_ARABIC)?@"Language_En":@"Language_Ar"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
-
+*/
         dictionary = [[NSDictionary alloc] initWithObjects:@[GET_STRING(@"Logout"),@"Side_Logout"] forKeys:@[Title_Key,Image_Key]];
         [self.items addObject:dictionary];
     }
@@ -192,7 +193,7 @@
         NSLog(@"I'm Ipad User in The Side Menu");
         return 100;
     }else {
-    return 45;
+    return 42;
     }
 }
 
@@ -252,6 +253,10 @@
             [self.frostedViewController setContentViewController:self.savedSearchNavigationController];
             [self.frostedViewController hideMenuViewController];
         }
+        else if ([title isEqualToString:GET_STRING(@"Help & FAQ")]){
+            [self.frostedViewController setContentViewController:self.FAQVC];
+            [self.frostedViewController hideMenuViewController];
+        }
         else if ([title isEqualToString:GET_STRING(@"Notifications")]){
             [self.frostedViewController setContentViewController:self.notificationsNavigationController];
             [self.frostedViewController hideMenuViewController];
@@ -264,7 +269,7 @@
             [[HelpManager sharedHelpManager] deleteUserFromUSerDefaults];
             [MobAccountManager sharedMobAccountManager].applicationUser = nil;
             [self presentViewController:self.welcomeNavigationController animated:YES completion:nil];
-        }else if ([title isEqualToString:GET_STRING(@"Language")]){
+        }/*else if ([title isEqualToString:GET_STRING(@"Language")]){
 
             if (KIS_ARABIC)
             {
@@ -272,7 +277,7 @@
             }else{
                 [self selectLangaugeAr];
             }
-        }
+        }*/
 }
 
 - (void)selectLangaugeEn
@@ -302,6 +307,15 @@
     }
 }
 
+-(UINavigationController *)FAQVC{
+
+        if (!_FAQVC) {
+            FAQ *viewController = [[FAQ alloc] initWithNibName:@"FAQ" bundle:nil];
+            viewController.enableBackButton = NO;
+            _FAQVC = [[UINavigationController alloc] initWithRootViewController:viewController];
+        }
+        return _FAQVC;
+    }
 
 
 

@@ -47,7 +47,9 @@
                         <constraint firstAttribute="trailing" secondItem="3MU-Nn-ATo" secondAttribute="trailing" id="W5a-ix-SZs">
                             <variation key="heightClass=regular-widthClass=regular" constant="14"/>
                         </constraint>
-                        <constraint firstItem="3MU-Nn-ATo" firstAttribute="leading" secondItem="PGA-SL-v1P" secondAttribute="leading" constant="8" id="Wft-YO-gm6"/>
+                        <constraint firstItem="3MU-Nn-ATo" firstAttribute="leading" secondItem="PGA-SL-v1P" secondAttribute="leading" constant="8" id="Wft-YO-gm6">
+                            <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                        </constraint>
                         <constraint firstAttribute="width" constant="400" id="rOf-xl-C09"/>
                         <constraint firstAttribute="bottom" secondItem="3MU-Nn-ATo" secondAttribute="bottom" id="wxx-8t-1iX"/>
                     </constraints>
@@ -75,7 +77,7 @@
                     <variation key="heightClass=regular-widthClass=regular">
                         <mask key="constraints">
                             <include reference="JUn-xz-PRg"/>
-                            <include reference="rOf-xl-C09"/>
+                            <exclude reference="rOf-xl-C09"/>
                             <include reference="FUg-yW-1eL"/>
                             <include reference="W5a-ix-SZs"/>
                             <include reference="Wft-YO-gm6"/>
@@ -102,7 +104,9 @@
                             <variation key="heightClass=regular-widthClass=regular" constant="8"/>
                         </constraint>
                         <constraint firstItem="voM-A6-Go4" firstAttribute="top" secondItem="hJl-MU-e0O" secondAttribute="top" id="yOw-Dh-eEX"/>
-                        <constraint firstItem="voM-A6-Go4" firstAttribute="leading" secondItem="hJl-MU-e0O" secondAttribute="leading" constant="8" id="zOA-qn-QJT"/>
+                        <constraint firstItem="voM-A6-Go4" firstAttribute="leading" secondItem="hJl-MU-e0O" secondAttribute="leading" constant="8" id="zOA-qn-QJT">
+                            <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                        </constraint>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -273,6 +277,7 @@
                 <constraint firstItem="PGA-SL-v1P" firstAttribute="top" secondItem="al8-NN-cFP" secondAttribute="bottom" constant="129" id="5np-WF-pnD">
                     <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                 </constraint>
+                <constraint firstItem="PGA-SL-v1P" firstAttribute="width" secondItem="oFt-SY-eFE" secondAttribute="width" multiplier="0.75" id="6gh-Xs-WkZ"/>
                 <constraint firstItem="hJl-MU-e0O" firstAttribute="top" secondItem="PGA-SL-v1P" secondAttribute="bottom" constant="10" id="96M-Zi-Ih2">
                     <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                 </constraint>
@@ -316,6 +321,7 @@
                     <exclude reference="0rU-Kj-xHe"/>
                     <exclude reference="Du4-SN-1wG"/>
                     <exclude reference="5np-WF-pnD"/>
+                    <exclude reference="6gh-Xs-WkZ"/>
                     <exclude reference="g7F-oV-0wi"/>
                     <exclude reference="96M-Zi-Ih2"/>
                     <exclude reference="Hfs-ll-OeB"/>
@@ -341,6 +347,7 @@
                     <include reference="0rU-Kj-xHe"/>
                     <include reference="Du4-SN-1wG"/>
                     <include reference="5np-WF-pnD"/>
+                    <include reference="6gh-Xs-WkZ"/>
                     <include reference="g7F-oV-0wi"/>
                     <include reference="96M-Zi-Ih2"/>
                     <include reference="Hfs-ll-OeB"/>

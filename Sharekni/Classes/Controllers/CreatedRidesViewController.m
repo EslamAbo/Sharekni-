@@ -17,8 +17,13 @@
 #import "UIView+Borders.h"
 #import <UIColor+Additions.h>
 
+#import "MobAccountManager.h"
+#import "User.h"
 
-@interface CreatedRidesViewController ()<UIAlertViewDelegate>
+#import "HappyMeter.h"
+#import "UIViewController+MJPopupViewController.h"
+
+@interface CreatedRidesViewController ()<UIAlertViewDelegate,MJAddRemarkPopupDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *noResultLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSArray *createdRides;
@@ -42,7 +47,10 @@
     self.noResultLabel.alpha = 0;
     
     self.navigationItem.title = GET_STRING(@"Rides Created");
+    
+   
 }
+
 
 - (BOOL)shouldAutorotate
 {

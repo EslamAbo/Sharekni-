@@ -47,7 +47,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [_mapView bringSubviewToFront:_TheMapSwitcherOutLet];
+    [_mapView bringSubviewToFront:_TheMapSwitcherOutLet];
+    
+    
+    
+//    if([CLLocationManager locationServicesEnabled] &&
+//       [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied) {
+//        // show the map
+//        NSLog(@"GPS working and he allowes it");
+//    } else {
+//        __block MapLookupViewController *blockSelf = self;
+//   [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"Please turn on GPS first")];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [blockSelf.navigationController popViewControllerAnimated:YES];
+//            
+//        });
+//    }
     
     currentLocationEnabled = NO;
     self.title = GET_STRING(@"Map Lookup");

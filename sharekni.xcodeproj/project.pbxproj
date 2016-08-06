@@ -163,9 +163,16 @@
 		14ECD2431C1AAF170013FE1D /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECD2411C1AAF170013FE1D /* EditProfileViewController.m */; };
 		7103F4FC1CD52E6A00FFC52B /* HomeViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7103F4FB1CD52E6A00FFC52B /* HomeViewController_Ipad.xib */; };
 		7103F4FE1CD52E7E00FFC52B /* HomeViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7103F4FD1CD52E7E00FFC52B /* HomeViewController_ar_Ipad.xib */; };
+		710E82551D274E6F0040F334 /* HappyMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E82541D274E6F0040F334 /* HappyMeter.m */; };
+		710E82571D274E7A0040F334 /* HappyMeter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 710E82561D274E7A0040F334 /* HappyMeter.xib */; };
 		712F0DAB1C88555200721D9A /* RideDetailsVCInvitePassengers.m in Sources */ = {isa = PBXBuildFile; fileRef = 712F0DAA1C88555200721D9A /* RideDetailsVCInvitePassengers.m */; };
 		712F0DB81C885A5D00721D9A /* RideDetailsVCInvitePassengers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712F0DB71C885A5D00721D9A /* RideDetailsVCInvitePassengers.xib */; };
 		712F0DBA1C885A6D00721D9A /* RideDetailsVCInvitePassengers_ar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 712F0DB91C885A6D00721D9A /* RideDetailsVCInvitePassengers_ar.xib */; };
+		713CC6631D40F36C009A6BAE /* AppPulsemobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713CC6621D40F36C009A6BAE /* AppPulsemobile.framework */; };
+		713CC6651D40F451009A6BAE /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 713CC6641D40F451009A6BAE /* libstdc++.tbd */; };
+		713CC6671D40F460009A6BAE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 713CC6661D40F460009A6BAE /* libz.tbd */; };
+		713CC66C1D40F4DF009A6BAE /* HPFilter.xml in Resources */ = {isa = PBXBuildFile; fileRef = 713CC66A1D40F4DF009A6BAE /* HPFilter.xml */; };
+		713CC66D1D40F4DF009A6BAE /* hprummonitor.plist in Resources */ = {isa = PBXBuildFile; fileRef = 713CC66B1D40F4DF009A6BAE /* hprummonitor.plist */; };
 		713FD4511CCE97400011CFDE /* RegisterViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713FD4501CCE97400011CFDE /* RegisterViewController_Ipad.xib */; };
 		713FD4531CCE97610011CFDE /* RegisterViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 713FD4521CCE97610011CFDE /* RegisterViewController_ar_Ipad.xib */; };
 		7140BB631CD68FBB00207C47 /* AdvancedSearchViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7140BB621CD68FBB00207C47 /* AdvancedSearchViewController_Ipad.xib */; };
@@ -182,15 +189,26 @@
 		719090051C79D796002D5214 /* MapLookupForPassenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 719090041C79D796002D5214 /* MapLookupForPassenger.m */; };
 		719090081C7A286D002D5214 /* AddRemarksViewControllerForMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 719090071C7A286D002D5214 /* AddRemarksViewControllerForMap.m */; };
 		7190900A1C7A287C002D5214 /* AddRemarksViewControllerForMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719090091C7A287C002D5214 /* AddRemarksViewControllerForMap.xib */; };
+		719BDB711D09CE3800108FE1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719BDB701D09CE3800108FE1 /* Social.framework */; };
 		71B9D69C1CD42A9D003E973D /* SearchViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B9D69B1CD42A9D003E973D /* SearchViewController_Ipad.xib */; };
 		71B9D69E1CD42AB1003E973D /* SearchViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71B9D69D1CD42AB1003E973D /* SearchViewController_ar_Ipad.xib */; };
 		71C97E3D1CDEA6D0005C5C6F /* VehiclesViewController_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C97E3C1CDEA6D0005C5C6F /* VehiclesViewController_Ipad.xib */; };
 		71C97E3F1CDEA6DD005C5C6F /* VehiclesViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C97E3E1CDEA6DD005C5C6F /* VehiclesViewController_ar_Ipad.xib */; };
+		71CEFCF11D320F5B002BDC08 /* FAQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CEFCEF1D320F5B002BDC08 /* FAQ.m */; };
+		71CEFCF21D320F5B002BDC08 /* FAQ.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CEFCF01D320F5B002BDC08 /* FAQ.xib */; };
 		71D522C41C799A5000E0F8E7 /* MostRideDetailsForMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D522C31C799A5000E0F8E7 /* MostRideDetailsForMap.m */; };
 		71D522C61C799A6600E0F8E7 /* MostRideDetailsForMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D522C51C799A6600E0F8E7 /* MostRideDetailsForMap.xib */; };
 		71D522C91C79A10400E0F8E7 /* SearchResultsViewControllerForMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D522C81C79A10400E0F8E7 /* SearchResultsViewControllerForMap.m */; };
 		71D522D11C79A4EE00E0F8E7 /* SearchResultsViewControllerForMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D522D01C79A4EE00E0F8E7 /* SearchResultsViewControllerForMap.xib */; };
 		71D522D31C79A5CB00E0F8E7 /* SearchResultsViewControllerForMap_ar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D522D21C79A5CB00E0F8E7 /* SearchResultsViewControllerForMap_ar.xib */; };
+		71DED95C1D276DCC0067B6B3 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DED94C1D276DCC0067B6B3 /* Application.m */; };
+		71DED95D1D276DCC0067B6B3 /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DED94E1D276DCC0067B6B3 /* Header.m */; };
+		71DED95E1D276DCC0067B6B3 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DED9501D276DCC0067B6B3 /* Transaction.m */; };
+		71DED95F1D276DCC0067B6B3 /* UserH.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DED9521D276DCC0067B6B3 /* UserH.m */; };
+		71DED9601D276DCC0067B6B3 /* VotingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DED9541D276DCC0067B6B3 /* VotingManager.m */; };
+		71DED9611D276DCC0067B6B3 /* VotingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DED9561D276DCC0067B6B3 /* VotingRequest.m */; };
+		71DED9621D276DCC0067B6B3 /* NSString+DSGHappinessCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DED9591D276DCC0067B6B3 /* NSString+DSGHappinessCrypto.m */; };
+		71DED9631D276DCC0067B6B3 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DED95B1D276DCC0067B6B3 /* Util.m */; };
 		71E294D01CD8C31900743C67 /* CreateRideViewController_IPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E294CF1CD8C31900743C67 /* CreateRideViewController_IPad.xib */; };
 		71E294D21CD8C32D00743C67 /* CreateRideViewController_ar_Ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71E294D11CD8C32D00743C67 /* CreateRideViewController_ar_Ipad.xib */; };
 		71F7340E1C787F4A00CF1826 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04931B2B1BAAF814000F5434 /* Main.storyboard */; };
@@ -498,10 +516,20 @@
 		33EF369DCE24017837965426 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7103F4FB1CD52E6A00FFC52B /* HomeViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController_Ipad.xib; sourceTree = "<group>"; };
 		7103F4FD1CD52E7E00FFC52B /* HomeViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		710E82531D274E5D0040F334 /* HappyMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HappyMeter.h; sourceTree = "<group>"; };
+		710E82541D274E6F0040F334 /* HappyMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HappyMeter.m; sourceTree = "<group>"; };
+		710E82561D274E7A0040F334 /* HappyMeter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HappyMeter.xib; sourceTree = "<group>"; };
 		712F0DA91C88554300721D9A /* RideDetailsVCInvitePassengers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RideDetailsVCInvitePassengers.h; sourceTree = "<group>"; };
 		712F0DAA1C88555200721D9A /* RideDetailsVCInvitePassengers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideDetailsVCInvitePassengers.m; sourceTree = "<group>"; };
 		712F0DB71C885A5D00721D9A /* RideDetailsVCInvitePassengers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideDetailsVCInvitePassengers.xib; sourceTree = "<group>"; };
 		712F0DB91C885A6D00721D9A /* RideDetailsVCInvitePassengers_ar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideDetailsVCInvitePassengers_ar.xib; sourceTree = "<group>"; };
+		713BD8261D4F623B008B180F /* fil-PH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fil-PH"; path = "fil-PH.lproj/Main.strings"; sourceTree = "<group>"; };
+		713BD8271D4F623B008B180F /* fil-PH */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fil-PH"; path = "fil-PH.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		713CC6621D40F36C009A6BAE /* AppPulsemobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppPulsemobile.framework; sourceTree = "<group>"; };
+		713CC6641D40F451009A6BAE /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		713CC6661D40F460009A6BAE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		713CC66A1D40F4DF009A6BAE /* HPFilter.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = HPFilter.xml; path = "../../../../../../../../../../../../Users/killvak/Downloads/AppPulsemobile.framework-2.22.4 2/HPFilter.xml"; sourceTree = "<group>"; };
+		713CC66B1D40F4DF009A6BAE /* hprummonitor.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hprummonitor.plist; path = "../../../../../../../../../../../../Users/killvak/Downloads/AppPulsemobile.framework-2.22.4 2/hprummonitor.plist"; sourceTree = "<group>"; };
 		713FD4501CCE97400011CFDE /* RegisterViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController_Ipad.xib; sourceTree = "<group>"; };
 		713FD4521CCE97610011CFDE /* RegisterViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController_ar_Ipad.xib; sourceTree = "<group>"; };
 		7140BB621CD68FBB00207C47 /* AdvancedSearchViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvancedSearchViewController_Ipad.xib; sourceTree = "<group>"; };
@@ -522,10 +550,14 @@
 		719090061C7A285E002D5214 /* AddRemarksViewControllerForMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddRemarksViewControllerForMap.h; sourceTree = "<group>"; };
 		719090071C7A286D002D5214 /* AddRemarksViewControllerForMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRemarksViewControllerForMap.m; sourceTree = "<group>"; };
 		719090091C7A287C002D5214 /* AddRemarksViewControllerForMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddRemarksViewControllerForMap.xib; sourceTree = "<group>"; };
+		719BDB701D09CE3800108FE1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		71B9D69B1CD42A9D003E973D /* SearchViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController_Ipad.xib; sourceTree = "<group>"; };
 		71B9D69D1CD42AB1003E973D /* SearchViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController_ar_Ipad.xib; sourceTree = "<group>"; };
 		71C97E3C1CDEA6D0005C5C6F /* VehiclesViewController_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VehiclesViewController_Ipad.xib; sourceTree = "<group>"; };
 		71C97E3E1CDEA6DD005C5C6F /* VehiclesViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VehiclesViewController_ar_Ipad.xib; sourceTree = "<group>"; };
+		71CEFCEE1D320F5B002BDC08 /* FAQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQ.h; sourceTree = "<group>"; };
+		71CEFCEF1D320F5B002BDC08 /* FAQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQ.m; sourceTree = "<group>"; };
+		71CEFCF01D320F5B002BDC08 /* FAQ.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FAQ.xib; sourceTree = "<group>"; };
 		71D522C21C799A4200E0F8E7 /* MostRideDetailsForMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MostRideDetailsForMap.h; sourceTree = "<group>"; };
 		71D522C31C799A5000E0F8E7 /* MostRideDetailsForMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostRideDetailsForMap.m; sourceTree = "<group>"; };
 		71D522C51C799A6600E0F8E7 /* MostRideDetailsForMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MostRideDetailsForMap.xib; sourceTree = "<group>"; };
@@ -533,6 +565,22 @@
 		71D522C81C79A10400E0F8E7 /* SearchResultsViewControllerForMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewControllerForMap.m; sourceTree = "<group>"; };
 		71D522D01C79A4EE00E0F8E7 /* SearchResultsViewControllerForMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsViewControllerForMap.xib; sourceTree = "<group>"; };
 		71D522D21C79A5CB00E0F8E7 /* SearchResultsViewControllerForMap_ar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsViewControllerForMap_ar.xib; sourceTree = "<group>"; };
+		71DED94B1D276DCC0067B6B3 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		71DED94C1D276DCC0067B6B3 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		71DED94D1D276DCC0067B6B3 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		71DED94E1D276DCC0067B6B3 /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
+		71DED94F1D276DCC0067B6B3 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		71DED9501D276DCC0067B6B3 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		71DED9511D276DCC0067B6B3 /* UserH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserH.h; sourceTree = "<group>"; };
+		71DED9521D276DCC0067B6B3 /* UserH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserH.m; sourceTree = "<group>"; };
+		71DED9531D276DCC0067B6B3 /* VotingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VotingManager.h; sourceTree = "<group>"; };
+		71DED9541D276DCC0067B6B3 /* VotingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VotingManager.m; sourceTree = "<group>"; };
+		71DED9551D276DCC0067B6B3 /* VotingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VotingRequest.h; sourceTree = "<group>"; };
+		71DED9561D276DCC0067B6B3 /* VotingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VotingRequest.m; sourceTree = "<group>"; };
+		71DED9581D276DCC0067B6B3 /* NSString+DSGHappinessCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DSGHappinessCrypto.h"; sourceTree = "<group>"; };
+		71DED9591D276DCC0067B6B3 /* NSString+DSGHappinessCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DSGHappinessCrypto.m"; sourceTree = "<group>"; };
+		71DED95A1D276DCC0067B6B3 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		71DED95B1D276DCC0067B6B3 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		71E294CF1CD8C31900743C67 /* CreateRideViewController_IPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateRideViewController_IPad.xib; sourceTree = "<group>"; };
 		71E294D11CD8C32D00743C67 /* CreateRideViewController_ar_Ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateRideViewController_ar_Ipad.xib; sourceTree = "<group>"; };
 		71F506351C5D9D0F003C0639 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -628,12 +676,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				713CC6671D40F460009A6BAE /* libz.tbd in Frameworks */,
+				713CC6651D40F451009A6BAE /* libstdc++.tbd in Frameworks */,
+				140B97B71C167E9E0030E266 /* CoreTelephony.framework in Frameworks */,
 				140B97BD1C167EC40030E266 /* SystemConfiguration.framework in Frameworks */,
+				719BDB711D09CE3800108FE1 /* Social.framework in Frameworks */,
 				140B97BB1C167EBB0030E266 /* MobileCoreServices.framework in Frameworks */,
 				140B97B91C167EA60030E266 /* AdSupport.framework in Frameworks */,
+				713CC6631D40F36C009A6BAE /* AppPulsemobile.framework in Frameworks */,
 				715F02291C78893A00788D41 /* StoreKit.framework in Frameworks */,
 				140B97C31C1680BA0030E266 /* MobileAppTracker.framework in Frameworks */,
-				140B97B71C167E9E0030E266 /* CoreTelephony.framework in Frameworks */,
 				140B97B31C167E680030E266 /* iAd.framework in Frameworks */,
 				14D3E94B1C06AD220047F415 /* CoreGraphics.framework in Frameworks */,
 				14D3E9491C06AD1B0047F415 /* QuartzCore.framework in Frameworks */,
@@ -687,6 +739,7 @@
 				04931B1C1BAAF814000F5434 /* Products */,
 				CF95CB2E9D399F32CE70C8F6 /* Pods */,
 				EB0896A2D090EB584EC82226 /* Frameworks */,
+				713CC6691D40F4C0009A6BAE /* Pulse */,
 			);
 			sourceTree = "<group>";
 		};
@@ -711,6 +764,7 @@
 				04931B2B1BAAF814000F5434 /* Main.storyboard */,
 				14DFCB8D1C24756500EE87CA /* Main_ar.storyboard */,
 				04931B251BAAF814000F5434 /* Sharekni.xcdatamodeld */,
+				71DED9491D276DCC0067B6B3 /* DSGHappiness */,
 				04931B1E1BAAF814000F5434 /* Supporting Files */,
 				87A1133C1BB6FD230092E870 /* Constants.h */,
 				87196D451BF0A30500A94370 /* Launch Screen.storyboard */,
@@ -762,6 +816,9 @@
 				719090061C7A285E002D5214 /* AddRemarksViewControllerForMap.h */,
 				719090071C7A286D002D5214 /* AddRemarksViewControllerForMap.m */,
 				719090091C7A287C002D5214 /* AddRemarksViewControllerForMap.xib */,
+				710E82531D274E5D0040F334 /* HappyMeter.h */,
+				710E82541D274E6F0040F334 /* HappyMeter.m */,
+				710E82561D274E7A0040F334 /* HappyMeter.xib */,
 				140B97AD1C164E1A0030E266 /* VerifyMobileViewController.h */,
 				140B97AE1C164E1A0030E266 /* VerifyMobileViewController.m */,
 				140B97AF1C164E1A0030E266 /* VerifyMobileViewController.xib */,
@@ -816,6 +873,9 @@
 				0451C3AA1C05B76D009CA1FC /* SplashViewController.xib */,
 				14D3E9571C06C0440047F415 /* PHPageScrollView.h */,
 				14D3E9581C06C0440047F415 /* PHPageScrollView.m */,
+				71CEFCEE1D320F5B002BDC08 /* FAQ.h */,
+				71CEFCEF1D320F5B002BDC08 /* FAQ.m */,
+				71CEFCF01D320F5B002BDC08 /* FAQ.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1123,6 +1183,54 @@
 			name = Welcome;
 			sourceTree = "<group>";
 		};
+		713CC6691D40F4C0009A6BAE /* Pulse */ = {
+			isa = PBXGroup;
+			children = (
+				713CC66A1D40F4DF009A6BAE /* HPFilter.xml */,
+				713CC66B1D40F4DF009A6BAE /* hprummonitor.plist */,
+			);
+			name = Pulse;
+			sourceTree = "<group>";
+		};
+		71DED9491D276DCC0067B6B3 /* DSGHappiness */ = {
+			isa = PBXGroup;
+			children = (
+				71DED94A1D276DCC0067B6B3 /* Models */,
+				71DED9571D276DCC0067B6B3 /* Utils */,
+			);
+			path = DSGHappiness;
+			sourceTree = "<group>";
+		};
+		71DED94A1D276DCC0067B6B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				71DED94B1D276DCC0067B6B3 /* Application.h */,
+				71DED94C1D276DCC0067B6B3 /* Application.m */,
+				71DED94D1D276DCC0067B6B3 /* Header.h */,
+				71DED94E1D276DCC0067B6B3 /* Header.m */,
+				71DED94F1D276DCC0067B6B3 /* Transaction.h */,
+				71DED9501D276DCC0067B6B3 /* Transaction.m */,
+				71DED9511D276DCC0067B6B3 /* UserH.h */,
+				71DED9521D276DCC0067B6B3 /* UserH.m */,
+				71DED9531D276DCC0067B6B3 /* VotingManager.h */,
+				71DED9541D276DCC0067B6B3 /* VotingManager.m */,
+				71DED9551D276DCC0067B6B3 /* VotingRequest.h */,
+				71DED9561D276DCC0067B6B3 /* VotingRequest.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		71DED9571D276DCC0067B6B3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				71DED9581D276DCC0067B6B3 /* NSString+DSGHappinessCrypto.h */,
+				71DED9591D276DCC0067B6B3 /* NSString+DSGHappinessCrypto.m */,
+				71DED95A1D276DCC0067B6B3 /* Util.h */,
+				71DED95B1D276DCC0067B6B3 /* Util.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		873E7BEA1C12C8C000B9A68D /* RZDataBinding */ = {
 			isa = PBXGroup;
 			children = (
@@ -1218,6 +1326,10 @@
 		EB0896A2D090EB584EC82226 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				713CC6661D40F460009A6BAE /* libz.tbd */,
+				713CC6641D40F451009A6BAE /* libstdc++.tbd */,
+				713CC6621D40F36C009A6BAE /* AppPulsemobile.framework */,
+				719BDB701D09CE3800108FE1 /* Social.framework */,
 				715F02281C78893A00788D41 /* StoreKit.framework */,
 				140B97C21C1680BA0030E266 /* MobileAppTracker.framework */,
 				140B97BC1C167EC40030E266 /* SystemConfiguration.framework */,
@@ -1307,6 +1419,7 @@
 				ar,
 				"zh-Hans",
 				hi,
+				"fil-PH",
 			);
 			mainGroup = 04931B121BAAF814000F5434;
 			productRefGroup = 04931B1C1BAAF814000F5434 /* Products */;
@@ -1326,6 +1439,7 @@
 			files = (
 				14DFCBAF1C24925300EE87CA /* RideDetailsViewController_ar.xib in Resources */,
 				140B97CF1C1686B90030E266 /* tourar_5.png in Resources */,
+				710E82571D274E7A0040F334 /* HappyMeter.xib in Resources */,
 				7190900A1C7A287C002D5214 /* AddRemarksViewControllerForMap.xib in Resources */,
 				8787E1F21BF7534100CCD53B /* policy.html in Resources */,
 				71501E871CD41707002B267B /* LoginViewController_Ipad.xib in Resources */,
@@ -1401,6 +1515,7 @@
 				14E5D7B91C0270E80089054A /* PermitsViewController.xib in Resources */,
 				14DFCBC01C24BEA400EE87CA /* HistoryViewController.xib in Resources */,
 				71B9D69E1CD42AB1003E973D /* SearchViewController_ar_Ipad.xib in Resources */,
+				713CC66D1D40F4DF009A6BAE /* hprummonitor.plist in Resources */,
 				148795DC1BEA9CF900B940D8 /* ReviewCell.xib in Resources */,
 				8777FA691C01AD120022E368 /* PassengerCell.xib in Resources */,
 				140960921BFEB0C700BA3268 /* AddReviewViewController.xib in Resources */,
@@ -1435,7 +1550,9 @@
 				1425F8091BFF11B300AD086B /* SavedSearchViewController.xib in Resources */,
 				718925861C81ED8000BE8A6D /* MostRideDetailsViewControllerForPassenger.xib in Resources */,
 				14C8CB761C14483900AA16DF /* BestDriverCell.xib in Resources */,
+				71CEFCF21D320F5B002BDC08 /* FAQ.xib in Resources */,
 				879AA9CA1C151E7F005466F5 /* terms_condition_Ar.html in Resources */,
+				713CC66C1D40F4DF009A6BAE /* HPFilter.xml in Resources */,
 				14DFCBA81C248A2900EE87CA /* CreateRideViewController.xib in Resources */,
 				71D522D31C79A5CB00E0F8E7 /* SearchResultsViewControllerForMap_ar.xib in Resources */,
 			);
@@ -1488,6 +1605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CEFCF11D320F5B002BDC08 /* FAQ.m in Sources */,
 				87D9D32A1BEE555B0096E17A /* SideMenuTableViewController.m in Sources */,
 				14E5D7C21C0276900089054A /* ActivatePermitViewController.m in Sources */,
 				718925811C81ECED00BE8A6D /* MostRideDetailsDataForPassenger.m in Sources */,
@@ -1512,6 +1630,7 @@
 				047E45501BC0960F000B5151 /* SearchViewController.m in Sources */,
 				719090051C79D796002D5214 /* MapLookupForPassenger.m in Sources */,
 				873E4C611BED30E4006C42F8 /* MapInfoWindow.m in Sources */,
+				71DED95E1D276DCC0067B6B3 /* Transaction.m in Sources */,
 				87ED1B331C1221EF00EB58EB /* UploadImageManager.m in Sources */,
 				14C3F39F1C029A8300CEF11C /* RideHistoryCell.m in Sources */,
 				048912AD1BB926A6005E4E02 /* Region.m in Sources */,
@@ -1532,6 +1651,7 @@
 				04CFC7051BE52C6B0009BBDA /* RegisterViewController.m in Sources */,
 				0489129E1BB92150005E4E02 /* Nationality.m in Sources */,
 				87C571D61BDBCCA900EFB618 /* UIView+Borders.m in Sources */,
+				71DED95C1D276DCC0067B6B3 /* Application.m in Sources */,
 				143BE6C71BB69327009F6496 /* MostRidesCell.m in Sources */,
 				1425F8081BFF11B300AD086B /* SavedSearchViewController.m in Sources */,
 				71D522C91C79A10400E0F8E7 /* SearchResultsViewControllerForMap.m in Sources */,
@@ -1548,11 +1668,13 @@
 				143BE6C41BB68F1D009F6496 /* BestDriverCell.m in Sources */,
 				048912A41BB92458005E4E02 /* Language.m in Sources */,
 				048912A71BB92539005E4E02 /* Employer.m in Sources */,
+				71DED9611D276DCC0067B6B3 /* VotingRequest.m in Sources */,
 				048912B01BB933B8005E4E02 /* User.m in Sources */,
 				143BE6C11BB68EA5009F6496 /* BestDriversViewController.m in Sources */,
 				14E5D79B1C01A2E80089054A /* Notification.m in Sources */,
 				047E45831BC59DE0000B5151 /* SelectLocationViewController.m in Sources */,
 				87B58B651BD3983800E73E55 /* MapItemPopupViewController.m in Sources */,
+				71DED9631D276DCC0067B6B3 /* Util.m in Sources */,
 				873E7BF41C12C8C100B9A68D /* RZDBCoalesce.m in Sources */,
 				048912AA1BB92609005E4E02 /* Emirate.m in Sources */,
 				87E5F7681BFB6914004FF688 /* RidesCreatedViewController.m in Sources */,
@@ -1574,18 +1696,23 @@
 				1425F8171BFFCB5500AD086B /* AddRemarksViewController.m in Sources */,
 				718925841C81ED7300BE8A6D /* MostRideDetailsViewControllerForPassenger.m in Sources */,
 				047E455A1BC5831D000B5151 /* PickupLocationView.m in Sources */,
+				710E82551D274E6F0040F334 /* HappyMeter.m in Sources */,
 				143BE6D91BB82363009F6496 /* CALayer+RuntimeAttribute.m in Sources */,
 				14D3E93A1C06A2290047F415 /* TourViewController.m in Sources */,
 				140960911BFEB0C700BA3268 /* AddReviewViewController.m in Sources */,
 				71D522C41C799A5000E0F8E7 /* MostRideDetailsForMap.m in Sources */,
 				8777FA601C00C4B20022E368 /* CreatedRidesViewController.m in Sources */,
+				71DED95D1D276DCC0067B6B3 /* Header.m in Sources */,
 				14A61F6B1C2C472A00FF8F93 /* UINavigationController+Rotation.m in Sources */,
 				143BE6B21BB14BE5009F6496 /* WelcomeViewController.m in Sources */,
 				140960881BFEACC100BA3268 /* NSStringEmpty.m in Sources */,
+				71DED95F1D276DCC0067B6B3 /* UserH.m in Sources */,
 				047E45911BC63686000B5151 /* MobDriverManager.m in Sources */,
+				71DED9601D276DCC0067B6B3 /* VotingManager.m in Sources */,
 				047E45941BC63C99000B5151 /* DriverSearchResult.m in Sources */,
 				14E5D7B41C026F4F0089054A /* Permit.m in Sources */,
 				87C1AF7F1BB831A300E21838 /* MasterDataManager.m in Sources */,
+				71DED9621D276DCC0067B6B3 /* NSString+DSGHappinessCrypto.m in Sources */,
 				145C84751C15E8900051FDCB /* PageView.m in Sources */,
 				04931B211BAAF814000F5434 /* main.m in Sources */,
 				14ECD2431C1AAF170013FE1D /* EditProfileViewController.m in Sources */,
@@ -1626,6 +1753,7 @@
 				04931B2C1BAAF814000F5434 /* Base */,
 				71F506351C5D9D0F003C0639 /* zh-Hans */,
 				71F506371C5DA2D2003C0639 /* hi */,
+				713BD8261D4F623B008B180F /* fil-PH */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1637,6 +1765,7 @@
 				143F30F11BC84893006A6A21 /* ar */,
 				71F506361C5D9D0F003C0639 /* zh-Hans */,
 				71F506381C5DA2D2003C0639 /* hi */,
+				713BD8271D4F623B008B180F /* fil-PH */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

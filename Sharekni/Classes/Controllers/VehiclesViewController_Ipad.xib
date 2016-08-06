@@ -8,6 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehiclesViewController">
             <connections>
+                <outlet property="LRefresh" destination="qdk-b0-sFL" id="ZQt-dq-Wux"/>
+                <outlet property="LSubmit" destination="pMz-gB-18h" id="SOV-Aw-YoR"/>
                 <outlet property="containerView" destination="xEw-bI-mbE" id="GOG-xe-rOW"/>
                 <outlet property="dateLabel" destination="Bdp-7h-DuV" id="QPp-7x-Sjc"/>
                 <outlet property="datePickerView" destination="jd7-2N-qaf" id="a4H-oy-9yj"/>

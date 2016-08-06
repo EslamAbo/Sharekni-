@@ -39,6 +39,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = GET_STRING(@"login");
+    [_loginButton setTitle:GET_STRING(@"login") forState:UIControlStateNormal];
+    [_registerNewButton setTitle:GET_STRING(@"Register Now") forState:UIControlStateNormal];
+
+    [_forgotPasswordButton setTitle:GET_STRING(@"Forget Password?") forState:UIControlStateNormal];
+    if ([[Languages sharedLanguageInstance] language] == Philippine) {
+        [_forgotPasswordButton.titleLabel setFont:[UIFont systemFontOfSize:10]];
+
+        [_registerNewButton.titleLabel setFont:[UIFont systemFontOfSize:11]];
+    }else {
+        [_forgotPasswordButton.titleLabel setFont:[UIFont systemFontOfSize:13]];
+        [_registerNewButton.titleLabel setFont:[UIFont systemFontOfSize:13]];
+
+    }
     
     UIButton *_backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _backBtn.frame = CGRectMake(0, 0, 22, 22);

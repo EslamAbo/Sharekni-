@@ -17,7 +17,10 @@
 #import "LoginViewController.h"
 #import "MobAccountManager.h"
 
-@interface SearchResultsViewController () <SendMSGDelegate,MFMessageComposeViewControllerDelegate>
+#import "HappyMeter.h"
+#import "UIViewController+MJPopupViewController.h"
+
+@interface SearchResultsViewController () <SendMSGDelegate,MFMessageComposeViewControllerDelegate,MJAddRemarkPopupDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *fromLabel;
@@ -32,7 +35,10 @@
 {
     [super viewDidLoad];
     [self configureUI];
+    
+   
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

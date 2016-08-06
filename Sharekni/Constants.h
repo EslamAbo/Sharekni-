@@ -48,9 +48,9 @@
 
 //#define Sharkeni_BASEURL @"https://www.sharekni.ae/_mobfiles/"
 
-//#define Sharkeni_BASEURL @"http://213.42.51.219/_mobfiles/"
-
-#define Sharkeni_BASEURL @"http://sharekni-web.sdg.ae/_mobfiles/"
+#define Sharkeni_BASEURL @"http://213.42.51.219/_mobfiles/"
+//
+//#define Sharkeni_BASEURL @"http://sharekni-web.sdg.ae/_mobfiles/"
 
 #define GetAgeRanges_URL @"cls_mobios.asmx/GetAgeRanges"
 #define GetEmirates_URL @"cls_mobios.asmx/GetEmirates"
@@ -102,6 +102,12 @@
 #define Yellow_HEX @"f30c12"
 #define Red_UIColor [UIColor add_colorWithRGBHexString:Red_HEX]
 #define Yellow_UIColor [UIColor add_colorWithRGBHexString:Yellow_HEX]
+
+
+#define serviceProviderSecretHM @"aaaf179f5f4b852f"
+#define clientIDHM @"dsg123"
+#define microAppHM @"Sharekni"
+#define serviceProviderHM @"DSG"
 
 #pragma ENUMS
 

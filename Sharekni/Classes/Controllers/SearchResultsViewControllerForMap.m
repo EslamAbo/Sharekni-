@@ -22,10 +22,14 @@
 
 #import "LoginViewController.h"
 #import "UIViewController+MJPopupViewController.h"
+
+#import "HappyMeter.h"
+#import "UIViewController+MJPopupViewController.h"
+
 //#import "AddReviewViewController.h"
 
 
-@interface SearchResultsViewControllerForMap () <SendMSGDelegate/*,MJDetailPopupDelegate*/,MJAddRemarkPopupDelegate,MFMessageComposeViewControllerDelegate ,UIActionSheetDelegate ,UIAlertViewDelegate>
+@interface SearchResultsViewControllerForMap () <SendMSGDelegate/*,MJDetailPopupDelegate*/,MJAddRemarkPopupDelegate,MFMessageComposeViewControllerDelegate ,UIActionSheetDelegate ,UIAlertViewDelegate,MJAddRemarkPopupDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *fromLabel;
@@ -58,7 +62,10 @@
     }
 
     [self configureUI];
-}
+    
+   
+    
+  }
 
 - (void)viewWillAppear:(BOOL)animated
 {

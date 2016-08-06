@@ -20,13 +20,16 @@
 #import "MLPAutoCompleteTextFieldDelegate.h"
 #import <MZFormSheetController.h>
 #import "UIView+Borders.h"
-
+#import "HappyMeter.h"
+#import "UIViewController+MJPopupViewController.h"
+#import "User.h"
+#import "MobAccountManager.h"
 typedef enum DirectionType : NSUInteger {
     DirectionTypeTo,
     DirectionTypeFrom
 } DirectionType;
 
-@interface SelectLocationViewController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,MLPAutoCompleteTextFieldDelegate,MLPAutoCompleteTextFieldDataSource>
+@interface SelectLocationViewController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,MLPAutoCompleteTextFieldDelegate,MLPAutoCompleteTextFieldDataSource,MJAddRemarkPopupDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *fromEmirateButton;
 
@@ -60,7 +63,7 @@ typedef enum DirectionType : NSUInteger {
     [super viewDidLoad];
     [self configureData];
     [self configureUI];
-}
+   }
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

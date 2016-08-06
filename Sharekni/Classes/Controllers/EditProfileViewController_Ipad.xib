@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController">
             <connections>
+                <outlet property="Lupdate" destination="wEH-B4-aaZ" id="E5x-w8-fDG"/>
                 <outlet property="container" destination="6sU-IA-jnP" id="FVF-LA-yUl"/>
                 <outlet property="femaleLabel" destination="GpC-x0-QO7" id="9B0-uQ-DuI"/>
                 <outlet property="firstNameView" destination="gUp-6F-44y" id="pX4-z0-4gM"/>

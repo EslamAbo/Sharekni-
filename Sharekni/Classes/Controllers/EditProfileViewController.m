@@ -65,6 +65,11 @@
 @property (strong,nonatomic) NSString *mobileNumber ;
 @property (strong,nonatomic) NSString *NationalitySub ;
 
+//GonLang
+@property (weak, nonatomic) IBOutlet UIButton *Lupdate;
+
+
+//
 //@property (strong,nonatomic) NSDate *date;
 //@property (strong,nonatomic) NSDateFormatter *dateFormatter;
 @property (assign,nonatomic) BOOL isMale;
@@ -87,6 +92,10 @@
     
     self.title = GET_STRING(@"Edit Profile");
     
+    self.maleLabel.text = GET_STRING(@"Male");
+    self.femaleLabel.text = GET_STRING(@"Female");
+    [_Lupdate setTitle:GET_STRING(@"Update") forState:UIControlStateNormal];
+    self.Lupdate.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     UIButton *_backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _backBtn.frame = CGRectMake(0, 0, 22, 22);
     [_backBtn setBackgroundImage:[UIImage imageNamed:@"Back_icn"] forState:UIControlStateNormal];

@@ -30,10 +30,14 @@
 #import "UIViewController+MJPopupViewController.h"
 #import "EditProfileViewController.h"
 #import "Languages.h"
+#import "AppDelegate.h"
+
+#import "HappyMeter.h"
+#import "UIViewController+MJPopupViewController.h"
 
 @import MobileAppTracker;
 
-@interface HomeViewController () <VerifyMobilePopupDelegate>
+@interface HomeViewController () <VerifyMobilePopupDelegate,MJAddRemarkPopupDelegate ,UIPickerViewDelegate ,UIPickerViewDataSource  >
 
 #pragma Outlets
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
@@ -50,7 +54,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *notificationCountLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
+//LanguageLabels
 
+@property (weak, nonatomic) IBOutlet UITextField *TextViaPicker;
+
+//
 @property (weak, nonatomic) IBOutlet UIImageView *topLeftIcon;
 @property (weak, nonatomic) IBOutlet UILabel *topLeftLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomLeftIcon;
@@ -59,6 +67,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *topRightLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomRightIcon;
 @property (weak, nonatomic) IBOutlet UILabel *bottomRightLabel;
+
 
 @property (weak, nonatomic) IBOutlet UIView *topLeftView;
 @property (weak, nonatomic) IBOutlet UIView *topRightView;
@@ -84,6 +93,7 @@
 @end
 
 @implementation HomeViewController
+NSArray* language ;
 
 - (void)viewDidLoad
 {
@@ -91,6 +101,52 @@
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     [Tune measureSession];
     
+    switch ([[Languages sharedLanguageInstance] language]) {
+            
+            
+        case Arabic:
+            //
+            hardCodedLanguages = @[@"English",@"Chines",@"Filipino"];
+            selected = @"English";
+            break;
+        case English:
+            //
+            
+            //        self.HindiButtonSelector.hidden = NO;
+            hardCodedLanguages = @[@"Arabic",@"Chines",@"Filipino"];
+            selected = @"Arabic";
+            break;
+        case Chines:
+            //
+            
+            //        self.HindiButtonSelector.hidden = NO;
+            hardCodedLanguages = @[@"English",@"Arabic",@"Filipino"];
+            selected = @"English";
+            break;
+        case Philippine:
+            //
+            
+            //        self.HindiButtonSelector.hidden = NO;
+            hardCodedLanguages = @[@"English",@"Arabic",@"Chines"];
+            selected = @"English";
+            break;
+        default:
+            NSLog(@"Error Picking Language");
+            break;
+    }
+    
+    //GonLang
+    [_verifyBtn setTitle:GET_STRING(@"Verify") forState:UIControlStateNormal];
+    self.ridesCreatedLabel.text = GET_STRING(@"Create Ride");
+    if ([[Languages sharedLanguageInstance] language] == Philippine) {
+        self.verifyBtn.titleLabel.font = [UIFont boldSystemFontOfSize:11];
+        
+    }else{
+        self.verifyBtn.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+
+    }
+
+    //
     [self configureData];
     //    [self configureUI];
     [self configureActionsUI];
@@ -134,7 +190,11 @@
      }];
     
     [self getNotifications];
+    
+   
 }
+
+
 
 - (BOOL)shouldAutorotate
 {
@@ -223,9 +283,9 @@
         self.topRightLabel.text = GET_STRING(@"Create Ride");
         UITapGestureRecognizer *topRightGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createRideAction)];
         [self.topRightView addGestureRecognizer:topRightGesture];
-        
-        self.bottomLeftIcon.image = [UIImage imageNamed:@"history"];
-        self.bottomLeftLabel.text = GET_STRING(@"History");
+        //happy Meter
+//        self.bottomLeftIcon.image = [UIImage imageNamed:@"history"];
+//        self.bottomLeftLabel.text = GET_STRING(@"History");
         UITapGestureRecognizer *bottomLeftGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(historyAction)];
         [self.bottomLeftView addGestureRecognizer:bottomLeftGesture];
         
@@ -257,9 +317,9 @@
         self.topRightLabel.text = GET_STRING(@"Rides Joined");
         UITapGestureRecognizer *topRightGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showJoinedRides)];
         [self.topRightView addGestureRecognizer:topRightGesture];
-        
-        self.bottomLeftIcon.image = [UIImage imageNamed:@"history"];
-        self.bottomLeftLabel.text = GET_STRING(@"History");
+        //Happy Meter
+//        self.bottomLeftIcon.image = [UIImage imageNamed:@"history"];
+//        self.bottomLeftLabel.text = GET_STRING(@"History");
         UITapGestureRecognizer *bottomLeftGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(historyAction)];
         [self.bottomLeftView addGestureRecognizer:bottomLeftGesture];
         
@@ -272,7 +332,40 @@
 
 - (void) configureUI
 {
+    
+    // Picker
+    
+    UIPickerView *cityPicker = [[UIPickerView alloc] initWithFrame:CGRectZero];
+    cityPicker.delegate = self;
+    cityPicker.dataSource = self;
+    [cityPicker setBackgroundColor:[UIColor whiteColor]];
+    [cityPicker setShowsSelectionIndicator:YES];
+    _TextViaPicker.inputView = cityPicker;
+    // Create done button in UIPickerView
+    UIToolbar*  mypickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 56)];
+    mypickerToolbar.barStyle = UIBarStyleDefault;
+    [mypickerToolbar sizeToFit];
+    NSMutableArray *barItems = [[NSMutableArray alloc] init];
+    UIBarButtonItem *Cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(pickerCANCELClicked)];
+    Cancel.tintColor =  Red_UIColor;
+    [barItems addObject:Cancel];
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    [barItems addObject:flexSpace];
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(pickerDoneClicked)];
+    doneBtn.tintColor =  Red_UIColor;
+    [barItems addObject:doneBtn];
+    
+    [mypickerToolbar setItems:barItems animated:YES];
+    _TextViaPicker.inputAccessoryView = mypickerToolbar;
+    //    _TextViaPicker.inputView = picker ;
+    language = [NSArray new];
+    
+    //
+
+    
+    
     self.navigationItem.title = GET_STRING(@"Home Page");
+    
     
     self.nameLabel.text = [NSString stringWithFormat:@"%@ %@",self.sharedUser.FirstName,self.sharedUser.LastName];
     self.nameLabel.text = [self.nameLabel.text capitalizedString];
@@ -368,6 +461,94 @@
     self.vehiclesLabel.text = vehiclesCountText;
 }
 
+
+//LanguagePicker
+
+
+//PickerT
+
+- (void)pickerDoneClicked {
+    //[textField resignFirstResponder];
+    NSLog(@"hi");
+    [_TextViaPicker resignFirstResponder];
+    
+    
+    NSLog(@"that is the selected lang : %@",selected);
+    
+    if ([selected  isEqual: @"Arabic"]) {
+        NSLog(@"Select Arabic");
+        [[Languages sharedLanguageInstance] setLanguage:Arabic];
+        [[NSNotificationCenter defaultCenter] postNotificationName:LANGUAGE_CHANGE_NOTIFICATION object:self];
+        [appDelegate reloadApp];
+        
+    } else  if ([selected  isEqual: @"English"]) {
+        NSLog(@"Select English");
+        [[Languages sharedLanguageInstance] setLanguage:English];
+        [[NSNotificationCenter defaultCenter] postNotificationName:LANGUAGE_CHANGE_NOTIFICATION object:self];
+        [appDelegate reloadApp];
+    } else  if ([selected  isEqual: @"Chines"]) {
+        NSLog(@"Select Chines");
+        [[Languages sharedLanguageInstance] setLanguage:Chines];
+        [[NSNotificationCenter defaultCenter] postNotificationName:LANGUAGE_CHANGE_NOTIFICATION object:self];
+        [appDelegate reloadApp];
+    } else  if ([selected  isEqual: @"Filipino"]) {
+        NSLog(@"Select Filipino");
+        [[Languages sharedLanguageInstance] setLanguage:Philippine];
+        [[NSNotificationCenter defaultCenter] postNotificationName:LANGUAGE_CHANGE_NOTIFICATION object:self];
+        [appDelegate reloadApp];
+    }
+}
+
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *title = hardCodedLanguages[row];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
+    
+    return attString;
+    
+}
+
+//
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return  hardCodedLanguages.count ;
+}
+
+- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    
+    return  hardCodedLanguages[row]  ;
+}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    
+    _TextViaPicker.text = hardCodedLanguages[row];
+    selected = hardCodedLanguages[row];
+    //    NSLog(selected);
+    
+    
+}
+-(void)pickerCANCELClicked{
+    
+    [_TextViaPicker resignFirstResponder];
+}
+
+
+
+//
+- (IBAction)LanguageButtonPicker:(UIButton *)sender {
+    [_TextViaPicker becomeFirstResponder];
+
+    
+}
+
+//end of languagePicker
 - (IBAction) verfiyMobileAction:(id)sender
 {
     [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
@@ -491,6 +672,17 @@
 
 - (void) historyAction
 {
+    
+    NSLog(@"Happy Metter");
+    HappyMeter *happyMeter = [[HappyMeter alloc] initWithNibName:@"HappyMeter" bundle:nil];
+    happyMeter.serviceProviderSecret = serviceProviderSecretHM;
+    happyMeter.clientID = clientIDHM;
+    happyMeter.microApp = microAppHM;
+    happyMeter.serviceProvider = serviceProviderHM;
+    happyMeter.delegate = self;
+    [self presentPopupViewController2:happyMeter animationType:MJPopupViewAnimationSlideBottomBottom];
+    
+    /* // SavedHistory
 //    if ([[[[MobAccountManager sharedMobAccountManager] applicationUser] AccountStatus] isEqualToString:@"P"])
 //    {
     
@@ -507,6 +699,8 @@
         HistoryViewController *historyView = [[HistoryViewController alloc] initWithNibName:(KIS_ARABIC)?@"HistoryViewController_ar":@"HistoryViewController" bundle:nil];
         [self.navigationController pushViewController:historyView animated:YES];
     }
+    
+    */
 }
 
 - (void) permitAction

@@ -20,8 +20,10 @@
 #import "RZDataBinding.h"   
 #import "LoginViewController.h"
 #import "User.h"
+#import "HappyMeter.h"
+#import "UIViewController+MJPopupViewController.h"
 
-@interface DriverDetailsViewController () <MFMessageComposeViewControllerDelegate>
+@interface DriverDetailsViewController () <MFMessageComposeViewControllerDelegate,MJAddRemarkPopupDelegate>
 
 @property (nonatomic ,weak) IBOutlet UIImageView *driverImage ;
 @property (nonatomic ,weak) IBOutlet UILabel *driverName ;
@@ -59,8 +61,8 @@
     
     [self.ridesList registerClass:[DriverRideCell class] forCellReuseIdentifier:RIDE_CELLID];
     [self configureData];
-}
 
+}
 - (BOOL)shouldAutorotate
 {
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];

@@ -25,9 +25,8 @@
 #import "AddRemarksViewControllerForMap.h"
 #import "UIViewController+MJPopupViewController.h"
 
-/*
- #import "UIViewController+MJPopupViewController.h"
- */
+#import "HappyMeter.h"
+
 
 @interface MostRideDetailsViewControllerForPassenger ()<SendMSGDelegate/*,MJDetailPopupDelegate*/,MJAddRemarkPopupDelegate,MFMessageComposeViewControllerDelegate ,UIActionSheetDelegate ,UIAlertViewDelegate>
 
@@ -109,7 +108,10 @@
     }
     
     [self getRideDetails];
+    
+
 }
+
 
 - (BOOL)shouldAutorotate
 {

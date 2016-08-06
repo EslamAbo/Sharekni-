@@ -11,6 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController">
             <connections>
+                <outlet property="TLogin" destination="9wC-Ct-Hoy" id="Lvg-0a-Uk2"/>
+                <outlet property="TMostRides" destination="Vol-a4-G1b" id="9r6-tX-BJA"/>
+                <outlet property="TSearch" destination="v8C-CB-YJe" id="P7a-hQ-SSM"/>
+                <outlet property="TbestDrivers" destination="NfG-NG-f50" id="TaC-TZ-Tzq"/>
+                <outlet property="TextViaPicker" destination="DmC-gH-acL" id="uzu-w0-C8G"/>
+                <outlet property="TheHappyMeter" destination="iWt-Oo-qBc" id="gZB-NC-mrr"/>
+                <outlet property="Tregister" destination="0Ub-Al-00A" id="2EQ-mb-Six"/>
                 <outlet property="arBtn" destination="JIY-cG-9Qa" id="eXS-oT-agR"/>
                 <outlet property="bestDriversView" destination="PxC-jE-2qJ" id="AbF-Bk-esM"/>
                 <outlet property="mostRidesView" destination="y4V-HN-rDg" id="UFz-pe-AZ1"/>
@@ -22,6 +29,30 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
+                <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DmC-gH-acL">
+                    <rect key="frame" x="66" y="76" width="97" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="PuU-NL-cS9"/>
+                        <constraint firstAttribute="width" constant="97" id="dHH-up-iDD"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="PuU-NL-cS9"/>
+                            <exclude reference="dHH-up-iDD"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="PuU-NL-cS9"/>
+                            <include reference="dHH-up-iDD"/>
+                        </mask>
+                    </variation>
+                </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="welcome-BG" translatesAutoresizingMaskIntoConstraints="NO" id="qQ8-4g-oNU">
                     <rect key="frame" x="0.0" y="64" width="320" height="415"/>
                 </imageView>
@@ -50,7 +81,7 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Most Rides" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vol-a4-G1b">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Most Rides" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vol-a4-G1b">
                             <rect key="frame" x="39" y="8" width="124" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="178" id="CsD-MS-aQE"/>
@@ -214,6 +245,29 @@
                         <action selector="selectArabic:" destination="-1" eventType="touchUpInside" id="fBS-2N-oVY"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Xbc-i7-zln">
+                    <rect key="frame" x="95" y="123" width="130" height="130"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="151" id="2m2-bn-74d">
+                            <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="146" id="qo6-KI-ak6">
+                            <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                        </constraint>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="2m2-bn-74d"/>
+                            <exclude reference="qo6-KI-ak6"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="2m2-bn-74d"/>
+                            <include reference="qo6-KI-ak6"/>
+                        </mask>
+                    </variation>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nej-7v-xze">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <subviews>
@@ -252,11 +306,20 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdR-QC-z2C" userLabel="جولة">
                             <rect key="frame" x="162" y="480" width="75" height="75"/>
-                            <state key="normal" backgroundImage="tour_icon">
+                            <state key="normal" backgroundImage="Happy_icon">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="makeATour:" destination="-1" eventType="touchUpInside" id="dnK-cb-nLN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMG-Mz-UdC" userLabel="تسجيل دخول">
+                            <rect key="frame" x="83" y="480" width="75" height="75"/>
+                            <state key="normal" backgroundImage="login_icon">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="login:" destination="-1" eventType="touchUpInside" id="mi2-5n-Pfw"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ub-Al-00A">
@@ -274,49 +337,30 @@
                                     <exclude reference="ltE-Zp-Gdj"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                <rect key="frame" x="73" y="104" width="99" height="40"/>
+                            <variation key="heightClass=regular-widthClass=regular">
                                 <mask key="constraints">
                                     <include reference="Aae-gf-lLf"/>
                                     <include reference="ltE-Zp-Gdj"/>
                                 </mask>
                             </variation>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMG-Mz-UdC" userLabel="تسجيل دخول">
-                            <rect key="frame" x="83" y="480" width="75" height="75"/>
-                            <state key="normal" backgroundImage="login_icon">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="login:" destination="-1" eventType="touchUpInside" id="mi2-5n-Pfw"/>
-                            </connections>
-                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wC-Ct-Hoy">
                             <rect key="frame" x="99" y="529" width="42" height="21"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                             <color key="textColor" red="0.90196078431372551" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
-                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                <rect key="frame" x="261" y="104" width="99" height="40"/>
-                            </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8C-CB-YJe">
                             <rect key="frame" x="261" y="529" width="42" height="21"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                             <color key="textColor" red="0.90196078431372551" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
-                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                <rect key="frame" x="629" y="104" width="99" height="40"/>
-                            </variation>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a tour" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWt-Oo-qBc">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Meter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWt-Oo-qBc">
                             <rect key="frame" x="169" y="529" width="60" height="23"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                             <color key="textColor" red="0.90196078431372551" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
-                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                <rect key="frame" x="439" y="104" width="99" height="40"/>
-                            </variation>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -373,8 +417,8 @@
                             <exclude reference="rEX-hD-ryj"/>
                             <exclude reference="fih-H5-jsf"/>
                             <exclude reference="tdR-QC-z2C"/>
-                            <exclude reference="0Ub-Al-00A"/>
                             <exclude reference="KMG-Mz-UdC"/>
+                            <exclude reference="0Ub-Al-00A"/>
                             <exclude reference="9wC-Ct-Hoy"/>
                             <exclude reference="v8C-CB-YJe"/>
                             <exclude reference="iWt-Oo-qBc"/>
@@ -421,8 +465,8 @@
                             <include reference="rEX-hD-ryj"/>
                             <include reference="fih-H5-jsf"/>
                             <include reference="tdR-QC-z2C"/>
-                            <include reference="0Ub-Al-00A"/>
                             <include reference="KMG-Mz-UdC"/>
+                            <include reference="0Ub-Al-00A"/>
                             <include reference="9wC-Ct-Hoy"/>
                             <include reference="v8C-CB-YJe"/>
                             <include reference="iWt-Oo-qBc"/>
@@ -465,29 +509,6 @@
                         </mask>
                     </variation>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Xbc-i7-zln">
-                    <rect key="frame" x="95" y="123" width="130" height="130"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="151" id="2m2-bn-74d">
-                            <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                        </constraint>
-                        <constraint firstAttribute="height" constant="146" id="qo6-KI-ak6">
-                            <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                        </constraint>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="2m2-bn-74d"/>
-                            <exclude reference="qo6-KI-ak6"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <mask key="constraints">
-                            <include reference="2m2-bn-74d"/>
-                            <include reference="qo6-KI-ak6"/>
-                        </mask>
-                    </variation>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -496,7 +517,9 @@
                     <variation key="heightClass=regular-widthClass=regular" constant="35"/>
                 </constraint>
                 <constraint firstItem="qQ8-4g-oNU" firstAttribute="top" secondItem="fEs-t3-EbW" secondAttribute="top" constant="64" id="4pJ-5s-vlp"/>
+                <constraint firstItem="DmC-gH-acL" firstAttribute="leading" secondItem="JIY-cG-9Qa" secondAttribute="trailing" constant="21" id="6q4-ja-OYZ"/>
                 <constraint firstItem="Nej-7v-xze" firstAttribute="leading" secondItem="fEs-t3-EbW" secondAttribute="leading" id="8OD-IN-Gwc"/>
+                <constraint firstItem="DmC-gH-acL" firstAttribute="top" secondItem="fEs-t3-EbW" secondAttribute="top" constant="86" id="A5J-x8-7Gb"/>
                 <constraint firstAttribute="bottom" secondItem="Nej-7v-xze" secondAttribute="bottom" id="H2s-I0-fbw"/>
                 <constraint firstItem="Xbc-i7-zln" firstAttribute="top" secondItem="qQ8-4g-oNU" secondAttribute="top" constant="83" id="Jro-u9-0hX">
                     <variation key="heightClass=regular-widthClass=regular" constant="91"/>
@@ -516,9 +539,12 @@
             <nil key="simulatedTopBarMetrics"/>
             <variation key="default">
                 <mask key="subviews">
+                    <exclude reference="DmC-gH-acL"/>
                     <exclude reference="Nej-7v-xze"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="6q4-ja-OYZ"/>
+                    <exclude reference="A5J-x8-7Gb"/>
                     <exclude reference="8OD-IN-Gwc"/>
                     <exclude reference="H2s-I0-fbw"/>
                     <exclude reference="dWd-Mc-feS"/>
@@ -538,9 +564,12 @@
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
                 <mask key="subviews">
+                    <include reference="DmC-gH-acL"/>
                     <include reference="Nej-7v-xze"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="6q4-ja-OYZ"/>
+                    <include reference="A5J-x8-7Gb"/>
                     <include reference="8OD-IN-Gwc"/>
                     <include reference="H2s-I0-fbw"/>
                     <include reference="dWd-Mc-feS"/>
@@ -563,13 +592,13 @@
     </objects>
     <resources>
         <image name="Best_Driver" width="25" height="25"/>
+        <image name="Happy_icon" width="75" height="75"/>
         <image name="Language_Ar" width="50" height="50"/>
         <image name="Logo" width="600" height="600"/>
         <image name="Most_Ride" width="40" height="40"/>
         <image name="login_icon" width="75" height="75"/>
         <image name="register_icon" width="75" height="75"/>
         <image name="search_icon" width="75" height="75"/>
-        <image name="tour_icon" width="75" height="75"/>
         <image name="welcome-BG" width="320" height="415"/>
     </resources>
 </document>

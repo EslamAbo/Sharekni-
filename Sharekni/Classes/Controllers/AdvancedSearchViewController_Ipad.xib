@@ -9,6 +9,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdvancedSearchViewController">
             <connections>
+                <outlet property="LAccept" destination="vmx-S5-MxC" id="vEY-eX-iXR"/>
+                <outlet property="LBoth" destination="Baw-g2-YAB" id="Bs9-mQ-Vob"/>
+                <outlet property="LDoesnotAccept" destination="ZEw-te-XZo" id="mdt-TO-J4j"/>
+                <outlet property="LFemale" destination="90F-rj-Wq0" id="Xmw-G8-sOP"/>
+                <outlet property="LMale" destination="Dcy-HT-kHf" id="4YA-YN-Aba"/>
+                <outlet property="LPrefGender" destination="7Dq-J5-gc9" id="8yr-i7-M58"/>
+                <outlet property="LSmokers" destination="FED-vl-31e" id="7nZ-um-Lze"/>
                 <outlet property="acceptBtn" destination="ImI-3k-OlZ" id="D1G-D1-vOg"/>
                 <outlet property="ageRangeButton" destination="KsY-8x-cEV" id="DrQ-oe-g0Y"/>
                 <outlet property="bothBtn" destination="EWs-lB-vhZ" id="jcB-Yc-ziO"/>

@@ -40,6 +40,12 @@
 #import "MostRideDetailsViewControllerForPassenger.h"
 
 
+#import <Social/Social.h>
+
+#import "User.h"
+
+#import "HappyMeter.h"
+
 #define VERTICAL_SPACE 47
 #define REVIEWS_CELL_HEIGHT  117
 #define PASSENGER_ALERT_TAG  1199
@@ -82,6 +88,17 @@
     __weak IBOutlet UIButton *thirdButton;
     
     __weak IBOutlet UIButton *MatchedSearchResults;
+    
+    //Gonlang
+    
+    __weak IBOutlet UILabel *LSmokers;
+    __weak IBOutlet UILabel *LLang;
+    __weak IBOutlet UILabel *Lgender;
+    
+    __weak IBOutlet UILabel *LAgerange;
+    __weak IBOutlet UILabel *LNationality;
+    
+    //
     NSString *selected;
 }
 
@@ -123,11 +140,22 @@
   
     
  
-    UIBarButtonItem *customBtn=[[UIBarButtonItem alloc] initWithTitle:GET_STRING(@"Share") style:UIBarButtonItemStylePlain target:self action:@selector(customBtnPressed)];
-    [self.navigationItem setRightBarButtonItem:customBtn];
+//    UIBarButtonItem *customBtn=[[UIBarButtonItem alloc] initWithTitle:GET_STRING(@"Share") style:UIBarButtonItemStylePlain target:self action:@selector(customBtnPressed)];
+//    [self.navigationItem setRightBarButtonItem:customBtn];
     
     
+    [MatchedSearchResults setTitle:GET_STRING(@"Matched Search Results") forState:UIControlStateNormal];
+    MatchedSearchResults.titleLabel.font = [UIFont boldSystemFontOfSize:15];
+    preferenceLbl.text = GET_STRING(@"Preferences");
+    nationality.text = GET_STRING(@"Not Specified");
+    NSLog(@"that is the nationality : %@",nationality.text);
+    LLang.text = GET_STRING(@"Language");
+    Lgender.text = GET_STRING(@"Gender");
+    LAgerange.text = GET_STRING(@"Age Range");
+    LSmokers.text = GET_STRING(@"Smokers");
+LNationality.text = GET_STRING(@"nationality");
     
+    //
     _RouteName = self.driverDetails.RouteEnName;
 
     NSLog(@"1 %@",_createdRide.Name_en);
@@ -218,37 +246,47 @@
     [self configureMapView];
     [self configureData];
     [self getDriverRate];
+    
+    
+    NSMutableArray *arrRightBarItems = [[NSMutableArray alloc] init];
+    UIButton *btnLib = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnLib setImage:[UIImage imageNamed:@"share.png"] forState:UIControlStateNormal];
+    btnLib.frame = CGRectMake(0, 0, 32, 32);
+    btnLib.showsTouchWhenHighlighted=YES;
+    [btnLib addTarget:self action:@selector(ShareFunction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButtonItem2 = [[UIBarButtonItem alloc] initWithCustomView:btnLib];
+    [arrRightBarItems addObject:barButtonItem2];
+    
+//    UIButton *btnRefresh = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [btnRefresh setImage:[UIImage imageNamed:@"HappyMeter.png"] forState:UIControlStateNormal];
+//    btnRefresh.frame = CGRectMake(0, 0, 32, 32);
+//    btnRefresh.showsTouchWhenHighlighted=YES;
+//    [btnRefresh addTarget:self action:@selector(HappyMeter) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *barButtonItem1 = [[UIBarButtonItem alloc] initWithCustomView:btnRefresh];
+    
+//    [arrRightBarItems addObject:barButtonItem1];
+    self.navigationItem.rightBarButtonItems=arrRightBarItems;
+    
+    //HappyMeter LastMark   
 }
-//Test
 
--(void)customBtnPressed{
+-(void)ShareFunction{
     
-    NSString * from = @"Join My Ride from  " ;
-    NSString * to = @"   to   " ;
+    NSString *MyRideLink = [NSString stringWithFormat:@"%@",self.routeDetails.ShareLink] ;
     
-    UIImage * image = [UIImage imageNamed:@"Splash1"];
+    NSArray * shareItems = @[[NSURL URLWithString:MyRideLink]]; // Working
     
-    NSArray * shareItems = @[from , FromRegionName.text,to, ToRegionName.text, image];
+     UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+     
+     if (IDIOM == IPAD) {
+     
+     avc.popoverPresentationController.sourceView = self.view;
+     
+     }
+     
+     [self presentViewController:avc animated:YES completion:nil];
     
-    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
-    
-    if (IDIOM == IPAD) {
-        
-        avc.popoverPresentationController.sourceView = self.view;
-
     }
-    
-    [self presentViewController:avc animated:YES completion:nil];
-    
-    //perform your action
-    //    NSLog(@"Working");
-    //   _ShareLink =  (@" %s",_ShareLink) ;
-    //    NSArray* sharedObjects=[NSArray arrayWithObjects:_ShareLink,  nil];
-    //    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]
-    //                                                        initWithActivityItems:sharedObjects applicationActivities:nil];
-    //    activityViewController.popoverPresentationController.sourceView = self.view;
-    //    [self presentViewController:activityViewController animated:YES completion:nil];
-}
 
 ///
 - (BOOL)shouldAutorotate
@@ -361,6 +399,11 @@
     else
     {
         nationality.text = (KIS_ARABIC)?self.routeDetails.NationalityArName:self.routeDetails.NationalityEnName ;
+        
+        if ([nationality.text containsString:@"Not Specified"]) {
+            
+            nationality.text = GET_STRING(@"Not Specified");
+        }
     }
     
     if ([NSStringEmpty isNullOrEmpty:self.routeDetails.AgeRange])
@@ -877,7 +920,7 @@
     //        {
     //            [self.navigationController popToViewController:controller animated:YES];
     if (self.alreadyJoined == NO) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:GET_STRING(@"Received your request and waiting for The approval") preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:GET_STRING(@"Request had been sent Successfully , wait for Passenger's Approval") preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *ok = [UIAlertAction actionWithTitle:GET_STRING(@"Ok") style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:ok];
@@ -1389,7 +1432,7 @@
                 [self.navigationController pushViewController:rideDetailsView animated:YES];
             }
             else{
-                [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"No Rides Found")];
+                [[HelpManager sharedHelpManager] showAlertWithMessage:GET_STRING(@"No Passengers Found")];
             }
             //    [[MasterDataManager sharedMasterDataManager] getRideDetails:@"0" FromEmirateID:_ride.FromEmirateId FromRegionID:_ride.FromRegionId ToEmirateID:_ride.ToEmirateId ToRegionID:_ride.ToRegionId WithSuccess:^(NSMutableArray *array) {
             
