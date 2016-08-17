@@ -131,14 +131,6 @@
                     <color key="textColor" red="0.90196078431372551" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mdX-nY-9ph">
-                    <rect key="frame" x="275" y="71" width="37" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="Language_En"/>
-                    <connections>
-                        <action selector="selectEnglish:" destination="-1" eventType="touchUpInside" id="1IV-N3-nya"/>
-                    </connections>
-                </button>
                 <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="AZv-RP-l9q">
                     <rect key="frame" x="143" y="75" width="97" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -148,6 +140,14 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mdX-nY-9ph">
+                    <rect key="frame" x="275" y="71" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="ariconGlobal"/>
+                    <connections>
+                        <action selector="selectEnglish:" destination="-1" eventType="touchUpInside" id="1IV-N3-nya"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -158,9 +158,9 @@
     <resources>
         <image name="Best_Driver" width="25" height="25"/>
         <image name="Happy_icon" width="75" height="75"/>
-        <image name="Language_En" width="50" height="50"/>
         <image name="Logo" width="600" height="600"/>
         <image name="Most_Ride" width="40" height="40"/>
+        <image name="ariconGlobal" width="75" height="75"/>
         <image name="login_icon" width="75" height="75"/>
         <image name="register_icon" width="75" height="75"/>
         <image name="search_icon" width="75" height="75"/>

@@ -103,6 +103,9 @@
     self.title = GET_STRING(@"searchOptions");
     self.TopRides.text = GET_STRING(@"Top Rides");
     self.saveSearchLabel.text = GET_STRING(@"Saved Search");
+    self.TopRides.text = GET_STRING(@"Top Rides");
+    
+    
     
     _setDirectionButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     _searchButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];

@@ -46,7 +46,8 @@
                             <exclude reference="dHH-up-iDD"/>
                         </mask>
                     </variation>
-                    <variation key="heightClass=regular-widthClass=regular">
+                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                        <rect key="frame" x="79" y="86" width="97" height="30"/>
                         <mask key="constraints">
                             <include reference="PuU-NL-cS9"/>
                             <include reference="dHH-up-iDD"/>
@@ -238,13 +239,6 @@
                         </mask>
                     </variation>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-cG-9Qa">
-                    <rect key="frame" x="8" y="72" width="37" height="37"/>
-                    <state key="normal" backgroundImage="Language_Ar"/>
-                    <connections>
-                        <action selector="selectArabic:" destination="-1" eventType="touchUpInside" id="fBS-2N-oVY"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Xbc-i7-zln">
                     <rect key="frame" x="95" y="123" width="130" height="130"/>
                     <constraints>
@@ -509,6 +503,16 @@
                         </mask>
                     </variation>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-cG-9Qa">
+                    <rect key="frame" x="8" y="72" width="37" height="37"/>
+                    <state key="normal" backgroundImage="ariconGlobal"/>
+                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                        <rect key="frame" x="8" y="76" width="50" height="50"/>
+                    </variation>
+                    <connections>
+                        <action selector="selectArabic:" destination="-1" eventType="touchUpInside" id="fBS-2N-oVY"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -593,9 +597,9 @@
     <resources>
         <image name="Best_Driver" width="25" height="25"/>
         <image name="Happy_icon" width="75" height="75"/>
-        <image name="Language_Ar" width="50" height="50"/>
         <image name="Logo" width="600" height="600"/>
         <image name="Most_Ride" width="40" height="40"/>
+        <image name="ariconGlobal" width="75" height="75"/>
         <image name="login_icon" width="75" height="75"/>
         <image name="register_icon" width="75" height="75"/>
         <image name="search_icon" width="75" height="75"/>

@@ -494,7 +494,7 @@
 
 - (void) configureData{
     
-    [KVNProgress showWithStatus:@"Loading..."];
+    [KVNProgress showWithStatus:GET_STRING(@"Loading...")];
     __block MapLookupViewController *blockSelf = self;
     if ( _MapDeciderSwitchBoolean == YES && [_MapDeciderForSwitch  isEqual: @"Driver"]  ) {
         

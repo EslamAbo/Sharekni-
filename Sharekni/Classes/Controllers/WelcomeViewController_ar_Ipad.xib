@@ -224,7 +224,8 @@
                                     <exclude reference="EBx-pH-Thl"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=regular">
+                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                <rect key="frame" x="619" y="109" width="120" height="18"/>
                                 <mask key="constraints">
                                     <include reference="Dvy-Cg-C6Y"/>
                                     <include reference="EBx-pH-Thl"/>
@@ -460,29 +461,6 @@
                         </mask>
                     </variation>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-cG-9Qa">
-                    <rect key="frame" x="8" y="72" width="37" height="37"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="LVp-uZ-Mjo"/>
-                        <constraint firstAttribute="height" constant="50" id="PjB-Zi-no6"/>
-                    </constraints>
-                    <state key="normal" backgroundImage="Language_En"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="LVp-uZ-Mjo"/>
-                            <exclude reference="PjB-Zi-no6"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <mask key="constraints">
-                            <include reference="LVp-uZ-Mjo"/>
-                            <include reference="PjB-Zi-no6"/>
-                        </mask>
-                    </variation>
-                    <connections>
-                        <action selector="selectEnglish:" destination="-1" eventType="touchUpInside" id="wem-Tt-pjH"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Xbc-i7-zln">
                     <rect key="frame" x="95" y="123" width="130" height="130"/>
                     <constraints>
@@ -530,6 +508,29 @@
                         </mask>
                     </variation>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIY-cG-9Qa">
+                    <rect key="frame" x="8" y="72" width="37" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="LVp-uZ-Mjo"/>
+                        <constraint firstAttribute="height" constant="50" id="PjB-Zi-no6"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="ariconGlobal"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="LVp-uZ-Mjo"/>
+                            <exclude reference="PjB-Zi-no6"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="LVp-uZ-Mjo"/>
+                            <include reference="PjB-Zi-no6"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="selectEnglish:" destination="-1" eventType="touchUpInside" id="wem-Tt-pjH"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -614,9 +615,9 @@
     <resources>
         <image name="Best_Driver" width="25" height="25"/>
         <image name="Happy_icon" width="75" height="75"/>
-        <image name="Language_En" width="50" height="50"/>
         <image name="Logo" width="600" height="600"/>
         <image name="Most_Ride" width="40" height="40"/>
+        <image name="ariconGlobal" width="75" height="75"/>
         <image name="login_icon" width="75" height="75"/>
         <image name="register_icon" width="75" height="75"/>
         <image name="search_icon" width="75" height="75"/>

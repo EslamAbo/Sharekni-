@@ -53,29 +53,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-bg" translatesAutoresizingMaskIntoConstraints="NO" id="iCS-JN-zcc">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="372"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMU-BW-tcQ">
-                    <rect key="frame" x="227" y="8" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="43" id="FVr-Xa-3Ym"/>
-                        <constraint firstAttribute="width" constant="43" id="yqg-kJ-mnN"/>
-                    </constraints>
-                    <state key="normal" image="Language_En"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="FVr-Xa-3Ym"/>
-                            <exclude reference="yqg-kJ-mnN"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=regular">
-                        <mask key="constraints">
-                            <include reference="FVr-Xa-3Ym"/>
-                            <include reference="yqg-kJ-mnN"/>
-                        </mask>
-                    </variation>
-                    <connections>
-                        <action selector="LanguageButtonPicker:" destination="-1" eventType="touchUpInside" id="Ld6-Dh-SLA"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-Os-AaR">
                     <rect key="frame" x="0.0" y="372" width="600" height="228"/>
                     <subviews>
@@ -912,6 +889,30 @@
                         </mask>
                     </variation>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMU-BW-tcQ">
+                    <rect key="frame" x="227" y="8" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="FVr-Xa-3Ym"/>
+                        <constraint firstAttribute="width" constant="43" id="yqg-kJ-mnN"/>
+                    </constraints>
+                    <state key="normal" image="ariconGlobal"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="FVr-Xa-3Ym"/>
+                            <exclude reference="yqg-kJ-mnN"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                        <rect key="frame" x="119" y="16" width="43" height="43"/>
+                        <mask key="constraints">
+                            <include reference="FVr-Xa-3Ym"/>
+                            <include reference="yqg-kJ-mnN"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="LanguageButtonPicker:" destination="-1" eventType="touchUpInside" id="Ld6-Dh-SLA"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -998,8 +999,8 @@
             <nil key="simulatedTopBarMetrics"/>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="QMU-BW-tcQ"/>
                     <exclude reference="gl0-tA-8WX"/>
+                    <exclude reference="QMU-BW-tcQ"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="KY6-Jv-ycr"/>
@@ -1023,8 +1024,8 @@
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
                 <mask key="subviews">
-                    <include reference="QMU-BW-tcQ"/>
                     <include reference="gl0-tA-8WX"/>
+                    <include reference="QMU-BW-tcQ"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="KY6-Jv-ycr"/>
@@ -1052,9 +1053,9 @@
         </view>
     </objects>
     <resources>
-        <image name="Language_En" width="50" height="50"/>
         <image name="Ride_Joined" width="100" height="34"/>
         <image name="Verified" width="40" height="40"/>
+        <image name="ariconGlobal" width="75" height="75"/>
         <image name="create-ride" width="50" height="42"/>
         <image name="edit" width="50" height="58"/>
         <image name="home-bg" width="320" height="407"/>

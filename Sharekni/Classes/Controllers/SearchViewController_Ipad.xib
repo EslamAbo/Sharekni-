@@ -189,11 +189,15 @@
                         </mask>
                     </variation>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Top Rides" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQL-Op-Nec">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Top Rides" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="RQL-Op-Nec">
                     <rect key="frame" x="115" y="525" width="89" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="89" id="i7i-jA-B4s"/>
-                        <constraint firstAttribute="height" constant="24" id="zgd-er-yA8"/>
+                        <constraint firstAttribute="width" constant="89" id="i7i-jA-B4s">
+                            <variation key="heightClass=regular-widthClass=regular" constant="140"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="24" id="zgd-er-yA8">
+                            <variation key="heightClass=regular-widthClass=regular" constant="44"/>
+                        </constraint>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" red="1" green="0.0092928023220000006" blue="0.06065833943" alpha="1" colorSpace="calibratedRGB"/>
@@ -955,7 +959,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="RQL-Op-Nec" firstAttribute="bottom" secondItem="lRZ-VX-YVx" secondAttribute="bottom" constant="27" id="2an-jT-zNn">
-                    <variation key="heightClass=regular-widthClass=regular" constant="35"/>
+                    <variation key="heightClass=regular-widthClass=regular" constant="55"/>
                 </constraint>
                 <constraint firstItem="uTD-R5-ZlG" firstAttribute="trailing" secondItem="21J-nP-6Bz" secondAttribute="trailing" constant="-16" id="51T-z0-VV8"/>
                 <constraint firstItem="uTD-R5-ZlG" firstAttribute="leading" secondItem="21J-nP-6Bz" secondAttribute="leading" constant="17" id="6Mg-jt-2zB"/>
@@ -992,7 +996,9 @@
                     <variation key="heightClass=regular-widthClass=regular" constant="76"/>
                 </constraint>
                 <constraint firstAttribute="bottom" secondItem="Krf-JA-QYv" secondAttribute="bottom" constant="23" id="dkZ-yN-K6E"/>
-                <constraint firstItem="RQL-Op-Nec" firstAttribute="leading" secondItem="lRZ-VX-YVx" secondAttribute="leading" constant="26" id="dpE-yN-poe"/>
+                <constraint firstItem="RQL-Op-Nec" firstAttribute="leading" secondItem="lRZ-VX-YVx" secondAttribute="leading" constant="26" id="dpE-yN-poe">
+                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                </constraint>
                 <constraint firstAttribute="bottom" secondItem="yhL-B1-Ye4" secondAttribute="bottom" id="eZX-kU-Agc"/>
                 <constraint firstItem="uFj-QM-Wmb" firstAttribute="leading" secondItem="leo-sB-QVx" secondAttribute="leading" constant="1" id="feG-Xl-d2g">
                     <variation key="heightClass=regular-widthClass=regular" constant="13"/>
@@ -1009,7 +1015,9 @@
                 </constraint>
                 <constraint firstItem="far-O2-SPS" firstAttribute="leading" secondItem="21J-nP-6Bz" secondAttribute="leading" id="iF6-LY-s0F"/>
                 <constraint firstItem="Krf-JA-QYv" firstAttribute="top" secondItem="vfr-Ir-4pa" secondAttribute="bottom" constant="12" id="iFX-ws-AaK"/>
-                <constraint firstItem="RQL-Op-Nec" firstAttribute="trailing" secondItem="lRZ-VX-YVx" secondAttribute="trailing" constant="-25" id="iN4-mM-Dko"/>
+                <constraint firstItem="RQL-Op-Nec" firstAttribute="trailing" secondItem="lRZ-VX-YVx" secondAttribute="trailing" constant="-25" id="iN4-mM-Dko">
+                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                </constraint>
                 <constraint firstItem="Krf-JA-QYv" firstAttribute="bottom" secondItem="lRZ-VX-YVx" secondAttribute="bottom" constant="48" id="ine-Sk-d1E"/>
                 <constraint firstItem="Krf-JA-QYv" firstAttribute="centerX" secondItem="Vgi-xN-qM3" secondAttribute="centerX" id="jA4-GX-Md9"/>
                 <constraint firstItem="uTD-R5-ZlG" firstAttribute="top" secondItem="21J-nP-6Bz" secondAttribute="top" constant="85" id="jqW-ro-blH">

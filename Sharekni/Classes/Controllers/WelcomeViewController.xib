@@ -99,14 +99,6 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JIY-cG-9Qa">
-                    <rect key="frame" x="8" y="72" width="37" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="Language_Ar"/>
-                    <connections>
-                        <action selector="selectArabic:" destination="-1" eventType="touchUpInside" id="fBS-2N-oVY"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" id="v8C-CB-YJe">
                     <rect key="frame" x="261" y="529" width="42" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -145,8 +137,16 @@
                         <action selector="makeATour:" destination="-1" eventType="touchUpInside" id="dnK-cb-nLN"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JIY-cG-9Qa">
+                    <rect key="frame" x="8" y="72" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="ariconGlobal"/>
+                    <connections>
+                        <action selector="selectArabic:" destination="-1" eventType="touchUpInside" id="fBS-2N-oVY"/>
+                    </connections>
+                </button>
                 <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Y0s-Kg-HEG">
-                    <rect key="frame" x="66" y="76" width="97" height="30"/>
+                    <rect key="frame" x="111" y="269" width="97" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -164,9 +164,9 @@
     <resources>
         <image name="Best_Driver" width="25" height="25"/>
         <image name="Happy_icon" width="75" height="75"/>
-        <image name="Language_Ar" width="50" height="50"/>
         <image name="Logo" width="600" height="600"/>
         <image name="Most_Ride" width="40" height="40"/>
+        <image name="ariconGlobal" width="75" height="75"/>
         <image name="login_icon" width="75" height="75"/>
         <image name="register_icon" width="75" height="75"/>
         <image name="search_icon" width="75" height="75"/>

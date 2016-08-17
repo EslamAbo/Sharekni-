@@ -223,7 +223,7 @@
         }
        
     }else {
-    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Select a Route:" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:@"Select a Route:" delegate:self cancelButtonTitle:GET_STRING(@"Cancel") destructiveButtonTitle:nil otherButtonTitles:
                             @"Route 1",
                             @"Route 2",
                             nil];

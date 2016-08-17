@@ -99,7 +99,7 @@
 "Create Ride"  = "Create Ride";
 "You Don't Have Any Vehcile Registered" = "You Don't Have Any Registered Vehciles";
 "Do you want to Register it now?" = "Do you want to Register?";
-"Register Vehicle" = "Register Now";
+"Register Vehicle" = "Register Vehicle";
 "Dismiss" = "Dismiss";
 
 "No permits found" = "There is no permit yet";
@@ -372,5 +372,22 @@
 "Please turn on GPS first" = "Please turn on GPS first" ;
 
 "Preferred Gender" = "Preferred Gender" ;
+
+
+"Happy Meter" = "Happiness";
+
+"Filipino" = "Filipino";
+"Chinese" = "Chinese";
+"Arabic" = "Arabic";
+"English" = "English";
+
+
+
+
+
+
+
+
+
 
 // 9 , 12 ,19, 21 ,23,25 , 38 ("Please write your verification code") ,42 (Not)

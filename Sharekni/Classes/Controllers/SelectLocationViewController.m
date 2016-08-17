@@ -35,7 +35,9 @@ typedef enum DirectionType : NSUInteger {
 
 @property (weak, nonatomic) IBOutlet UIButton *toEmirateButton;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *containerViews;
+@property (weak, nonatomic) IBOutlet UILabel *DropOffLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *PickUplabel;
 
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *fromRegionTextField;
 @property (weak, nonatomic) IBOutlet MLPAutoCompleteTextField *toRegionTextField;
@@ -132,6 +134,12 @@ typedef enum DirectionType : NSUInteger {
 {    
     self.navigationItem.title = GET_STRING(@"Set Direction");
     
+    self.PickUplabel.text = GET_STRING(@"Pick up");
+    self.DropOffLabel.text = GET_STRING(@"Drop off");
+    [self.DoneButton setTitle:GET_STRING(@"Done") forState:UIControlStateNormal] ;
+    
+    
+
     UIButton *_backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _backBtn.frame = CGRectMake(0, 0, 22, 22);
     [_backBtn setBackgroundImage:[UIImage imageNamed:@"Back_icn"] forState:UIControlStateNormal];

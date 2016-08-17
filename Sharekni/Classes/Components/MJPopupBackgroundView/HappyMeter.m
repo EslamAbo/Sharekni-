@@ -45,12 +45,25 @@
 
 @implementation HappyMeter
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    
+    switch ([[Languages sharedLanguageInstance] language]) {
+            case English:
+            break;
+        case Arabic:
+            break;
+        case Philippine:
+            break;
+        case Chines:
+            break;
+        case Indian:
+            break;
+        
+    }
     [_ThisappB setTitle:GET_STRING(@"This app") forState:UIControlStateNormal];
     [_MicroAppB setTitle:GET_STRING(@"Micro app") forState:UIControlStateNormal];
     [_TransationB setTitle:GET_STRING(@"Transation") forState:UIControlStateNormal];

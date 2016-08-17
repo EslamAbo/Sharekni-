@@ -1269,7 +1269,7 @@ LNationality.text = GET_STRING(@"nationality");
 {
     if(![MFMessageComposeViewController canSendText])
     {
-        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:GET_STRING(@"Ok") otherButtonTitles:nil];
         [warningAlert show];
         return;
     }

@@ -71,9 +71,10 @@ static void * const keypath = (void*)&keypath;
 
 - (void)presentPopupViewController2:(UIViewController*)popupViewController animationType:(MJPopupViewAnimation)animationType
 {
-    i5 = 263.0f;
-    i6 = 358.0f;
-    i6p = 395.0f;
+    ///GonChangeHeight
+    i5 = 326.0f;
+    i6 = 421.0f;
+    i6p = 458.0f;
     [self presentPopupViewController:popupViewController animationType:animationType dismissed:nil];
 }
 

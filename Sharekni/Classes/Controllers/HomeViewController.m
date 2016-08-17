@@ -105,29 +105,30 @@ NSArray* language ;
             
             
         case Arabic:
-            //
-            hardCodedLanguages = @[@"English",@"Chines",@"Filipino"];
+            //GET_STRING(@"Filipino") GET_STRING(@"Chinese") GET_STRING(@"Arabic") GET_STRING(@"English")
+            
+            hardCodedLanguages = @[ GET_STRING(@"English"),GET_STRING(@"Chinese"),GET_STRING(@"Filipino")];
             selected = @"English";
             break;
         case English:
             //
             
             //        self.HindiButtonSelector.hidden = NO;
-            hardCodedLanguages = @[@"Arabic",@"Chines",@"Filipino"];
+            hardCodedLanguages = @[GET_STRING(@"Arabic") ,GET_STRING(@"Chinese"),GET_STRING(@"Filipino")];
             selected = @"Arabic";
             break;
         case Chines:
             //
             
             //        self.HindiButtonSelector.hidden = NO;
-            hardCodedLanguages = @[@"English",@"Arabic",@"Filipino"];
+            hardCodedLanguages = @[GET_STRING(@"English") ,GET_STRING(@"Arabic"),GET_STRING(@"Filipino")];
             selected = @"English";
             break;
         case Philippine:
             //
             
             //        self.HindiButtonSelector.hidden = NO;
-            hardCodedLanguages = @[@"English",@"Arabic",@"Chines"];
+            hardCodedLanguages = @[GET_STRING(@"English") ,GET_STRING(@"Arabic"),GET_STRING(@"Chinese")];
             selected = @"English";
             break;
         default:
@@ -262,6 +263,7 @@ NSArray* language ;
 
 - (void) configureActionsUI
 {
+    self.
     self.topLeftView.backgroundColor = Red_UIColor;
     self.topRightView.backgroundColor = Red_UIColor;
     self.bottomLeftView.backgroundColor = Red_UIColor;
@@ -285,7 +287,7 @@ NSArray* language ;
         [self.topRightView addGestureRecognizer:topRightGesture];
         //happy Meter
 //        self.bottomLeftIcon.image = [UIImage imageNamed:@"history"];
-//        self.bottomLeftLabel.text = GET_STRING(@"History");
+        self.bottomLeftLabel.text = GET_STRING(@"Happy Meter");
         UITapGestureRecognizer *bottomLeftGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(historyAction)];
         [self.bottomLeftView addGestureRecognizer:bottomLeftGesture];
         
@@ -319,7 +321,7 @@ NSArray* language ;
         [self.topRightView addGestureRecognizer:topRightGesture];
         //Happy Meter
 //        self.bottomLeftIcon.image = [UIImage imageNamed:@"history"];
-//        self.bottomLeftLabel.text = GET_STRING(@"History");
+        self.bottomLeftLabel.text = GET_STRING(@"Happy Meter");
         UITapGestureRecognizer *bottomLeftGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(historyAction)];
         [self.bottomLeftView addGestureRecognizer:bottomLeftGesture];
         
@@ -433,7 +435,34 @@ NSArray* language ;
                     self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"imageaftereditfemale.png"];
                     
                 }
+                break;
+            case Chines:
+                //
                 
+                if ([self.sharedUser.GenderEn  isEqual: @"Male"]) {
+                    
+                    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"imageafterediten_ch.png"];
+                    
+                }else{
+                    //                    NSLog(self.sharedUser.GenderAr);
+                    
+                    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"imageaftereditfemale_ch.png"];
+                    
+                }
+                break;
+            case Philippine:
+                //
+                
+                if ([self.sharedUser.GenderEn  isEqual: @"Male"]) {
+                    
+                    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"imageafterediten_fi.png"];
+                    
+                }else{
+                    //                    NSLog(self.sharedUser.GenderAr);
+                    
+                    self.profileImageView.image = self.sharedUser.userImage ? self.sharedUser.userImage : [UIImage imageNamed:@"imageaftereditfemale_fi.png"];
+                    
+                }
             default:
                 NSLog(@"Error while picking Language");
                 
@@ -475,23 +504,23 @@ NSArray* language ;
     
     NSLog(@"that is the selected lang : %@",selected);
     
-    if ([selected  isEqual: @"Arabic"]) {
+    if ([selected  isEqual: @"Arabic"] || [selected  isEqual: @"阿拉伯语"] || [selected  isEqual: @"Arabe"]|| [selected  isEqual: @"العربية"]) {
         NSLog(@"Select Arabic");
         [[Languages sharedLanguageInstance] setLanguage:Arabic];
         [[NSNotificationCenter defaultCenter] postNotificationName:LANGUAGE_CHANGE_NOTIFICATION object:self];
         [appDelegate reloadApp];
         
-    } else  if ([selected  isEqual: @"English"]) {
+    } else  if ([selected  isEqual: @"Ingles"] || [selected  isEqual: @"英语"] || [selected  isEqual: @"الإنجليزية"]||[selected  isEqual: @"English"]) {
         NSLog(@"Select English");
         [[Languages sharedLanguageInstance] setLanguage:English];
         [[NSNotificationCenter defaultCenter] postNotificationName:LANGUAGE_CHANGE_NOTIFICATION object:self];
         [appDelegate reloadApp];
-    } else  if ([selected  isEqual: @"Chines"]) {
+    } else  if ([selected  isEqual: @"الصينية"] || [selected  isEqual: @"Tsino"] || [selected  isEqual: @"Chinese"]||[selected  isEqual: @"中文"]) {
         NSLog(@"Select Chines");
         [[Languages sharedLanguageInstance] setLanguage:Chines];
         [[NSNotificationCenter defaultCenter] postNotificationName:LANGUAGE_CHANGE_NOTIFICATION object:self];
         [appDelegate reloadApp];
-    } else  if ([selected  isEqual: @"Filipino"]) {
+    } else  if ([selected  isEqual: @"Filipino"] || [selected  isEqual: @"الفلبينية"] || [selected  isEqual: @"菲律宾"]||[selected  isEqual: @"filipino"]) {
         NSLog(@"Select Filipino");
         [[Languages sharedLanguageInstance] setLanguage:Philippine];
         [[NSNotificationCenter defaultCenter] postNotificationName:LANGUAGE_CHANGE_NOTIFICATION object:self];
@@ -502,6 +531,15 @@ NSArray* language ;
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     NSString *title = hardCodedLanguages[row];
+    if ([title  isEqual: @"Arabic"] || [title  isEqual: @"阿拉伯语"] || [title  isEqual: @"Arabe"]|| [title  isEqual: @"العربية"]) {
+        title = GET_STRING(@"Arabic");
+    } else  if ([title  isEqual: @"Ingles"] || [title  isEqual: @"英语"] || [title  isEqual: @"الإنجليزية"]||[title  isEqual: @"English"]) {
+        title = GET_STRING(@"English");
+    } else  if ([title  isEqual: @"الصينية"] || [title  isEqual: @"Tsino"] || [title  isEqual: @"Chinese"]||[title  isEqual: @"中文"]) {
+        title = GET_STRING(@"Chinese");
+    } else  if ([title  isEqual: @"Filipino"] || [title  isEqual: @"الفلبينية"] || [title  isEqual: @"菲律宾"]||[title  isEqual: @"filipino"]) {
+        title = GET_STRING(@"Filipino");
+    }//
     NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
     
     return attString;

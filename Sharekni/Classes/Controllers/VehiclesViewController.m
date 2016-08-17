@@ -79,7 +79,7 @@
     [_LRefresh setTitle:GET_STRING(@"Refresh") forState:UIControlStateNormal];
     _LRefresh.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     _LSubmit.titleLabel.font = [UIFont boldSystemFontOfSize:15];
-
+    titleLabel.text = GET_STRING(@"Register Vehicle");
     //
     if (self.enableBackButton)
     {

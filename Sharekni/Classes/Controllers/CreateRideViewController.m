@@ -187,7 +187,8 @@
     _setDirectionButton.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     self.optionalSectionLabel.text = GET_STRING(@"Optional");
     self.availableSeatsLabel.text = GET_STRING(@"Available Seats");
-    
+    [_nationalityTextField setText:GET_STRING(@"Select Nationality")];
+    _nationalityTextField.font =  [ UIFont boldSystemFontOfSize:15];
     self.satLabel.text = GET_STRING(@"Sat ");
     self.sunLabel.text = GET_STRING(@"Sun ");
     self.monLabel.text = GET_STRING(@"Mon ");

@@ -75,6 +75,8 @@
 "Select" = "اختر";
 "Cancel" = "إلغاء";
 "Ok" = "موافق";
+"ok" = "موافق";
+"Done" = "موافق";
 "Email already exists" = "لا يمكن التسجيل,هذا البريد الإلكترونى مسجل بالفعل";
 "Mobile number already exists" = "لا يمكن التسجيل,رقم الهاتف مسجل بالفعل";
 "Registration done successfully" = "تم التسجيل بنجاح";
@@ -160,7 +162,7 @@
 "Please Enter from Region" = "يرجي اختيار المنطقة";
 "Please Enter to Region" = "يرجي اختيار المنطقة";
 "Please select to Emirate" = "من فضلك اختر الإمارة";
-
+"Top Rides" = "أكثر الرحلات طلبا";
 
 "Select Emirate" = "اختر الإمارة";
 "Please select from Emirate first" = "من فضلك اختر الإمارة أولا";
@@ -331,3 +333,23 @@
 "Matched Search Results" = "نتائج البحث المطابق";
 "Available Seats" = "المقاعد المتاحة";
 "Preferences" = "التفضيلات";
+
+"Happy Meter" = "السعادة";
+
+"Filipino" = "الفلبينية";
+"Chinese" = "الصينية";
+"Arabic" = "العربية";
+"English" = "الإنجليزية";
+
+"Pick up" = "الإنطلاق";
+"Drop off" = "الوصول";
+
+
+
+
+
+
+
+
+
+
