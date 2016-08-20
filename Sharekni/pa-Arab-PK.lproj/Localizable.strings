@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  Sharekni
-
-  Created by Ahmed Askar on 10/9/15.
-
-*/
+/*
+ Localizable.strings
+ Sharekni
+ 
+ Created by Ahmed Askar on 10/9/15.
+ 
+ */
 
 
 "No" = "نہیں";
@@ -12,7 +12,7 @@
 
 "Back_icn" = "واپس آئکن";
 "username"  = "کا صارف کا نام";
-"Username (Your Email)" = "(صارف کا نام(ای میل";
+"Username (Your Email)" = "صارف كا نام(ای ميل)";
 "Password"  = "پاس ورڈ";
 "firstName" = "پہلا نام";
 "lastName"  = "آخری نام";
@@ -29,7 +29,7 @@
 
 "registration" = "رجسٹریشن";
 "login" = "لاگ ان";
-"bestDrivers" = "اچھے ڈرائیور";
+"bestDrivers" = "بہترین ڈرائیوروں";
 "searchOptions" = "فوری تلاش";
 "mostRides" = "سب سے اوپر سواری";
 "advancedSearch" = "علی درجے کی تلاش";
@@ -89,7 +89,7 @@
 "Language" = "زبان";
 
 "Rides Created" = "سواری پیدا کیا";
-"Rides Joined" = "سواری شمولیت اختیار کی";
+"Rides Joined" = "سواری شمولیت";
 "Vehicles" = "گاڑیاں";
 "History" = "تاریخ";
 "Permits" = "اجازت نامہ";
@@ -150,7 +150,7 @@
 
 
 "Map Lookup" = "نقشہ تلاش کریں";
-"Starting Time :" = "شروع کرنے کا وقت:";
+"Starting Time :" = "وقت پر شروع";
 "Set Direction" = "سیٹ سمت";
 "Please set direction" = "سمت مقرر کریں";
 "No Rides Found" = "نہیں ڈرائیوز پایا";
@@ -160,7 +160,7 @@
 "Please select to Emirate" = "امارت کرنے کے لئے منتخب کریں";
 
 
-"Select Emirate" = "سلیکٹ امارت";
+"Select Emirate" = "إمارات منتخب";
 "Please select from Emirate first" = "سب سے پہلے امارت سے انتخاب کریں";
 "Please select to Emirate first" = "سب سے پہلے امارت کرنے کے لئے منتخب کریں";
 "Please enter a valid to region name" = "خطے کا نام کے لئے ایک درست درج کریں";
@@ -173,18 +173,18 @@
 "Passengers" = "مسافروں";
 "Coming Rides :" = "آئندہ سواری";
 
-"From" = "سے";
-"To" = "کرنے";
+"From" = "منجانب";
+"To" = "کرنے کے لئے";
 "Not Set" = "سیٹ نہیں ہے";
 "Ride Days" = "سواری دن";
 
-"Sat " = "هفته ";
-"Sun " = "اتوار ";
-"Mon " = "پیر ";
-"Tue " = "منگل ";
-"Wed " = "بده";
-"Thu " = "جمعرات ";
-"Fri " = "جمعه ";
+"Sat " = "  هفته";
+"Sun " = "  اتوار";
+"Mon " = "  پیر";
+"Tue " = "  منگل";
+"Wed " = "  بده" ;
+"Thu " = " جمعرات";
+"Fri " = "  جمعه";
 
 "Terms And Conditions" = "شرائط و ضوابط";
 "Accept" = "قبول کریں";
@@ -338,7 +338,7 @@
 "I accept the RTA's terms and conditions" = "مجھے RTA کی شرائط و ضوابط کو قبول";
 "Privacy and Policy" = "پرائیویسی اور پالیسی";
 "Save" = "محفوظ کریں";
-"Register Now" = "ابھی رجسٹر کریں";
+"Register Now" = "ابھی رجسٹر";
 "Forget Password?" = "پاسورڈ بھول گے؟";
 
 //Vehicles
@@ -374,7 +374,7 @@
 "Preferred Gender" = "پسندیدہ صنف" ;
 
 
-"Happy Meter" = "خوشی";
+"Happy Meter" = "خوشی كو";
 
 "Filipino" = "Filipino";
 "Chinese" = "中国";
@@ -383,6 +383,10 @@
 "Urdu" = "اردو";
 
 
+"There is no saved search yet." = "ابھی تک کوئی محفوظ کردہ تلاش نہیں ہے" ; 
+
+
+"Refresh" = "تازہ کریں" ;
 
 
 
